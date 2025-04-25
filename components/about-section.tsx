@@ -140,11 +140,11 @@ I learned that true customer success comes from intuituve products that create c
                   company="Restaurant Tech"
                   description={`Recruited by Fintech backers to spin a technology portfolio out of a legacy IT business.
 
-Initially responsible for a platform migration, I was asked to assume revenue responsibility for a small product with huge organic traction.
+To acomplish this, we turned a traditional IT-service org into a venture-backed Fintech. We rebuilt the leadership team, professionalized operations and established a coherent product & revenue strategy. The cornerstone of that strategy was a small product with amazing organic traction.
 
-We implemented both Product Led Growth and Channel revenue approaches to maximize the growth, leading to an overall 30% growth rate.
+We implemented the dual strategy of using Product Led Growth to maximize organic acquisition while relying on channel partnerships to sell our product into enterprise accounts.
 
-Along the way we rebuilt a legacy IT services team into a formidable modern technology company.`}
+Revenue growth tripled, from under 5% to 30-40% YoY, while attracting strategic acquireres in point-of-sales systems.`}
                   achievements={[
                     "Bootstrapped channel revenue to 40% of MRR and 10x'd TAM",
                     "30% annual revenue growth",
