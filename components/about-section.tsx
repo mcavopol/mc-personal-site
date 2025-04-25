@@ -97,11 +97,13 @@ Paid my way through school with IT consulting and didn't rack up any debt!`}
                   year="2009"
                   role="LeanKit"
                   company="Future of Work"
-                  description={`Hired into technical role, but soon missed the fast-cycle problem solving of consulting, leading me into product management.
+                  description={`I was hired for a technical role, but soon realized, while I loved the close-knit team, I missed the fast-cycle, customer-facing problem solving.
 
-Grew LeanKit into new markets with the tailwinds of a Lean-construction movement.
+I moved into a hybrid role as both Product Manager and Solution Engineeer tighly integrating market needs with product capability.
 
-My blend of technical and business acumen made me a natural revenue leader. As we neared exit I was tapped to build & lead the Post-Sales, Solution Engineering and Professional Services functions.`}
+With the tailwind of the Lean-construction movement, I was tapped for a new market tiger-team, charged with growing LeanKit into new verticals. 
+
+My blend of technical and business acumen made me a natural revenue leader. As LeanKit accelerated towards exit, I was asked to build & lead the Post-Sales functions of Customer-Success, Solution Architecture and Professional Services.`}
                   achievements={["3m → 18m ARR", "110% net revenue retention"]}
                   isLeft={false}
                   sector="B2B SaaS"
