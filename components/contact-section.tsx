@@ -1,5 +1,4 @@
 "use client"
-import { Card } from "@/components/ui/card"
 import { Globe, Linkedin } from "lucide-react"
 
 export default function ContactSection() {
@@ -16,8 +15,6 @@ export default function ContactSection() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card>{/* Form content removed */}</Card>
-
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
@@ -46,7 +43,9 @@ export default function ContactSection() {
                   </div>
                 </div>
               </div>
+            </div>
 
+            <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
                 <p className="text-gray-700 dark:text-gray-300">

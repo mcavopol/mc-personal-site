@@ -52,8 +52,8 @@ export default function AboutSection() {
                   role="Asked for a computer for Christmas"
                   company=""
                   description={`Instead, my parents bought me a Motherboard, RAM, CPU, HDD and a copy of Windows 95.
-                  
-"If you can build it you can have it"`}
+
+"If you can build it, you can have it"`}
                   achievements={["1 computer built", "2 week completion time", "4 hard drive reformats"]}
                   isLeft={true}
                   sector="Personal"
