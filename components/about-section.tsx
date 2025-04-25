@@ -115,13 +115,18 @@ My blend of technical and business acumen made me a natural revenue leader. As L
                   year="2016"
                   role="Ambition"
                   company="Sales Tech"
-                  description={`Joined Ambition as employee 10 to help them build out their post-sales functions.
+                  description={`I joined Ambition as employee 10 and the first non-founder exec to help them control churn and accelerate stalled revenue.
 
-As we scaled, I was tapped to build solution engineering and professional services functions as we established a Customers and Solutions org.`}
+We improved churn by hiring a team of CSMs, and later layering in Solution Architecture, Professional Services and Account Management functions, which I personal built and led. 
+
+In hindsight, this was an error. We papered over product shortcomings with an expensive team, missing the opportunity to refocus on creating an incredible product experience.
+
+I learned that true customer success comes from intuituve products that create customer value inside the places they already work, paving the path for future product-led work.`}
                   achievements={[
                     "2m → 8m ARR",
+                    "60% → 92% Retention",
                     "2.5x growth in customer lifetime value (LTV)",
-                    "12.7x growth in same-account sales (NRR)",
+                    "12.7x growth in same-account expansion sales",
                   ]}
                   isLeft={true}
                   sector="B2B SaaS"
