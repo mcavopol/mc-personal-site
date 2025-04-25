@@ -22,8 +22,8 @@ export default function AboutSection() {
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">People-First Mission</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-              I've hired the most incredible people from non-traditional backgrounds outside of the "tech
-              hubs" of SF, NYC, Boston, etc.
+              I've hired the most incredible people from non-traditional backgrounds outside of the "tech hubs" of SF,
+              NYC, Boston, etc.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
               I've seen firsthand how dedicated, passional people inside growth-focused companies transform their own,

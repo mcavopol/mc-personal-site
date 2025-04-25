@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
 
@@ -6,10 +7,12 @@ export default function HeroSection() {
     <section id="hero" className="min-h-screen flex items-center pt-16 container-padding mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black dark:text-white">
-            Fractional Chief Revenue Officer & Product Leader
+          <h2 className="text-lg md:text-xl font-medium text-gray-600 dark:text-gray-400">
+            Entrepreneur, Operator, Fractional Product & Revenue Leader
+          </h2>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            <span className="text-black dark:text-white">Hi, I'm Michael</span>
           </h1>
-          <p className="text-xl md:text-2xl font-medium">Hi, I'm Michael</p>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl">
             A B2B-Product operator who has spent two decades building product and revenue teams so the companies (and
             the people inside them) can grow faster.
@@ -26,15 +29,15 @@ export default function HeroSection() {
             </Button>
           </div>
         </div>
-        <div className="relative max-w-md mx-auto w-full">
-          {/* Fixed height container for the image */}
-          <div style={{ height: "400px", width: "100%" }} className="relative rounded-lg overflow-hidden shadow-lg">
-            <img
-              src="/michael-headshot.jpg"
-              alt="Michael Cavopol – Fractional CRO & Product Leader speaking at SaaS conference"
-              className="object-cover w-full h-full"
-            />
-          </div>
+        <div className="relative aspect-square max-w-md mx-auto">
+          <Image
+            src="/michael-headshot.jpg"
+            alt="Michael Cavopol"
+            className="rounded-lg object-cover shadow-lg"
+            priority
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
@@ -17,13 +18,14 @@ export default function WritingSection() {
           <Card className="overflow-hidden">
             <CardContent className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-                <div className="flex-shrink-0 w-full md:w-2/5 lg:w-1/2 mx-auto md:mx-0">
-                  <div className="w-full rounded-md shadow-sm overflow-hidden">
-                    <img
+                <div className="flex-shrink-0 w-full md:w-2/5 lg:w-1/2 mx-auto md:mx-0 relative">
+                  <div className="aspect-[4/3] relative">
+                    <Image
                       src="/images/substack-content.png"
                       alt="Hedgehog Growth Newsletter Articles"
-                      className="w-full h-auto"
-                      loading="lazy"
+                      className="rounded-md shadow-sm"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
                     />
                   </div>
                 </div>
