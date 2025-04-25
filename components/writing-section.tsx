@@ -22,6 +22,10 @@ export default function WritingSection() {
                     src="/images/substack-content.png"
                     alt="Hedgehog Growth Newsletter Articles"
                     className="w-full h-auto rounded-md shadow-sm"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="450"
                   />
                 </div>
                 <div className="space-y-4 flex-1">

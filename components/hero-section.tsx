@@ -29,7 +29,14 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="relative aspect-square max-w-md mx-auto">
-          <img src="/michael-headshot.jpg" alt="Michael Cavopol" className="rounded-lg object-cover shadow-lg" />
+          <img
+            src="/michael-headshot.jpg"
+            alt="Michael Cavopol"
+            className="rounded-lg object-cover shadow-lg"
+            width="400"
+            height="400"
+            fetchPriority="high"
+          />
         </div>
       </div>
     </section>
