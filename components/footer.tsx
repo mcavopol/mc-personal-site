@@ -1,4 +1,5 @@
-import { Linkedin, Mail, Github } from "lucide-react"
+import { Linkedin, Mail, Github, Instagram, BookOpen } from "lucide-react"
+import { Twitter } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -21,6 +22,33 @@ export default function Footer() {
               className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
             >
               <Linkedin className="h-5 w-5" />
+            </a>
+            <a
+              href="https://x.com/cavopol"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter (X)"
+              className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+            >
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.instagram.com/cavopol/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a
+              href="https://cavopol.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Substack"
+              className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+            >
+              <BookOpen className="h-5 w-5" />
             </a>
             <a
               href="mailto:mcavopol@gmail.com"
