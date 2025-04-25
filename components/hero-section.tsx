@@ -14,7 +14,7 @@ export default function HeroSection() {
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl">
             A B2B-Product operator who has spent two decades building product and revenue teams so the companies (and
-            the people inside them) can climb higher, faster.
+            the people inside them) can grow faster.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg">
