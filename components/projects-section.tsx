@@ -5,6 +5,18 @@ import { ExternalLink } from "lucide-react"
 export default function ProjectsSection() {
   const projects = [
     {
+      title: "Foresight Strategic Narrative",
+      description:
+        'Foresight had a vision for Customer Success, but couldn\'t outgrow "Is this just a survey?". A compelling strategic narrative (with companion deck!) solved this and reframed the conversation.',
+      outcomes: [
+        "Increased Exec. Alignment",
+        'Re-Framed "the big problem" and solution',
+        "Doubled Disco -> Opp ratio",
+        "+25% pipeline conversion",
+      ],
+      link: "#",
+    },
+    {
       title: "LeanKit Growth Strategy",
       description:
         "Scaled post-sales engine and new-market product management, resulting in significant ARR growth from $5M to $14M.",
@@ -28,13 +40,6 @@ export default function ProjectsSection() {
       title: "Prado Enterprise Refocus",
       description: "As Interim COO & SVP of Revenue/Product, refocused on enterprise ICP and optimized burn rate.",
       outcomes: ["Burn multiple 3× → 0×", "Median contract 427×", "Dev cycle 60d → <7d"],
-      link: "#",
-    },
-    {
-      title: "Hedgehog Growth Partners",
-      description:
-        "Founded to provide Revenue Engineering frameworks for SaaS companies, delivering measurable growth.",
-      outcomes: ["28% faster revenue growth for clients"],
       link: "#",
     },
   ]

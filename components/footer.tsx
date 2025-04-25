@@ -23,14 +23,16 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:michael.cavopol@gmail.com"
+              href="mailto:mcavopol@gmail.com"
               aria-label="Email"
               className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
             >
               <Mail className="h-5 w-5" />
             </a>
             <a
-              href="#"
+              href="https://github.com/mcavopol"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="GitHub"
               className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
             >
@@ -39,11 +41,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center md:text-left">
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
-            &copy; {currentYear} Michael Cavopol. All rights reserved.
-          </p>
-        </div>
+        <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center md:text-left"></div>
       </div>
     </footer>
   )

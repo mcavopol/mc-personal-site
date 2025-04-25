@@ -30,6 +30,10 @@
   --education-color: #10b981;
   --saas-color: #f97316;
   --consulting-color: #ec4899;
+  --enterprise-b2b-color: #0ea5e9;
+  --b2b-enterprise-color: #0ea5e9;
+  --b2bc-enterprise-color: #0ea5e9;
+  --plg-and-channel-color: #f59e0b;
 }
 
 .dark {
@@ -59,14 +63,19 @@
   --education-color: #34d399;
   --saas-color: #fb923c;
   --consulting-color: #f472b6;
+  --enterprise-b2b-color: #38bdf8;
+  --b2b-enterprise-color: #38bdf8;
+  --b2bc-enterprise-color: #38bdf8;
+  --plg-and-channel-color: #fbbf24;
 }
 
-* {
-  @apply border-border;
-}
-
-body {
-  @apply bg-background text-foreground;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 .section-padding {
@@ -79,4 +88,29 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Ensure timeline cards don't get cut off */
+@media (max-width: 768px) {
+  .timeline-card {
+    width: calc(100% - 1rem);
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+/* Fix for timeline cards on mobile */
+@media (max-width: 768px) {
+  #career .container-padding {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #career .card-content {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
 }

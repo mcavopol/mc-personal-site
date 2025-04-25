@@ -7,19 +7,18 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
           <h2 className="text-lg md:text-xl font-medium text-gray-600 dark:text-gray-400">
-            Entrepreneur, Operator, 
-Fractional Product & Revenue Leader
+            Entrepreneur, Operator, Fractional Product & Revenue Leader
           </h2>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             <span className="text-black dark:text-white">Hi, I'm Michael</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl">
-            A B2B-Product operator who has spent two decades building product and to revenue teams so the 
-            companies (and the people inside them) can climb higher, faster.
+            A B2B-Product operator who has spent two decades building product and revenue teams so the companies (and
+            the people inside them) can climb higher, faster.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg">
-              <a href="#contact">Let's get coffee</a>
+              <a href="https://cal.com/hedgehog-growth/30min">Let's Meet</a>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="#about">
