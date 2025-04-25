@@ -7,7 +7,7 @@ export default function ProjectsSection() {
     {
       title: "Foresight Strategic Narrative",
       description:
-        'Foresight had a vision for Customer Success, but couldn\'t outgrow "Is this just a survey?". A compelling strategic narrative (with companion deck!) solved this and reframed the conversation.',
+        'Helped Foresight co-founders tell the story of their big audatious goal, reframing sales and investor conversations.',
       outcomes: [
         "Increased Exec. Alignment",
         'Re-Framed "the big problem" and solution',
