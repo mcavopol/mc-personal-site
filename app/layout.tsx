@@ -10,7 +10,6 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   preload: true,
-  variable: "--font-inter",
 })
 
 // Define the base URL for the site
@@ -73,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.variable}>
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
