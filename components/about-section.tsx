@@ -20,9 +20,9 @@ export default function AboutSection() {
         <div className="space-y-12">
           {/* Why I Do This */}
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why I Do This</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">People-First Mission</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-              The most incredible people I've hired have come from non-traditional backgrounds outside of the "tech
+              I've hired the most incredible people from non-traditional backgrounds outside of the "tech
               hubs" of SF, NYC, Boston, etc.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
@@ -30,9 +30,9 @@ export default function AboutSection() {
               and their families, future.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-              I believe that by building the next generation of durable, profitability focused companies, we will build
+              I believe that by building the next generation of durable, profitability-focused companies, we will build
               a platform of economic opportunity for amazing, entrepreneurial individuals. This resilient class of
-              techno-optimists, obsessed with creating value for their communities and customers can lead us to a new
+              techno-optimists, obsessed with creating value for their customers and communities can lead us to a new
               age of prosperity and abundance.
             </p>
           </div>
