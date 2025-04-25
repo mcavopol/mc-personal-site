@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
 
@@ -30,14 +29,7 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="relative aspect-square max-w-md mx-auto">
-          <Image
-            src="/michael-headshot.jpg"
-            alt="Michael Cavopol"
-            className="rounded-lg object-cover shadow-lg"
-            priority
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <img src="/michael-headshot.jpg" alt="Michael Cavopol" className="rounded-lg object-cover shadow-lg" />
         </div>
       </div>
     </section>
