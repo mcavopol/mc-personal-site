@@ -18,11 +18,14 @@ export default function WritingSection() {
             <CardContent className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
                 <div className="flex-shrink-0 w-full md:w-2/5 lg:w-1/2 mx-auto md:mx-0">
-                  <img
-                    src="/images/substack-content.png"
-                    alt="Hedgehog Growth Newsletter Articles"
-                    className="w-full h-auto rounded-md shadow-sm"
-                  />
+                  <div className="w-full rounded-md shadow-sm overflow-hidden">
+                    <img
+                      src="/images/substack-content.png"
+                      alt="Hedgehog Growth Newsletter Articles"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
                 <div className="space-y-4 flex-1">
                   <div>

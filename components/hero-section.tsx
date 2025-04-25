@@ -28,8 +28,11 @@ export default function HeroSection() {
             </Button>
           </div>
         </div>
-        <div className="relative aspect-square max-w-md mx-auto">
-          <img src="/michael-headshot.jpg" alt="Michael Cavopol" className="rounded-lg object-cover shadow-lg" />
+        <div className="relative max-w-md mx-auto w-full">
+          {/* Fixed height container for the image */}
+          <div style={{ height: "400px", width: "100%" }} className="relative rounded-lg overflow-hidden shadow-lg">
+            <img src="/michael-headshot.jpg" alt="Michael Cavopol" className="object-cover w-full h-full" />
+          </div>
         </div>
       </div>
     </section>
