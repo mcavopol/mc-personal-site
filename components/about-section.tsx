@@ -159,7 +159,7 @@ Along the way we rebuilt a legacy IT services team into a formidable modern tech
                   year="2023"
                   role="Prado"
                   company="B2B2C e-commerce"
-                  description={`I was recruited by an ATX-based Shopify alternative, trying to get profitable in the post-ZIRP-era overhang. Through deep customer discovery, identified key profitable customer segments and the risks/opportunities within.
+                  description={`I was recruited by an ATX-based Shopify alternative, trying to get profitable in the post-ZIRP-era overhang. Through deep customer discovery, I identified key profitable customer segments and the risks/opportunities within.
 
 We tripled resourcing to profitable customers, delivering on key initiatives by defocusing on less profitable segments.
 
