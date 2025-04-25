@@ -17,8 +17,9 @@ const inter = Inter({
 const baseUrl = "https://michael.cavopol.me" // Replace with your actual domain
 
 export const metadata: Metadata = {
-  title: "Michael Cavopol | Chief Revenue & Product Operator",
-  description: "B2B-SaaS operator with two decades of experience welding product insight to revenue mechanics.",
+  title: "Fractional Chief Revenue Officer & Product Leader – Michael Cavopol",
+  description:
+    "Nashville-based Fractional CRO helping B2B SaaS companies build revenue engines that scale. 20+ years experience in Revenue Engineering, Product Strategy, and Go-to-Market execution.",
   metadataBase: new URL(baseUrl),
   alternates: {
     canonical: "/",
@@ -31,15 +32,38 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: baseUrl,
-    title: "Michael Cavopol | Chief Revenue & Product Operator",
-    description: "B2B-SaaS operator with two decades of experience welding product insight to revenue mechanics.",
+    title: "Fractional Chief Revenue Officer & Product Leader – Michael Cavopol",
+    description:
+      "Nashville-based Fractional CRO helping B2B SaaS companies build revenue engines that scale. 20+ years experience in Revenue Engineering, Product Strategy, and Go-to-Market execution.",
     siteName: "Michael Cavopol",
+    images: [
+      {
+        url: `${baseUrl}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Michael Cavopol – Fractional CRO & Product Leader speaking at SaaS conference",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Michael Cavopol | Chief Revenue & Product Operator",
-    description: "B2B-SaaS operator with two decades of experience welding product insight to revenue mechanics.",
+    title: "Fractional Chief Revenue Officer & Product Leader – Michael Cavopol",
+    description:
+      "Nashville-based Fractional CRO helping B2B SaaS companies build revenue engines that scale. 20+ years experience in Revenue Engineering, Product Strategy, and Go-to-Market execution.",
+    images: [`${baseUrl}/og-image.jpg`],
+    creator: "@michaelcavopol",
   },
+  keywords: [
+    "Fractional CRO",
+    "Chief Revenue Officer",
+    "Product Leader",
+    "Revenue Engineering",
+    "B2B SaaS",
+    "Nashville",
+    "Growth Strategy",
+    "Go-to-Market",
+    "Product Strategy",
+  ],
     generator: 'v0.dev'
 }
 
