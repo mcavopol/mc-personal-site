@@ -35,7 +35,6 @@ export default function HeroSection() {
             className="rounded-lg object-cover shadow-lg"
             width="400"
             height="400"
-            fetchPriority="high"
           />
         </div>
       </div>

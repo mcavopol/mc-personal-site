@@ -23,7 +23,6 @@ export default function WritingSection() {
                     alt="Hedgehog Growth Newsletter Articles"
                     className="w-full h-auto rounded-md shadow-sm"
                     loading="lazy"
-                    decoding="async"
                     width="600"
                     height="450"
                   />
