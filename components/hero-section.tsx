@@ -7,14 +7,13 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
           <h2 className="text-lg md:text-xl font-medium text-gray-600 dark:text-gray-400">
-            Entrepreneur, Operator, Fractional Product & Revenue Leader
+            AI-Focused, Product & Revenue Operator
           </h2>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             <span className="text-black dark:text-white">Hi, I'm Michael</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl">
-            A B2B-Product operator who has spent two decades building product and revenue teams so the companies (and
-            the people inside them) can grow faster.
+            My unique background integrates technical fluency with revenue strategy unifying product vision, go‑to‑market execution, and data‑driven operations to build capital‑efficient product companies.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg">
