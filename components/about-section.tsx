@@ -4,7 +4,7 @@ import type React from "react"
 import { ChevronRight } from "lucide-react" // Import ChevronRight here
 
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, TrendingUp, BarChart2, Clock } from "lucide-react"
+import { TrendingUp, BarChart2, Clock, Code, Building, Repeat, Users, Bot } from "lucide-react"
 import { useState, useEffect } from "react"
 
 export default function AboutSection() {
@@ -22,7 +22,7 @@ export default function AboutSection() {
           {/* Founder's Right Hand */}
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-800">
             <div className="p-6 md:p-8">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Founder's Right Hand</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">The Founders' Right Hand</h2>
 
               <div className="mb-6 border-l-4 border-gray-400 dark:border-gray-600 pl-6 py-2">
                 <p className="text-gray-700 dark:text-gray-300 italic">
@@ -33,13 +33,13 @@ export default function AboutSection() {
               <div className="mb-8 space-y-6">
                 <div className="space-y-4">
                   <p className="text-lg text-gray-700 dark:text-gray-300">
-                    I work with venture‑backed product companies, helping break growth plateaus and create operating
-                    leverage.
+                    I work with venture‑backed product companies, helping <strong>break growth plateaus</strong> and{" "}
+                    <strong>create operating leverage</strong>.
                   </p>
                   <p className="text-lg text-gray-700 dark:text-gray-300">
-                    I do this by uniting company mission, product vision, and go‑to‑market execution. This alignment
-                    connects every function—from marketing and sales development through engineering and support—driving
-                    focused, predictable results.
+                    I do this by uniting company <strong>mission</strong>, product <strong>vision</strong>, and
+                    go‑to‑market <strong>execution</strong>. This alignment connects every function—from marketing and
+                    sales development through engineering and support—driving focused, predictable results.
                   </p>
                   <p className="text-lg text-gray-700 dark:text-gray-300">
                     I've seen firsthand how dedicated, passionate teams will rally behind audacious missions; that
@@ -49,15 +49,20 @@ export default function AboutSection() {
 
                 <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
                   <h3 className="text-lg font-bold mb-2">Ideal Fit</h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2">
+                    50 to 350‑person product companies that need support integrating <strong>Product Strategy</strong>{" "}
+                    and <strong>Revenue Engines</strong>.
+                  </p>
                   <p className="text-gray-700 dark:text-gray-300 mb-6">
-                    50–350‑person product companies that need support integrating Product Strategy and Revenue Engines:
-                    Titles vary but rhyme with COO or CPRO (Product & Revenue Officer)
+                    Titles vary but rhyme with <strong>COO</strong> or <strong>CPRO</strong> (Product & Revenue Officer)
                   </p>
 
                   <h3 className="text-lg font-bold mb-2">Full‑Stack Perspective</h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2">
+                    Two‑decades of experience across technical, product, marketing, sales and customer success roles.
+                  </p>
                   <p className="text-gray-700 dark:text-gray-300 mb-6">
-                    With two‑decades of experience across technical, product, marketing, sales and customer success
-                    roles, I see the whole revenue engine and focus on what actually matters.
+                    I see the whole revenue engine and focus on what actually matters.
                   </p>
 
                   <h3 className="text-lg font-bold mb-2">Core Plays</h3>
@@ -153,7 +158,18 @@ export default function AboutSection() {
 
           {/* Career Timeline */}
           <div id="career" className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">My Journey</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">My Story</h2>
+
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mb-8">
+              I once worried my meandering career was unfocused. I now believe it's my{" "}
+              <a
+                href="#superpower"
+                className="font-bold underline hover:text-black dark:hover:text-white transition-colors"
+              >
+                superpower
+              </a>
+              , giving me a rare perspective otherwise reserved only for Founders and CEOs.
+            </p>
 
             <div className="relative mt-10 md:pb-12 overflow-hidden">
               {/* Central timeline line */}
@@ -313,6 +329,350 @@ We decreased operating costs 70% through extreme focus on only essential priorit
             </div>
           </div>
 
+          {/* Superpower Section */}
+          <div
+            id="superpower"
+            className="space-y-6 bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-800 p-6 md:p-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Superpower</h2>
+
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
+              By saying "Yes!" whenever tapped to solve a new problem, I earned a broad first-hand perspective across
+              every function of a product company.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-start space-x-4">
+                <Code className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                <div>
+                  <h3 className="text-xl font-bold">Technical × Commercial DNA</h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Computer‑science roots + quota‑carrying sales + PLG chops.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <Building className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                <div>
+                  <h3 className="text-xl font-bold">Company OS</h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Tying usability, feasibility and viability to accountability, cadence and vision.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <TrendingUp className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                <div>
+                  <h3 className="text-xl font-bold">Operator's POV</h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    I've owned burn multiple, retention, product-market fit, then lived the results in board rooms.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <Repeat className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                <div>
+                  <h3 className="text-xl font-bold">Repeatable Playbooks</h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Go To Market strategies chosen by unit economics, not fashion.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <Users className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                <div>
+                  <h3 className="text-xl font-bold">Customer Obsession</h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Focused on customer problems + value creation, not technical solutions.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <Bot className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                <div>
+                  <h3 className="text-xl font-bold">AI Edge</h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Innovating the next generation of product and tactics with AI copilots, agent workflows, and RAG
+                    systems that cut CAC and COGS now, not next quarter.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Partners Section - Rolling Banner */}
+          <div id="partners" className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">I've Worked with Amazing Companies</h2>
+
+            <div className="overflow-hidden bg-white dark:bg-gray-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-800">
+              <div className="py-6 relative">
+                {/* Tech & Enterprise */}
+                <div className="marquee-container mb-4">
+                  <div className="marquee-label">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm font-medium">
+                      Tech & Enterprise
+                    </span>
+                  </div>
+                  <div className="marquee" data-direction="left">
+                    <div className="marquee-content">
+                      {[
+                        "Salesforce",
+                        "Intel",
+                        "Verizon",
+                        "ServiceNow",
+                        "Zendesk",
+                        "Veracode",
+                        "Amazon",
+                        "Walmart",
+                        "Outreach",
+                        "Johnson & Johnson",
+                        "Cardinal Health",
+                        "Unum",
+                        "Stryker",
+                      ].map((company) => (
+                        <div key={company} className="marquee-item">
+                          {company}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="marquee-content" aria-hidden="true">
+                      {[
+                        "Salesforce",
+                        "Intel",
+                        "Verizon",
+                        "ServiceNow",
+                        "Zendesk",
+                        "Veracode",
+                        "Amazon",
+                        "Walmart",
+                        "Outreach",
+                        "Johnson & Johnson",
+                        "Cardinal Health",
+                        "Unum",
+                        "Stryker",
+                      ].map((company) => (
+                        <div key={`${company}-duplicate`} className="marquee-item">
+                          {company}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Industrial & Engineering */}
+                <div className="marquee-container mb-4">
+                  <div className="marquee-label">
+                    <span className="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100 px-3 py-1 rounded-full text-sm font-medium">
+                      Industrial & Engineering
+                    </span>
+                  </div>
+                  <div className="marquee" data-direction="right">
+                    <div className="marquee-content">
+                      {[
+                        "Siemens",
+                        "Bosch",
+                        "Rockwell Automation",
+                        "Caterpillar",
+                        "Delta",
+                        "Rolls‑Royce",
+                        "BAE Systems",
+                        "FedEx",
+                        "GlobalTranz",
+                        "FreightWaves",
+                      ].map((company) => (
+                        <div key={company} className="marquee-item">
+                          {company}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="marquee-content" aria-hidden="true">
+                      {[
+                        "Siemens",
+                        "Bosch",
+                        "Rockwell Automation",
+                        "Caterpillar",
+                        "Delta",
+                        "Rolls‑Royce",
+                        "BAE Systems",
+                        "FedEx",
+                        "GlobalTranz",
+                        "FreightWaves",
+                      ].map((company) => (
+                        <div key={`${company}-duplicate`} className="marquee-item">
+                          {company}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Construction & Services */}
+                <div className="marquee-container mb-4">
+                  <div className="marquee-label">
+                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-100 px-3 py-1 rounded-full text-sm font-medium">
+                      Construction & Services
+                    </span>
+                  </div>
+                  <div className="marquee" data-direction="left">
+                    <div className="marquee-content">
+                      {["JE Dunn", "Skanska", "Turner", "Gilbane", "West Corp / Saleytics", "TTEC"].map((company) => (
+                        <div key={company} className="marquee-item">
+                          {company}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="marquee-content" aria-hidden="true">
+                      {["JE Dunn", "Skanska", "Turner", "Gilbane", "West Corp / Saleytics", "TTEC"].map((company) => (
+                        <div key={`${company}-duplicate`} className="marquee-item">
+                          {company}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hospitality & Food */}
+                <div className="marquee-container">
+                  <div className="marquee-label">
+                    <span className="bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-100 px-3 py-1 rounded-full text-sm font-medium">
+                      Hospitality & Food
+                    </span>
+                  </div>
+                  <div className="marquee" data-direction="right">
+                    <div className="marquee-content">
+                      {[
+                        "Erewhon",
+                        "Alfred Coffee",
+                        "Blaze Pizza",
+                        "Epicured",
+                        "Everytable",
+                        "FitLife Foods",
+                        "Hardee's",
+                        "PJ's Coffee",
+                        "Taziki's",
+                      ].map((company) => (
+                        <div key={company} className="marquee-item">
+                          {company}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="marquee-content" aria-hidden="true">
+                      {[
+                        "Erewhon",
+                        "Alfred Coffee",
+                        "Blaze Pizza",
+                        "Epicured",
+                        "Everytable",
+                        "FitLife Foods",
+                        "Hardee's",
+                        "PJ's Coffee",
+                        "Taziki's",
+                      ].map((company) => (
+                        <div key={`${company}-duplicate`} className="marquee-item">
+                          {company}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Pause instruction */}
+                <div className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
+                  Hover to pause scrolling
+                </div>
+              </div>
+            </div>
+
+            <style jsx>{`
+              .marquee-container {
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+              }
+
+              .marquee-label {
+                flex-shrink: 0;
+                width: 180px;
+                padding-left: 1rem;
+                z-index: 10;
+              }
+
+              .marquee {
+                display: flex;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+              }
+
+              .marquee-content {
+                display: flex;
+                animation: marquee 30s linear infinite;
+                padding-left: 1rem;
+                min-width: 100%;
+              }
+
+              .marquee[data-direction="right"] .marquee-content {
+                animation-name: marquee-reverse;
+              }
+
+              .marquee:hover .marquee-content {
+                animation-play-state: paused;
+              }
+
+              .marquee-item {
+                white-space: nowrap;
+                padding: 0.5rem 1rem;
+                margin: 0 0.5rem;
+                background-color: rgba(0, 0, 0, 0.03);
+                border-radius: 9999px;
+                font-weight: 500;
+                color: var(--foreground);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+              }
+
+              .marquee-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+              }
+
+              @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-100%); }
+              }
+
+              @keyframes marquee-reverse {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(0); }
+              }
+
+              @media (prefers-reduced-motion) {
+                .marquee-content {
+                  animation: none;
+                }
+                .marquee-container {
+                  flex-wrap: wrap;
+                }
+                .marquee-label {
+                  width: 100%;
+                  margin-bottom: 0.5rem;
+                }
+                .marquee {
+                  overflow-x: auto;
+                }
+              }
+
+              .dark .marquee-item {
+                background-color: rgba(255, 255, 255, 0.05);
+              }
+            `}</style>
+          </div>
+
           {/* Operating Principles */}
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Operating Principles</h2>
@@ -349,49 +709,6 @@ We decreased operating costs 70% through extreme focus on only essential priorit
             <p className="text-lg text-gray-700 dark:text-gray-300">
               When these gears lock, momentum feels unfair—because it is.
             </p>
-          </div>
-
-          {/* Expertise */}
-          <div id="expertise" className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Expertise at a Glance</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex items-start space-x-4">
-                <ArrowRight className="h-6 w-6 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-bold">GTM Mechanics</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    PLG, CLG, Channel, SLG—choose by unit economics, not fashion.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <ArrowRight className="h-6 w-6 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-bold">Partnership Magnet</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Signed Square, Lightspeed, Salesforce, AWS, Verizon, more.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <ArrowRight className="h-6 w-6 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-bold">Turnaround Playbooks</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Burn control, org redesign, continuous-delivery cultures.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <ArrowRight className="h-6 w-6 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-bold">Data-First Ops</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Dashboards that shout what matters; everything else is noise.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Off the Clock */}
