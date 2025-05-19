@@ -13,7 +13,8 @@ export default function HeroSection() {
             <span className="text-black dark:text-white">Hi, I'm Michael</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl">
-            My unique background integrates technical fluency with revenue strategy unifying product vision, go‑to‑market execution, and data‑driven operations to build capital‑efficient product companies.
+            My unique background integrates product <strong>vision</strong>, go‑to‑market <strong>execution</strong>,
+            and data‑driven <strong>operations</strong> to build capital‑efficient product companies.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg">

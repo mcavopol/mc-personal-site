@@ -1,9 +1,10 @@
 "use client"
 
 import type React from "react"
+import { ChevronRight } from "lucide-react" // Import ChevronRight here
 
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, ChevronRight } from "lucide-react"
+import { ArrowRight, TrendingUp, BarChart2, Clock } from "lucide-react"
 import { useState, useEffect } from "react"
 
 export default function AboutSection() {
@@ -18,23 +19,133 @@ export default function AboutSection() {
     <section id="about" className="section-padding bg-gray-50 dark:bg-gray-950">
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-12">
-          {/* Why I Do This */}
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">People-First Mission</h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-              I've hired the most incredible people from non-traditional backgrounds outside of the "tech hubs" of SF,
-              NYC, Boston, etc.
-            </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-              I've seen firsthand how dedicated, passional people inside growth-focused companies transform their own,
-              and their families, future.
-            </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-              I believe that by building the next generation of durable, profitability-focused companies, we will build
-              a platform of economic opportunity for amazing, entrepreneurial individuals. This resilient class of
-              techno-optimists, obsessed with creating value for their customers and communities can lead us to a new
-              age of prosperity and abundance.
-            </p>
+          {/* Founder's Right Hand */}
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-800">
+            <div className="p-6 md:p-8">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Founder's Right Hand</h2>
+
+              <div className="mb-6 border-l-4 border-gray-400 dark:border-gray-600 pl-6 py-2">
+                <p className="text-gray-700 dark:text-gray-300 italic">
+                  "Michael turns messy product roadmaps and revenue efforts into compounding revenue machines."
+                </p>
+              </div>
+
+              <div className="mb-8">
+                <p className="text-lg text-gray-700 dark:text-gray-300">
+                  I've joined startups as the first non‑founder exec. I break through growth plateaus by uniting product
+                  and GTM leadership. I help integrate the whole company from biz dev through engineering and support to
+                  create focused, aligned execution. I've seen firsthand how dedicated, passionate people inside
+                  growth-focused companies radically transform outcomes.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border border-gray-200 dark:border-gray-700">
+                  <h3 className="text-lg font-bold mb-2">Ideal Fit</h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    50–350‑person product companies that need support integrating Product Strategy and Revenue Engines:
+                    Titles vary but rhyme with COO or CPRO (Product & Revenue Officer)
+                  </p>
+                </div>
+
+                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border border-gray-200 dark:border-gray-700">
+                  <h3 className="text-lg font-bold mb-2">Full‑Stack Perspective</h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    With two‑decades of experience across technical, product, marketing, sales and customer success
+                    roles, I see the whole revenue engine and focus on what actually matters.
+                  </p>
+                </div>
+
+                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border border-gray-200 dark:border-gray-700">
+                  <h3 className="text-lg font-bold mb-2">Core Plays</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                      Revenue Acceleration
+                    </span>
+                    <span className="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                      AI‑Native Innovation
+                    </span>
+                    <span className="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                      Capital‑Efficient Scaling
+                    </span>
+                    <span className="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                      ICP Value Creation
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2">Key Outcomes</h3>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
+                    <div className="flex items-start">
+                      <TrendingUp className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
+                      <div>
+                        <h4 className="font-bold text-lg mb-2">Revenue Growth</h4>
+                        <ul className="space-y-1">
+                          <li className="flex items-baseline">
+                            <span className="font-semibold mr-2">Expansion revenue:</span>
+                            <span className="text-gray-700 dark:text-gray-300">+1,270%</span>
+                          </li>
+                          <li className="flex items-baseline">
+                            <span className="font-semibold mr-2">Median Contract Value:</span>
+                            <span className="text-gray-700 dark:text-gray-300">+427×</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
+                    <div className="flex items-start">
+                      <BarChart2 className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
+                      <div>
+                        <h4 className="font-bold text-lg mb-2">Customer Retention & Value</h4>
+                        <ul className="space-y-1">
+                          <li className="flex items-baseline">
+                            <span className="font-semibold mr-2">Logo LTV:</span>
+                            <span className="text-gray-700 dark:text-gray-300">+255%</span>
+                          </li>
+                          <li className="flex items-baseline">
+                            <span className="font-semibold mr-2">Gross Logo Retention:</span>
+                            <span className="text-gray-700 dark:text-gray-300">+41%</span>
+                          </li>
+                          <li className="flex items-baseline">
+                            <span className="font-semibold mr-2">Net Dollar Retention:</span>
+                            <span className="text-gray-700 dark:text-gray-300">+30%</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
+                    <div className="flex items-start">
+                      <Clock className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
+                      <div>
+                        <h4 className="font-bold text-lg mb-2">Operational Efficiency</h4>
+                        <ul className="space-y-1">
+                          <li className="flex items-baseline">
+                            <span className="font-semibold mr-2">Sales Cycle:</span>
+                            <span className="text-gray-700 dark:text-gray-300">6–8 mo → 15 days</span>
+                          </li>
+                          <li className="flex items-baseline">
+                            <span className="font-semibold mr-2">Delivery Velocity:</span>
+                            <span className="text-gray-700 dark:text-gray-300">3×</span>
+                          </li>
+                          <li className="flex items-baseline">
+                            <span className="font-semibold mr-2">Support Response Time:</span>
+                            <span className="text-gray-700 dark:text-gray-300">23× faster</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Career Timeline */}
@@ -43,7 +154,7 @@ export default function AboutSection() {
 
             <div className="relative mt-10 md:pb-12 overflow-hidden">
               {/* Central timeline line */}
-              <div className="absolute left-[22px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800 transform md:-translate-x-1/2"></div>
+              <div className="absolute left-[22px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800 transform md:-translate-x-1/2 z-30"></div>
 
               <div className="space-y-6 md:-space-y-12">
                 <TimelineCard
