@@ -152,10 +152,8 @@ export default function AboutSection() {
           {/* Founder's Right Hand */}
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-800">
             <div className="p-6 md:p-8">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">The Founders' Right Hand</h2>
-
-              <div className="mb-6 border-l-4 border-gray-400 dark:border-gray-600 pl-6 py-2">
-                <p className="text-gray-700 dark:text-gray-300 italic">
+              <div className="mb-8 border-l-4 border-gray-400 dark:border-gray-600 pl-6 py-4">
+                <p className="text-2xl md:text-3xl font-medium text-gray-700 dark:text-gray-300 italic leading-relaxed">
                   "Michael turns messy product roadmaps and revenue efforts into compounding revenue machines."
                 </p>
               </div>
@@ -180,8 +178,8 @@ export default function AboutSection() {
                 <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
                   <h3 className="text-lg font-bold mb-2">Ideal Fit</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-2">
-                    50 to 350‑person product companies that need support integrating <strong>Product Strategy</strong>{" "}
-                    and <strong>Revenue Engines</strong>.
+                    50 to 350‑person product companies needing support integrating <strong>company vision</strong>,{" "}
+                    <strong>product roadmap</strong> and <strong>revenue generation</strong>.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 mb-6">
                     Titles vary but rhyme with <strong>COO</strong> or <strong>CPRO</strong> (Product & Revenue Officer)
