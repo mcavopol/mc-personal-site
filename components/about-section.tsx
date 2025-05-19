@@ -580,98 +580,101 @@ We decreased operating costs 70% through extreme focus on only essential priorit
                     </div>
                   </div>
                 </div>
-
-                {/* Pause instruction */}
-                <div className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
-                  Hover to pause scrolling
-                </div>
               </div>
             </div>
-
-            <style jsx>{`
-              .marquee-container {
-                display: flex;
-                align-items: center;
-                overflow: hidden;
-                position: relative;
-              }
-
-              .marquee-label {
-                flex-shrink: 0;
-                width: 180px;
-                padding-left: 1rem;
-                z-index: 10;
-              }
-
-              .marquee {
-                display: flex;
-                width: 100%;
-                overflow: hidden;
-                position: relative;
-              }
-
-              .marquee-content {
-                display: flex;
-                animation: marquee 30s linear infinite;
-                padding-left: 1rem;
-                min-width: 100%;
-              }
-
-              .marquee[data-direction="right"] .marquee-content {
-                animation-name: marquee-reverse;
-              }
-
-              .marquee:hover .marquee-content {
-                animation-play-state: paused;
-              }
-
-              .marquee-item {
-                white-space: nowrap;
-                padding: 0.5rem 1rem;
-                margin: 0 0.5rem;
-                background-color: rgba(0, 0, 0, 0.03);
-                border-radius: 9999px;
-                font-weight: 500;
-                color: var(--foreground);
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-              }
-
-              .marquee-item:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-              }
-
-              @keyframes marquee {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-100%); }
-              }
-
-              @keyframes marquee-reverse {
-                0% { transform: translateX(-100%); }
-                100% { transform: translateX(0); }
-              }
-
-              @media (prefers-reduced-motion) {
-                .marquee-content {
-                  animation: none;
-                }
-                .marquee-container {
-                  flex-wrap: wrap;
-                }
-                .marquee-label {
-                  width: 100%;
-                  margin-bottom: 0.5rem;
-                }
-                .marquee {
-                  overflow-x: auto;
-                }
-              }
-
-              .dark .marquee-item {
-                background-color: rgba(255, 255, 255, 0.05);
-              }
-            `}</style>
           </div>
+
+          <style jsx>{`
+            .marquee-container {
+              display: flex;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+            }
+
+            .marquee-label {
+              flex-shrink: 0;
+              width: 180px;
+              padding-left: 1rem;
+              z-index: 10;
+            }
+
+            .marquee {
+              display: flex;
+              width: 100%;
+              overflow: hidden;
+              position: relative;
+            }
+
+            .marquee-content {
+              display: flex;
+              animation: marquee 30s linear infinite;
+              padding-left: 1rem;
+              min-width: 100%;
+            }
+
+            .marquee[data-direction="right"] .marquee-content {
+              animation-name: marquee-reverse;
+            }
+
+            .marquee:hover .marquee-content {
+              animation-play-state: paused;
+            }
+
+            .marquee-item {
+              white-space: nowrap;
+              padding: 0.5rem 1rem;
+              margin: 0 0.5rem;
+              background-color: rgba(0, 0, 0, 0.03);
+              border-radius: 9999px;
+              font-weight: 500;
+              color: var(--foreground);
+              transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            .marquee-item:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+
+            @keyframes marquee {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-100%);
+              }
+            }
+
+            @keyframes marquee-reverse {
+              0% {
+                transform: translateX(-100%);
+              }
+              100% {
+                transform: translateX(0);
+              }
+            }
+
+            @media (prefers-reduced-motion) {
+              .marquee-content {
+                animation: none;
+              }
+              .marquee-container {
+                flex-wrap: wrap;
+              }
+              .marquee-label {
+                width: 100%;
+                margin-bottom: 0.5rem;
+              }
+              .marquee {
+                overflow-x: auto;
+              }
+            }
+
+            .dark .marquee-item {
+              background-color: rgba(255, 255, 255, 0.05);
+            }
+          `}</style>
 
           {/* Operating Principles */}
           <div className="space-y-6">
