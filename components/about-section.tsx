@@ -30,33 +30,36 @@ export default function AboutSection() {
                 </p>
               </div>
 
-              <div className="mb-8">
-                <p className="text-lg text-gray-700 dark:text-gray-300">
-                  I've joined startups as the first non‑founder exec. I break through growth plateaus by uniting product
-                  and GTM leadership. I help integrate the whole company from biz dev through engineering and support to
-                  create focused, aligned execution. I've seen firsthand how dedicated, passionate people inside
-                  growth-focused companies radically transform outcomes.
-                </p>
-              </div>
+              <div className="mb-8 space-y-6">
+                <div className="space-y-4">
+                  <p className="text-lg text-gray-700 dark:text-gray-300">
+                    I work with venture‑backed product companies, helping break growth plateaus and create operating
+                    leverage.
+                  </p>
+                  <p className="text-lg text-gray-700 dark:text-gray-300">
+                    I do this by uniting company mission, product vision, and go‑to‑market execution. This alignment
+                    connects every function—from marketing and sales development through engineering and support—driving
+                    focused, predictable results.
+                  </p>
+                  <p className="text-lg text-gray-700 dark:text-gray-300">
+                    I've seen firsthand how dedicated, passionate teams will rally behind audacious missions; that
+                    shared purpose fuels growth‑oriented companies to transform their trajectory.
+                  </p>
+                </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
                   <h3 className="text-lg font-bold mb-2">Ideal Fit</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
                     50–350‑person product companies that need support integrating Product Strategy and Revenue Engines:
                     Titles vary but rhyme with COO or CPRO (Product & Revenue Officer)
                   </p>
-                </div>
 
-                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border border-gray-200 dark:border-gray-700">
                   <h3 className="text-lg font-bold mb-2">Full‑Stack Perspective</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700 dark:text-gray-300 mb-6">
                     With two‑decades of experience across technical, product, marketing, sales and customer success
                     roles, I see the whole revenue engine and focus on what actually matters.
                   </p>
-                </div>
 
-                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border border-gray-200 dark:border-gray-700">
                   <h3 className="text-lg font-bold mb-2">Core Plays</h3>
                   <div className="flex flex-wrap gap-2">
                     <span className="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
@@ -75,8 +78,8 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              <div className="space-y-6">
-                <h3 className="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2">Key Outcomes</h3>
+              <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
+                <h3 className="text-xl font-bold mb-6">Key Outcomes</h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
