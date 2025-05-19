@@ -1,21 +1,11 @@
-import Navbar from "@/components/navbar"
-import HeroSection from "@/components/hero-section"
-import AboutSection from "@/components/about-section"
-import ProjectsSection from "@/components/projects-section"
-import WritingSection from "@/components/writing-section"
-import ContactSection from "@/components/contact-section"
-import Footer from "@/components/footer"
+"use client"
 
-export default function Home() {
+import AboutSection from "../components/about-section"
+
+export default function Page() {
   return (
-    <main className="min-h-screen flex flex-col">
-      <Navbar />
-      <HeroSection />
+    <main>
       <AboutSection />
-      <ProjectsSection />
-      <WritingSection />
-      <ContactSection />
-      <Footer />
     </main>
   )
 }

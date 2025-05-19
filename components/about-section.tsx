@@ -1,11 +1,11 @@
 "use client"
 
 import type React from "react"
-import { ChevronRight } from "lucide-react" // Import ChevronRight here
+import { ChevronRight } from "lucide-react"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { TrendingUp, BarChart2, Clock, Code, Building, Repeat, Users, Bot } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 
 export default function AboutSection() {
   // Calculate current year for age calculations
@@ -14,6 +14,157 @@ export default function AboutSection() {
   useEffect(() => {
     setCurrentYear(new Date().getFullYear())
   }, [])
+
+  // State for filtering companies
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+
+  // Define company data with consistent structure
+  const companyData = {
+    Tech: [
+      "Salesforce",
+      "Verizon",
+      "Intel",
+      "Cisco",
+      "ServiceNow",
+      "Zendesk",
+      "Twilio",
+      "T‑Mobile",
+      "MuleSoft",
+      "Outreach",
+      "Veracode",
+      "GoDaddy",
+      "LevelSet",
+      "Posigen",
+    ],
+    "Retail & E‑commerce": [
+      "Amazon",
+      "Walmart",
+      "Square (Block)",
+      "Fiserv",
+      "Lightspeed",
+      "SpotOn",
+      "TouchBistro",
+      "Jet.com",
+      "Ranger Station",
+      "ABLE Clothing",
+    ],
+    Healthcare: ["Johnson & Johnson", "Cardinal Health", "Stryker", "Unum"],
+    Aerospace: ["Delta", "Rolls‑Royce Aerospace", "BAE Systems", "Siemens Aerospace"],
+    "Engineering & Industrial": ["Caterpillar", "Bosch", "Siemens Gas Turbine", "Rockwell Automation"],
+    Construction: ["Skanska", "Turner", "JE Dunn", "Gilbane", "Hoar"],
+    "BPO & Contact Centers": ["ADP", "TTEC", "Aerotek", "West Corp (Saleytics)"],
+    "Logistics & Supply Chain": [
+      "FedEx",
+      "WM (Waste Management)",
+      "Ryder",
+      "Coyote Logistics",
+      "Covenant Transport",
+      "GlobalTranz",
+      "BlueGrace",
+      "FreightWaves",
+    ],
+    "Hospitality & Foodservice": [
+      "Erewhon",
+      "Hardee's",
+      "Blaze Pizza",
+      "PJ's Coffee",
+      "Taziki's",
+      "Everytable",
+      "Snap Kitchen",
+      "Alfred Coffee",
+      "FitLife Foods",
+      "Epicured",
+    ],
+    "High‑Growth SaaS & Startups": [
+      "LeanKit",
+      "Ambition",
+      "Fresh Technology",
+      "Prado",
+      "Clearloop",
+      "XOi",
+      "Foresight",
+      "Untamed Theory",
+      "Jelawai Productions",
+    ],
+  }
+
+  // Define category colors - vibrant for categories
+  const categoryColors = {
+    Tech: "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 border-blue-200 dark:border-blue-800",
+    "Retail & E‑commerce":
+      "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 border-emerald-200 dark:border-emerald-800",
+    Healthcare: "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 border-red-200 dark:border-red-800",
+    Aerospace: "bg-sky-100 dark:bg-sky-900/30 text-sky-800 dark:text-sky-200 border-sky-200 dark:border-sky-800",
+    "Engineering & Industrial":
+      "bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 border-amber-200 dark:border-amber-800",
+    Construction:
+      "bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 border-orange-200 dark:border-orange-800",
+    "BPO & Contact Centers":
+      "bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 border-purple-200 dark:border-purple-800",
+    "Logistics & Supply Chain":
+      "bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-200 border-indigo-200 dark:border-indigo-800",
+    "Hospitality & Foodservice":
+      "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 border-green-200 dark:border-green-800",
+    "High‑Growth SaaS & Startups":
+      "bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-200 border-pink-200 dark:border-pink-800",
+  }
+
+  // Define company colors - lighter/darker versions of category colors
+  const companyColors = {
+    Tech: "bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border-blue-100 dark:border-blue-900",
+    "Retail & E‑commerce":
+      "bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border-emerald-100 dark:border-emerald-900",
+    Healthcare: "bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border-red-100 dark:border-red-900",
+    Aerospace: "bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 border-sky-100 dark:border-sky-900",
+    "Engineering & Industrial":
+      "bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border-amber-100 dark:border-amber-900",
+    Construction:
+      "bg-orange-50 dark:bg-orange-950/50 text-orange-700 dark:text-orange-300 border-orange-100 dark:border-orange-900",
+    "BPO & Contact Centers":
+      "bg-purple-50 dark:bg-purple-950/50 text-purple-700 dark:text-purple-300 border-purple-100 dark:border-purple-900",
+    "Logistics & Supply Chain":
+      "bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 border-indigo-100 dark:border-indigo-900",
+    "Hospitality & Foodservice":
+      "bg-green-50 dark:bg-green-950/50 text-green-700 dark:text-green-300 border-green-100 dark:border-green-900",
+    "High‑Growth SaaS & Startups":
+      "bg-pink-50 dark:bg-pink-950/50 text-pink-700 dark:text-pink-300 border-pink-100 dark:border-pink-900",
+  }
+
+  // Create a randomized array of all companies
+  const allCompanies = useMemo(() => {
+    const companies: { name: string; category: string }[] = []
+
+    Object.entries(companyData).forEach(([category, companyList]) => {
+      companyList.forEach((company) => {
+        companies.push({ name: company, category })
+      })
+    })
+
+    // Fisher-Yates shuffle algorithm
+    for (let i = companies.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[companies[i], companies[j]] = [companies[j], companies[i]]
+    }
+
+    return companies
+  }, [])
+
+  // Handle category click
+  const handleCategoryClick = (category: string) => {
+    if (selectedCategory === category) {
+      setSelectedCategory(null) // Toggle off if already selected
+    } else {
+      setSelectedCategory(category) // Select new category
+    }
+  }
+
+  // Handle background click to clear filter
+  const handleBackgroundClick = (e: React.MouseEvent) => {
+    // Only clear if clicking directly on the container, not on a pill
+    if ((e.target as HTMLElement).classList.contains("pills-container")) {
+      setSelectedCategory(null)
+    }
+  }
 
   return (
     <section id="about" className="section-padding bg-gray-50 dark:bg-gray-950">
@@ -405,276 +556,62 @@ We decreased operating costs 70% through extreme focus on only essential priorit
             </div>
           </div>
 
-          {/* Partners Section - Rolling Banner */}
+          {/* Partners Section - Cloud of Pills with Filtering */}
           <div id="partners" className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">I've Worked with Amazing Companies</h2>
 
-            <div className="overflow-hidden bg-white dark:bg-gray-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-800">
-              <div className="py-6 relative">
-                {/* Tech & Enterprise */}
-                <div className="marquee-container mb-4">
-                  <div className="marquee-label">
-                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm font-medium">
-                      Tech & Enterprise
-                    </span>
-                  </div>
-                  <div className="marquee" data-direction="left">
-                    <div className="marquee-content">
-                      {[
-                        "Salesforce",
-                        "Intel",
-                        "Verizon",
-                        "ServiceNow",
-                        "Zendesk",
-                        "Veracode",
-                        "Amazon",
-                        "Walmart",
-                        "Outreach",
-                        "Johnson & Johnson",
-                        "Cardinal Health",
-                        "Unum",
-                        "Stryker",
-                      ].map((company) => (
-                        <div key={company} className="marquee-item">
-                          {company}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="marquee-content" aria-hidden="true">
-                      {[
-                        "Salesforce",
-                        "Intel",
-                        "Verizon",
-                        "ServiceNow",
-                        "Zendesk",
-                        "Veracode",
-                        "Amazon",
-                        "Walmart",
-                        "Outreach",
-                        "Johnson & Johnson",
-                        "Cardinal Health",
-                        "Unum",
-                        "Stryker",
-                      ].map((company) => (
-                        <div key={`${company}-duplicate`} className="marquee-item">
-                          {company}
-                        </div>
-                      ))}
-                    </div>
+            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-800 overflow-hidden">
+              <div className="p-6 pills-container" onClick={handleBackgroundClick}>
+                {/* Category Pills - Centered */}
+                <div className="mb-6 text-center">
+                  <div className="inline-flex flex-wrap justify-center gap-3">
+                    {Object.keys(companyData).map((category) => (
+                      <div
+                        key={category}
+                        className={`px-4 py-2 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
+                          selectedCategory === category ? "ring-2 ring-offset-2 ring-gray-400 dark:ring-gray-600" : ""
+                        } ${categoryColors[category]}`}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleCategoryClick(category)
+                        }}
+                      >
+                        {category}
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Industrial & Engineering */}
-                <div className="marquee-container mb-4">
-                  <div className="marquee-label">
-                    <span className="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100 px-3 py-1 rounded-full text-sm font-medium">
-                      Industrial & Engineering
-                    </span>
-                  </div>
-                  <div className="marquee" data-direction="right">
-                    <div className="marquee-content">
-                      {[
-                        "Siemens",
-                        "Bosch",
-                        "Rockwell Automation",
-                        "Caterpillar",
-                        "Delta",
-                        "Rolls‑Royce",
-                        "BAE Systems",
-                        "FedEx",
-                        "GlobalTranz",
-                        "FreightWaves",
-                      ].map((company) => (
-                        <div key={company} className="marquee-item">
-                          {company}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="marquee-content" aria-hidden="true">
-                      {[
-                        "Siemens",
-                        "Bosch",
-                        "Rockwell Automation",
-                        "Caterpillar",
-                        "Delta",
-                        "Rolls‑Royce",
-                        "BAE Systems",
-                        "FedEx",
-                        "GlobalTranz",
-                        "FreightWaves",
-                      ].map((company) => (
-                        <div key={`${company}-duplicate`} className="marquee-item">
-                          {company}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                {/* Divider */}
+                <div className="border-t border-gray-200 dark:border-gray-800 my-6"></div>
+
+                {/* Company Pills - Centered and Randomized */}
+                <div className="flex flex-wrap justify-center gap-3">
+                  {allCompanies
+                    .filter((company) => !selectedCategory || company.category === selectedCategory)
+                    .map((company) => (
+                      <div
+                        key={`${company.category}-${company.name}`}
+                        className={`px-3 py-1.5 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${companyColors[company.category]}`}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleCategoryClick(company.category)
+                        }}
+                      >
+                        {company.name}
+                      </div>
+                    ))}
                 </div>
 
-                {/* Construction & Services */}
-                <div className="marquee-container mb-4">
-                  <div className="marquee-label">
-                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-100 px-3 py-1 rounded-full text-sm font-medium">
-                      Construction & Services
-                    </span>
+                {/* Instructions - only show when filtering */}
+                {selectedCategory && (
+                  <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+                    Click anywhere or on the same category again to clear filter
                   </div>
-                  <div className="marquee" data-direction="left">
-                    <div className="marquee-content">
-                      {["JE Dunn", "Skanska", "Turner", "Gilbane", "West Corp / Saleytics", "TTEC"].map((company) => (
-                        <div key={company} className="marquee-item">
-                          {company}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="marquee-content" aria-hidden="true">
-                      {["JE Dunn", "Skanska", "Turner", "Gilbane", "West Corp / Saleytics", "TTEC"].map((company) => (
-                        <div key={`${company}-duplicate`} className="marquee-item">
-                          {company}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Hospitality & Food */}
-                <div className="marquee-container">
-                  <div className="marquee-label">
-                    <span className="bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-100 px-3 py-1 rounded-full text-sm font-medium">
-                      Hospitality & Food
-                    </span>
-                  </div>
-                  <div className="marquee" data-direction="right">
-                    <div className="marquee-content">
-                      {[
-                        "Erewhon",
-                        "Alfred Coffee",
-                        "Blaze Pizza",
-                        "Epicured",
-                        "Everytable",
-                        "FitLife Foods",
-                        "Hardee's",
-                        "PJ's Coffee",
-                        "Taziki's",
-                      ].map((company) => (
-                        <div key={company} className="marquee-item">
-                          {company}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="marquee-content" aria-hidden="true">
-                      {[
-                        "Erewhon",
-                        "Alfred Coffee",
-                        "Blaze Pizza",
-                        "Epicured",
-                        "Everytable",
-                        "FitLife Foods",
-                        "Hardee's",
-                        "PJ's Coffee",
-                        "Taziki's",
-                      ].map((company) => (
-                        <div key={`${company}-duplicate`} className="marquee-item">
-                          {company}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
-
-          <style jsx>{`
-            .marquee-container {
-              display: flex;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-            }
-
-            .marquee-label {
-              flex-shrink: 0;
-              width: 180px;
-              padding-left: 1rem;
-              z-index: 10;
-            }
-
-            .marquee {
-              display: flex;
-              width: 100%;
-              overflow: hidden;
-              position: relative;
-            }
-
-            .marquee-content {
-              display: flex;
-              animation: marquee 30s linear infinite;
-              padding-left: 1rem;
-              min-width: 100%;
-            }
-
-            .marquee[data-direction="right"] .marquee-content {
-              animation-name: marquee-reverse;
-            }
-
-            .marquee:hover .marquee-content {
-              animation-play-state: paused;
-            }
-
-            .marquee-item {
-              white-space: nowrap;
-              padding: 0.5rem 1rem;
-              margin: 0 0.5rem;
-              background-color: rgba(0, 0, 0, 0.03);
-              border-radius: 9999px;
-              font-weight: 500;
-              color: var(--foreground);
-              transition: transform 0.2s ease, box-shadow 0.2s ease;
-            }
-
-            .marquee-item:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            }
-
-            @keyframes marquee {
-              0% {
-                transform: translateX(0);
-              }
-              100% {
-                transform: translateX(-100%);
-              }
-            }
-
-            @keyframes marquee-reverse {
-              0% {
-                transform: translateX(-100%);
-              }
-              100% {
-                transform: translateX(0);
-              }
-            }
-
-            @media (prefers-reduced-motion) {
-              .marquee-content {
-                animation: none;
-              }
-              .marquee-container {
-                flex-wrap: wrap;
-              }
-              .marquee-label {
-                width: 100%;
-                margin-bottom: 0.5rem;
-              }
-              .marquee {
-                overflow-x: auto;
-              }
-            }
-
-            .dark .marquee-item {
-              background-color: rgba(255, 255, 255, 0.05);
-            }
-          `}</style>
 
           {/* Operating Principles */}
           <div className="space-y-6">
