@@ -59,16 +59,16 @@ export default function AboutSection() {
                 <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border border-gray-200 dark:border-gray-700">
                   <h3 className="text-lg font-bold mb-2">Core Plays</h3>
                   <div className="flex flex-wrap gap-2">
-                    <span className="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                    <span className="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                       Revenue Acceleration
                     </span>
-                    <span className="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                    <span className="inline-block px-3 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-800 dark:text-violet-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                       AI‑Native Innovation
                     </span>
-                    <span className="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                    <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                       Capital‑Efficient Scaling
                     </span>
-                    <span className="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                    <span className="inline-block px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                       ICP Value Creation
                     </span>
                   </div>
