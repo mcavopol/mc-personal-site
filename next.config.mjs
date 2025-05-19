@@ -9,6 +9,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-}
+  // Simplified configuration - removing all experimental features
+  poweredByHeader: false,
+  reactStrictMode: true,
+  swcMinify: true,
+};
 
-export default nextConfig
+export default nextConfig;

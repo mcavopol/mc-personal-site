@@ -88,7 +88,7 @@ export default function AboutSection() {
     ],
   }
 
-  // Define category colors - vibrant for categories
+  // Define category colors
   const categoryColors = {
     Tech: "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 border-blue-200 dark:border-blue-800",
     "Retail & E‑commerce":
@@ -107,27 +107,6 @@ export default function AboutSection() {
       "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 border-green-200 dark:border-green-800",
     "High‑Growth SaaS & Startups":
       "bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-200 border-pink-200 dark:border-pink-800",
-  }
-
-  // Define company colors - lighter/darker versions of category colors
-  const companyColors = {
-    Tech: "bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border-blue-100 dark:border-blue-900",
-    "Retail & E‑commerce":
-      "bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border-emerald-100 dark:border-emerald-900",
-    Healthcare: "bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-300 border-red-100 dark:border-red-900",
-    Aerospace: "bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 border-sky-100 dark:border-sky-900",
-    "Engineering & Industrial":
-      "bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border-amber-100 dark:border-amber-900",
-    Construction:
-      "bg-orange-50 dark:bg-orange-950/50 text-orange-700 dark:text-orange-300 border-orange-100 dark:border-orange-900",
-    "BPO & Contact Centers":
-      "bg-purple-50 dark:bg-purple-950/50 text-purple-700 dark:text-purple-300 border-purple-100 dark:border-purple-900",
-    "Logistics & Supply Chain":
-      "bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 border-indigo-100 dark:border-indigo-900",
-    "Hospitality & Foodservice":
-      "bg-green-50 dark:bg-green-950/50 text-green-700 dark:text-green-300 border-green-100 dark:border-green-900",
-    "High‑Growth SaaS & Startups":
-      "bg-pink-50 dark:bg-pink-950/50 text-pink-700 dark:text-pink-300 border-pink-100 dark:border-pink-900",
   }
 
   // Create a randomized array of all companies
@@ -592,7 +571,7 @@ We decreased operating costs 70% through extreme focus on only essential priorit
                     .map((company) => (
                       <div
                         key={`${company.category}-${company.name}`}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${companyColors[company.category]}`}
+                        className={`px-3 py-1.5 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${categoryColors[company.category]}`}
                         onClick={(e) => {
                           e.stopPropagation()
                           handleCategoryClick(company.category)
