@@ -348,12 +348,6 @@ export default function AboutSection() {
             </div>
 
             <Card className="overflow-hidden">
-              <CardHeader>
-                <CardTitle>Company Partners</CardTitle>
-                <CardDescription>
-                  Filter by industry category or click on any company to see related organizations
-                </CardDescription>
-              </CardHeader>
               <CardContent className="p-6 md:p-8">
                 <div className="pills-container" onClick={handleBackgroundClick}>
                   {/* Category Pills - Centered */}
@@ -404,66 +398,6 @@ export default function AboutSection() {
                     </div>
                   )}
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Operating Principles */}
-          <div className="space-y-6">
-            <div className="space-y-4 mb-6">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Operating Principles</h2>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
-                Core philosophies that guide my approach to building successful companies.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="flex flex-col h-full">
-                <CardHeader>
-                  <CardTitle>Revenue Acceleration</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Nail ICP, craft an offer that hits "must-have," cut time-to-value.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="flex flex-col h-full">
-                <CardHeader>
-                  <CardTitle>Focused Innovation</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Every feature pays rent in revenue or differentiation.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="flex flex-col h-full">
-                <CardHeader>
-                  <CardTitle>Capital Efficiency</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700 dark:text-gray-300">Cash chases the highest-leverage move—always.</p>
-                </CardContent>
-              </Card>
-            </div>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              When these gears lock, momentum feels unfair—because it is.
-            </p>
-          </div>
-
-          {/* Off the Clock */}
-          <div className="space-y-6">
-            <Card className="flex flex-col h-full">
-              <CardHeader>
-                <CardTitle>Off the Clock</CardTitle>
-                <CardDescription>Life beyond the office</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg text-gray-700 dark:text-gray-300">
-                  Nashville-based. Father-to-be. Sort-of runner and biker. AI tinkerer. Likely sketching ideas on
-                  napkins or quoting Clayton Christensen. Mentor at the Nashville Entrepreneur Center; guest-lecturer on
-                  pricing, product strategy, and recession-proof growth.
-                </p>
               </CardContent>
             </Card>
           </div>

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Code, Building, TrendingUp, Repeat, Users, Bot } from "lucide-react"
 
 export default function SuperpowerSection() {
@@ -15,14 +15,7 @@ export default function SuperpowerSection() {
           </div>
 
           <Card className="flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-3xl md:text-4xl font-bold tracking-tight">Superpower</CardTitle>
-              <CardDescription className="text-lg">
-                By saying "Yes!" whenever tapped to solve a new problem, I earned a broad first-hand perspective across
-                every function of a product company.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+            <CardContent className="p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start space-x-4">
                   <Code className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />

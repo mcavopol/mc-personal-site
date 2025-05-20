@@ -7,6 +7,7 @@ import ProjectsSection from "@/components/projects-section"
 import WritingSection from "@/components/writing-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
+import OffTheClockSection from "@/components/off-the-clock-section"
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <SuperpowerSection />
       <ProjectsSection />
       <WritingSection />
+      <OffTheClockSection />
       <ContactSection />
       <Footer />
     </main>
