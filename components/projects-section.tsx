@@ -49,7 +49,7 @@ export default function ProjectsSection() {
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-12">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Featured Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Outcomes</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
               A showcase of key initiatives and transformations I've led throughout my career.
             </p>
