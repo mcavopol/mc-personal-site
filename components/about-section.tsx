@@ -181,8 +181,8 @@ export default function AboutSection() {
                   sales development through engineering and support—driving focused, predictable results.
                 </p>
                 <p className="text-lg text-gray-700 dark:text-gray-300">
-                  I've seen firsthand how dedicated, passionate teams will rally behind audacious missions; that shared
-                  purpose fuels growth‑oriented companies to transform their trajectory.
+                  I've seen firsthand how dedicated, passionate teams will rally behind audacious missions with shared
+                  purpose fueling growth‑oriented companies to transform their outcome.
                 </p>
               </div>
             </CardContent>
@@ -202,7 +202,8 @@ export default function AboutSection() {
                     <strong>Revenue Engines</strong>.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300">
-                    Titles vary but rhyme with <strong>COO</strong> or <strong>CPRO</strong> (Product & Revenue Officer)
+                    The role I'm best in carry different titles, but rhyme with <strong>CPRO</strong> (Product & Revenue
+                    Officer) or <strong>COO</strong>.
                   </p>
                 </div>
               </CardContent>
@@ -216,10 +217,19 @@ export default function AboutSection() {
               <CardContent>
                 <div className="space-y-3">
                   <p className="text-gray-700 dark:text-gray-300">
-                    Two‑decades of experience across technical, product, marketing, sales and customer success roles.
+                    I bring two‑decades of experience across technical, product, marketing, sales and customer success
+                    roles.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300">
-                    I see the whole revenue engine and focus on what actually matters.
+                    That broad perspective is my{" "}
+                    <a
+                      href="#superpower"
+                      className="underline font-medium hover:text-black dark:hover:text-white transition-colors"
+                    >
+                      superpower
+                    </a>
+                    . It lets me see the whole picture across product strategy and revenue engines, bringing clarity and
+                    focused to what actually matters.
                   </p>
                 </div>
               </CardContent>
@@ -249,11 +259,11 @@ export default function AboutSection() {
             </Card>
           </div>
 
-          {/* Add extra spacing to ensure separation between sections */}
-          <div className="h-6"></div>
+          {/* Minimal spacing between cards */}
+          <div className="h-2"></div>
 
-          {/* Key Outcomes Card */}
-          <Card className="overflow-hidden">
+          {/* Key Results Card */}
+          <Card className="overflow-hidden bg-white dark:bg-black">
             <CardHeader>
               <CardTitle>Key Results</CardTitle>
               <CardDescription>Real results delivered for clients and companies</CardDescription>

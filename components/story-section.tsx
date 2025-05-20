@@ -1,9 +1,5 @@
 "use client"
-
-import type React from "react"
 import { ChevronRight } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Code, Building, TrendingUp, Repeat, Users, Bot } from "lucide-react"
 
 export default function StorySection() {
   return (
@@ -28,9 +24,9 @@ export default function StorySection() {
 
             <div className="relative mt-10 md:pb-12 overflow-hidden">
               {/* Central timeline line */}
-              <div className="absolute left-[22px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800 transform md:-translate-x-1/2 z-30"></div>
+              <div className="absolute left-[22px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800 transform md:-translate-x-1/2 z-10"></div>
 
-              <div className="space-y-6 md:-space-y-12">
+              <div className="space-y-6 md:-space-y-32">
                 <TimelineCard
                   age="9"
                   year="1996"
@@ -183,83 +179,6 @@ We decreased operating costs 70% through extreme focus on only essential priorit
               </div>
             </div>
           </div>
-
-          {/* Superpower Section */}
-          <div id="superpower">
-            <Card className="flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-3xl md:text-4xl font-bold tracking-tight">Superpower</CardTitle>
-                <CardDescription className="text-lg">
-                  By saying "Yes!" whenever tapped to solve a new problem, I earned a broad first-hand perspective
-                  across every function of a product company.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex items-start space-x-4">
-                    <Code className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                    <div>
-                      <h3 className="text-xl font-bold">Technical × Commercial DNA</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        Computer‑science roots + quota‑carrying sales + PLG chops.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <Building className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                    <div>
-                      <h3 className="text-xl font-bold">Company OS</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        Tying usability, feasibility and viability to accountability, cadence and vision.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <TrendingUp className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                    <div>
-                      <h3 className="text-xl font-bold">Operator's POV</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        I've owned burn multiple, retention, product-market fit, then lived the results in board rooms.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <Repeat className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                    <div>
-                      <h3 className="text-xl font-bold">Repeatable Playbooks</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        Go To Market strategies chosen by unit economics, not fashion.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <Users className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                    <div>
-                      <h3 className="text-xl font-bold">Customer Obsession</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        Focused on customer problems + value creation, not technical solutions.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <Bot className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                    <div>
-                      <h3 className="text-xl font-bold">AI Edge</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        Innovating the next generation of product and tactics with AI copilots, agent workflows, and RAG
-                        systems that cut CAC and COGS now, not next quarter.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>
@@ -294,34 +213,49 @@ function TimelineCard({
   // Generate a sector-based color
   const getSectorColor = (sector: string) => {
     const sectorColors: { [key: string]: string } = {
-      Personal: "bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100",
-      "IT Consulting": "bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-100",
-      Education: "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100",
-      "B2B SaaS": "bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-100",
-      "PLG & Channel": "bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-100",
-      "SMB -> Enterprise": "bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-100",
-      "Consulting + Fractional": "bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-100",
+      Personal: "bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-100 border-blue-400 dark:border-blue-700",
+      "IT Consulting":
+        "bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-100 border-purple-400 dark:border-purple-700",
+      Education:
+        "bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-100 border-green-400 dark:border-green-700",
+      "B2B SaaS":
+        "bg-orange-100 dark:bg-orange-900/40 text-orange-800 dark:text-orange-100 border-orange-400 dark:border-orange-700",
+      "PLG & Channel":
+        "bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-100 border-amber-400 dark:border-amber-700",
+      "SMB -> Enterprise":
+        "bg-sky-100 dark:bg-sky-900/40 text-sky-800 dark:text-sky-100 border-sky-400 dark:border-sky-700",
+      "Consulting + Fractional":
+        "bg-pink-100 dark:bg-pink-900/40 text-pink-800 dark:text-pink-100 border-pink-400 dark:border-pink-700",
     }
 
-    return sectorColors[sector] || "bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100"
+    return (
+      sectorColors[sector] ||
+      "bg-gray-100 dark:bg-gray-800/40 text-gray-800 dark:text-gray-100 border-gray-400 dark:border-gray-700"
+    )
   }
 
   // Get revenue model color
   const getRevenueModelColor = () => {
-    return "bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-100"
+    return "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-800 dark:text-indigo-100 border-indigo-400 dark:border-indigo-700"
   }
 
   // Split description into paragraphs
   const paragraphs = description.split("\n\n").filter((p) => p.trim() !== "")
 
+  // Get sector-specific border color
+  const sectorColorClass =
+    getSectorColor(sector)
+      .split(" ")
+      .find((cls) => cls.startsWith("border-")) || "border-gray-400"
+
   return (
     <div
       className={`relative flex flex-col md:flex-row items-start gap-4 md:gap-0 group ${
-        !isLast ? "mb-8 md:mb-4" : ""
-      } md:my-6 w-full`}
+        !isLast ? "mb-12 md:mb-4" : ""
+      } md:my-4 w-full`}
     >
       {/* Age circle - always on the left for mobile, centered for desktop */}
-      <div className="absolute left-0 md:left-1/2 top-0 flex flex-col items-center md:transform md:-translate-x-1/2 z-30">
+      <div className="absolute left-0 md:left-1/2 top-0 flex flex-col items-center md:transform md:-translate-x-1/2 z-20">
         <div className="rounded-full w-11 h-11 bg-black dark:bg-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
           <span className="text-white dark:text-black text-sm font-bold">{age}</span>
         </div>
@@ -331,31 +265,36 @@ function TimelineCard({
       {/* Content card - full width on mobile, alternating sides on desktop */}
       <div
         className={`
-  w-[calc(100%-4rem)] md:w-[calc(50%-1.5rem)] 
-  ml-16 md:ml-0 
-  ${isLeft ? "md:mr-auto md:pr-4" : "md:ml-auto md:pl-4"}
-  transition-all duration-300 group-hover:shadow-md
-  ${isLeft ? "md:-mb-8" : "md:-mt-8"}
-  relative md:z-10
-  overflow-hidden
-`}
+          w-[calc(100%-4rem)] md:w-[calc(50%-2rem)] 
+          ml-16 md:ml-0 
+          ${isLeft ? "md:mr-auto md:pr-6" : "md:ml-auto md:pl-6"}
+          transition-all duration-300 group-hover:shadow-md
+          relative md:z-10
+          overflow-hidden
+        `}
       >
         <div
-          className="overflow-hidden border-t-4 shadow-sm card-content"
-          style={{ borderTopColor: "var(--border-color)" }}
+          className={`
+          overflow-hidden 
+          bg-white dark:bg-gray-900
+          border-2 border-gray-300 dark:border-gray-700
+          rounded-lg
+          shadow-sm 
+          transition-all duration-300
+          hover:shadow-lg
+          card-content
+        `}
         >
           <div
-            className="absolute top-0 left-0 right-0 h-1 transition-colors"
-            style={
-              {
-                "--border-color": `var(--${sector.toLowerCase().replace(" ", "-").replace("&", "and")}-color, black)`,
-              } as React.CSSProperties
-            }
+            className="h-2 w-full"
+            style={{
+              backgroundColor: `var(--${sector.toLowerCase().replace(" ", "-").replace("&", "and")}-color, black)`,
+            }}
           ></div>
 
-          <div className="p-3">
+          <div className="p-4">
             {/* Badges */}
-            <div className="flex flex-wrap gap-2 mb-2">
+            <div className="flex flex-wrap gap-2 mb-3">
               {/* Sector badge */}
               <div className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getSectorColor(sector)}`}>
                 {sector}
@@ -377,12 +316,12 @@ function TimelineCard({
             </div>
 
             {/* Title */}
-            <div className="flex flex-col space-y-1 mb-2">
+            <div className="flex flex-col space-y-1 mb-3">
               <h3 className="text-xl font-bold">{role}</h3>
             </div>
 
             {/* Description with proper paragraph spacing */}
-            <div className="mb-2 space-y-3">
+            <div className="mb-3 space-y-3">
               {paragraphs.map((paragraph, index) => (
                 <p key={index} className="text-sm text-gray-700 dark:text-gray-300">
                   {paragraph}
@@ -392,12 +331,12 @@ function TimelineCard({
 
             {/* Achievements */}
             {achievements.length > 0 && (
-              <div className="border-t border-gray-100 dark:border-gray-800 pt-2 mt-1">
-                <h4 className="text-sm font-semibold mb-1 flex items-center">
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+                <h4 className="text-sm font-semibold mb-2 flex items-center">
                   <ChevronRight className="h-4 w-4 mr-1" />
                   Key Outcomes
                 </h4>
-                <ul className="space-y-0.5">
+                <ul className="space-y-1">
                   {achievements.map((achievement, index) => (
                     <li key={index} className="text-gray-600 dark:text-gray-400 text-sm flex items-start">
                       <span className="mr-2">•</span>
