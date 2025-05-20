@@ -26,7 +26,7 @@ export default function StorySection() {
               {/* Central timeline line */}
               <div className="absolute left-[22px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800 transform md:-translate-x-1/2 z-10"></div>
 
-              <div className="space-y-6 md:-space-y-32">
+              <div className="space-y-12 md:space-y-0">
                 <TimelineCard
                   age="9"
                   year="1996"
@@ -242,17 +242,13 @@ function TimelineCard({
   // Split description into paragraphs
   const paragraphs = description.split("\n\n").filter((p) => p.trim() !== "")
 
-  // Get sector-specific border color
-  const sectorColorClass =
-    getSectorColor(sector)
-      .split(" ")
-      .find((cls) => cls.startsWith("border-")) || "border-gray-400"
-
   return (
     <div
-      className={`relative flex flex-col md:flex-row items-start gap-4 md:gap-0 group ${
-        !isLast ? "mb-12 md:mb-4" : ""
-      } md:my-4 w-full`}
+      className={`
+        relative flex flex-col md:flex-row items-start gap-4 md:gap-0 group 
+        mb-12 w-full
+        ${!isLeft ? "md:mt-[-120px]" : ""}
+      `}
     >
       {/* Age circle - always on the left for mobile, centered for desktop */}
       <div className="absolute left-0 md:left-1/2 top-0 flex flex-col items-center md:transform md:-translate-x-1/2 z-20">
@@ -285,13 +281,6 @@ function TimelineCard({
           card-content
         `}
         >
-          <div
-            className="h-2 w-full"
-            style={{
-              backgroundColor: `var(--${sector.toLowerCase().replace(" ", "-").replace("&", "and")}-color, black)`,
-            }}
-          ></div>
-
           <div className="p-4">
             {/* Badges */}
             <div className="flex flex-wrap gap-2 mb-3">
