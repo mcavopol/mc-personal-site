@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ModeToggle } from "./mode-toggle"
+import { Card, CardContent } from "@/components/ui/card"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,32 +36,36 @@ export default function Navbar() {
         scrolled ? "bg-white/90 dark:bg-black/90 backdrop-blur-sm shadow-sm" : "bg-transparent",
       )}
     >
-      <div className="container-padding mx-auto">
-        <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-xl font-bold tracking-tighter">
-            Michael Cavopol
-          </a>
-
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-              >
-                {link.name}
+      <div className="container-padding mx-auto max-w-6xl">
+        <Card className="bg-transparent border-none shadow-none">
+          <CardContent className="p-0">
+            <div className="flex items-center justify-between h-16">
+              <a href="#" className="text-xl font-bold tracking-tighter">
+                Michael Cavopol
               </a>
-            ))}
-            <ModeToggle />
-          </nav>
 
-          <div className="flex md:hidden items-center space-x-2">
-            <ModeToggle />
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-          </div>
-        </div>
+              <nav className="hidden md:flex items-center space-x-8">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+                <ModeToggle />
+              </nav>
+
+              <div className="flex md:hidden items-center space-x-2">
+                <ModeToggle />
+                <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+                  {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Mobile menu */}
@@ -71,8 +76,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="block py-2 text-base font-medium hover:text-gray-600 dark:hover:text-gray-300"
-                onClick={() => setIsOpen(false)}
+                className="block text-sm font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 {link.name}
               </a>

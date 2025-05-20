@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
 
@@ -15,6 +15,10 @@ export default function WritingSection() {
           </div>
 
           <Card className="overflow-hidden">
+            <CardHeader>
+              <CardTitle>Hedgehog Growth</CardTitle>
+              <CardDescription>Insights on B2B SaaS growth, revenue operations, and product strategy.</CardDescription>
+            </CardHeader>
             <CardContent className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
                 <div className="flex-shrink-0 w-full md:w-2/5 lg:w-1/2 mx-auto md:mx-0">
@@ -28,12 +32,6 @@ export default function WritingSection() {
                   />
                 </div>
                 <div className="space-y-4 flex-1">
-                  <div>
-                    <h3 className="text-2xl font-bold">Hedgehog Growth</h3>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      Insights on B2B SaaS growth, revenue operations, and product strategy.
-                    </p>
-                  </div>
                   <p className="text-gray-700 dark:text-gray-300">
                     I write about the intersection of product and revenue, sharing frameworks and insights from two
                     decades of building and scaling B2B SaaS companies. Topics include:
@@ -45,21 +43,21 @@ export default function WritingSection() {
                     <li>Navigating Economic Uncertainty</li>
                     <li>Building Resilient Growth Engines</li>
                   </ul>
-                  <div className="pt-2">
-                    <Button asChild>
-                      <a
-                        href="https://cavopol.substack.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center"
-                      >
-                        Read on Substack <ExternalLink className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
-                  </div>
                 </div>
               </div>
             </CardContent>
+            <CardFooter>
+              <Button asChild>
+                <a
+                  href="https://cavopol.substack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  Read on Substack <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </CardFooter>
           </Card>
         </div>
       </div>

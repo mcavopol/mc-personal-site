@@ -7,7 +7,7 @@ export default function ProjectsSection() {
     {
       title: "Foresight Strategic Narrative",
       description:
-        'Helped Foresight co-founders tell the story of their big audatious goal, reframing sales and investor conversations.',
+        "Helped Foresight co-founders tell the story of their big audatious goal, reframing sales and investor conversations.",
       outcomes: [
         "Increased Exec. Alignment",
         'Re-Framed "the big problem" and solution',

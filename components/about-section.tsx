@@ -3,7 +3,7 @@
 import type React from "react"
 import { ChevronRight } from "lucide-react"
 
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { TrendingUp, BarChart2, Clock, Code, Building, Repeat, Users, Bot } from "lucide-react"
 import { useState, useEffect, useMemo } from "react"
 
@@ -149,51 +149,100 @@ export default function AboutSection() {
     <section id="about" className="section-padding bg-gray-50 dark:bg-gray-950">
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-12">
-          {/* Founder's Right Hand */}
-          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-800">
-            <div className="p-6 md:p-8">
-              <div className="mb-8 border-l-4 border-gray-400 dark:border-gray-600 pl-6 py-4">
-                <p className="text-2xl md:text-3xl font-medium text-gray-700 dark:text-gray-300 italic leading-relaxed">
-                  "Michael turns messy product roadmaps and revenue efforts into compounding revenue machines."
-                </p>
-              </div>
+          {/* Section Header */}
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">About Me</h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
+              I help venture-backed product companies integrate product strategy and go-to-market execution to create
+              exceptional value.
+            </p>
+          </div>
 
-              <div className="mb-8 space-y-6">
-                <div className="space-y-4">
-                  <p className="text-lg text-gray-700 dark:text-gray-300">
-                    I work with venture‑backed product companies, helping <strong>break growth plateaus</strong> and{" "}
-                    <strong>create operating leverage</strong>.
-                  </p>
-                  <p className="text-lg text-gray-700 dark:text-gray-300">
-                    I do this by uniting company <strong>mission</strong>, product <strong>vision</strong>, and
-                    go‑to‑market <strong>execution</strong>. This alignment connects every function—from marketing and
-                    sales development through engineering and support—driving focused, predictable results.
-                  </p>
-                  <p className="text-lg text-gray-700 dark:text-gray-300">
-                    I've seen firsthand how dedicated, passionate teams will rally behind audacious missions; that
-                    shared purpose fuels growth‑oriented companies to transform their trajectory.
+          {/* Quote Card */}
+          <Card className="overflow-hidden">
+            <CardContent className="p-6 md:p-8">
+              <div className="flex">
+                <div className="w-1 bg-black dark:bg-white mr-6 flex-shrink-0"></div>
+                <div>
+                  <p className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-200 leading-relaxed">
+                    "Michael turns messy product roadmaps and revenue efforts into compounding revenue machines."
                   </p>
                 </div>
+              </div>
+            </CardContent>
+          </Card>
 
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-                  <h3 className="text-lg font-bold mb-2">Ideal Fit</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2">
-                    50 to 350‑person product companies needing support integrating <strong>company vision</strong>,{" "}
-                    <strong>product roadmap</strong> and <strong>revenue generation</strong>.
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-6">
-                    Titles vary but rhyme with <strong>COO</strong> or <strong>CPRO</strong> (Product & Revenue Officer)
-                  </p>
+          {/* Introduction Card */}
+          <Card className="overflow-hidden">
+            <CardContent className="p-6 md:p-8">
+              <div className="space-y-4">
+                <p className="text-lg text-gray-700 dark:text-gray-300">
+                  I work with venture‑backed product companies, helping <strong>break growth plateaus</strong> and{" "}
+                  <strong>create operating leverage</strong>.
+                </p>
+                <p className="text-lg text-gray-700 dark:text-gray-300">
+                  I do this by uniting company <strong>mission</strong>, product <strong>vision</strong>, and
+                  go‑to‑market <strong>execution</strong>. This alignment connects every function—from marketing and
+                  sales development through engineering and support—driving focused, predictable results.
+                </p>
+                <p className="text-lg text-gray-700 dark:text-gray-300">
+                  I've seen firsthand how dedicated, passionate teams will rally behind audacious missions; that shared
+                  purpose fuels growth‑oriented companies to transform their trajectory.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
 
-                  <h3 className="text-lg font-bold mb-2">Full‑Stack Perspective</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2">
-                    Two‑decades of experience across technical, product, marketing, sales and customer success roles.
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-6">
-                    I see the whole revenue engine and focus on what actually matters.
-                  </p>
+          {/* Cards Grid - Reorganized with aligned bottoms and responsive order */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Left Column - Two Stacked Cards and Core Playbook */}
+            <div className="lg:col-span-2 flex flex-col">
+              {/* Top row with Ideal Fit and Full-Stack Perspective */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {/* Ideal Fit Card */}
+                <Card className="flex flex-col h-full">
+                  <CardHeader>
+                    <CardTitle>Ideal Fit</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <p className="text-gray-700 dark:text-gray-300">
+                        50 to 350‑person product companies needing support integrating <strong>Product Strategy</strong>{" "}
+                        and <strong>Revenue Engines</strong>.
+                      </p>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        Titles vary but rhyme with <strong>COO</strong> or <strong>CPRO</strong> (Product & Revenue
+                        Officer)
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
 
-                  <h3 className="text-lg font-bold mb-2">Core Plays</h3>
+                {/* Full-Stack Perspective Card */}
+                <Card className="flex flex-col h-full">
+                  <CardHeader>
+                    <CardTitle>Full‑Stack Perspective</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <p className="text-gray-700 dark:text-gray-300">
+                        Two‑decades of experience across technical, product, marketing, sales and customer success
+                        roles.
+                      </p>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        I see the whole revenue engine and focus on what actually matters.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Core Playbook Card - aligned with bottom of Impact Framework */}
+              <Card className="flex flex-col flex-grow order-3 lg:order-2">
+                <CardHeader>
+                  <CardTitle>Core Playbook</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
                   <div className="flex flex-wrap gap-2">
                     <span className="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                       Revenue Acceleration
@@ -208,96 +257,124 @@ export default function AboutSection() {
                       ICP Value Creation
                     </span>
                   </div>
-                </div>
-              </div>
-
-              <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
-                <h3 className="text-xl font-bold mb-6">Key Outcomes</h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
-                    <div className="flex items-start">
-                      <TrendingUp className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
-                      <div>
-                        <h4 className="font-bold text-lg mb-2">Revenue Growth</h4>
-                        <ul className="space-y-1">
-                          <li className="flex items-baseline">
-                            <span className="font-semibold mr-2">Expansion revenue:</span>
-                            <span className="text-gray-700 dark:text-gray-300">+1,270%</span>
-                          </li>
-                          <li className="flex items-baseline">
-                            <span className="font-semibold mr-2">Median Contract Value:</span>
-                            <span className="text-gray-700 dark:text-gray-300">+427×</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
-                    <div className="flex items-start">
-                      <BarChart2 className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
-                      <div>
-                        <h4 className="font-bold text-lg mb-2">Customer Retention & Value</h4>
-                        <ul className="space-y-1">
-                          <li className="flex items-baseline">
-                            <span className="font-semibold mr-2">Logo LTV:</span>
-                            <span className="text-gray-700 dark:text-gray-300">+255%</span>
-                          </li>
-                          <li className="flex items-baseline">
-                            <span className="font-semibold mr-2">Gross Logo Retention:</span>
-                            <span className="text-gray-700 dark:text-gray-300">+41%</span>
-                          </li>
-                          <li className="flex items-baseline">
-                            <span className="font-semibold mr-2">Net Dollar Retention:</span>
-                            <span className="text-gray-700 dark:text-gray-300">+30%</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
-                    <div className="flex items-start">
-                      <Clock className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
-                      <div>
-                        <h4 className="font-bold text-lg mb-2">Operational Efficiency</h4>
-                        <ul className="space-y-1">
-                          <li className="flex items-baseline">
-                            <span className="font-semibold mr-2">Sales Cycle:</span>
-                            <span className="text-gray-700 dark:text-gray-300">6–8 mo → 15 days</span>
-                          </li>
-                          <li className="flex items-baseline">
-                            <span className="font-semibold mr-2">Delivery Velocity:</span>
-                            <span className="text-gray-700 dark:text-gray-300">3×</span>
-                          </li>
-                          <li className="flex items-baseline">
-                            <span className="font-semibold mr-2">Support Response Time:</span>
-                            <span className="text-gray-700 dark:text-gray-300">23× faster</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </div>
+
+            {/* Right Column - Impact Framework Card */}
+            <Card className="flex flex-col h-full order-2 lg:order-3">
+              <CardHeader>
+                <CardTitle>Impact Framework</CardTitle>
+                <CardDescription>
+                  My approach integrates mission, vision, and execution to drive predictable results
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex justify-center items-center flex-grow p-6">
+                <img
+                  src="/images/impact-diagram.png"
+                  alt="Impact Framework Diagram showing Company Mission, Intuitive Products, Customer Obsession, Innovative Technology, and Commercial Strategy connected to Impact"
+                  className="max-w-full h-auto"
+                  width="400"
+                  height="400"
+                />
+              </CardContent>
+            </Card>
           </div>
+
+          {/* Add extra spacing to ensure separation between sections */}
+          <div className="h-6"></div>
+
+          {/* Key Outcomes Card */}
+          <Card className="overflow-hidden">
+            <CardHeader>
+              <CardTitle>Key Outcomes</CardTitle>
+              <CardDescription>Real results delivered for clients and companies</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
+                  <div className="flex items-start">
+                    <TrendingUp className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
+                    <div>
+                      <h4 className="font-bold text-lg mb-2">Revenue Growth</h4>
+                      <ul className="space-y-1">
+                        <li className="flex items-baseline">
+                          <span className="font-semibold mr-2">Expansion revenue:</span>
+                          <span className="text-gray-700 dark:text-gray-300">+1,270%</span>
+                        </li>
+                        <li className="flex items-baseline">
+                          <span className="font-semibold mr-2">Median Contract Value:</span>
+                          <span className="text-gray-700 dark:text-gray-300">+427×</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
+                  <div className="flex items-start">
+                    <BarChart2 className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
+                    <div>
+                      <h4 className="font-bold text-lg mb-2">Customer Retention & Value</h4>
+                      <ul className="space-y-1">
+                        <li className="flex items-baseline">
+                          <span className="font-semibold mr-2">Logo LTV:</span>
+                          <span className="text-gray-700 dark:text-gray-300">+255%</span>
+                        </li>
+                        <li className="flex items-baseline">
+                          <span className="font-semibold mr-2">Gross Logo Retention:</span>
+                          <span className="text-gray-700 dark:text-gray-300">+41%</span>
+                        </li>
+                        <li className="flex items-baseline">
+                          <span className="font-semibold mr-2">Net Dollar Retention:</span>
+                          <span className="text-gray-700 dark:text-gray-300">+30%</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
+                  <div className="flex items-start">
+                    <Clock className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
+                    <div>
+                      <h4 className="font-bold text-lg mb-2">Operational Efficiency</h4>
+                      <ul className="space-y-1">
+                        <li className="flex items-baseline">
+                          <span className="font-semibold mr-2">Sales Cycle:</span>
+                          <span className="text-gray-700 dark:text-gray-300">6–8 mo → 15 days</span>
+                        </li>
+                        <li className="flex items-baseline">
+                          <span className="font-semibold mr-2">Delivery Velocity:</span>
+                          <span className="text-gray-700 dark:text-gray-300">3×</span>
+                        </li>
+                        <li className="flex items-baseline">
+                          <span className="font-semibold mr-2">Support Response Time:</span>
+                          <span className="text-gray-700 dark:text-gray-300">23× faster</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Career Timeline */}
           <div id="career" className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">My Story</h2>
-
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mb-8">
-              I once worried my meandering career was unfocused. I now believe it's my{" "}
-              <a
-                href="#superpower"
-                className="font-bold underline hover:text-black dark:hover:text-white transition-colors"
-              >
-                superpower
-              </a>
-              , giving me a rare perspective otherwise reserved only for Founders and CEOs.
-            </p>
+            <div className="space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">My Story</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
+                I once worried my meandering career was unfocused. I now believe it's my{" "}
+                <a
+                  href="#superpower"
+                  className="font-bold underline hover:text-black dark:hover:text-white transition-colors"
+                >
+                  superpower
+                </a>
+                , giving me a rare perspective otherwise reserved only for Founders and CEOs.
+              </p>
+            </div>
 
             <div className="relative mt-10 md:pb-12 overflow-hidden">
               {/* Central timeline line */}
@@ -458,168 +535,187 @@ We decreased operating costs 70% through extreme focus on only essential priorit
           </div>
 
           {/* Superpower Section */}
-          <div
-            id="superpower"
-            className="space-y-6 bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-800 p-6 md:p-8"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Superpower</h2>
+          <div id="superpower">
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardTitle className="text-3xl md:text-4xl font-bold tracking-tight">Superpower</CardTitle>
+                <CardDescription className="text-lg">
+                  By saying "Yes!" whenever tapped to solve a new problem, I earned a broad first-hand perspective
+                  across every function of a product company.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex items-start space-x-4">
+                    <Code className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                    <div>
+                      <h3 className="text-xl font-bold">Technical × Commercial DNA</h3>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        Computer‑science roots + quota‑carrying sales + PLG chops.
+                      </p>
+                    </div>
+                  </div>
 
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              By saying "Yes!" whenever tapped to solve a new problem, I earned a broad first-hand perspective across
-              every function of a product company.
-            </p>
+                  <div className="flex items-start space-x-4">
+                    <Building className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                    <div>
+                      <h3 className="text-xl font-bold">Company OS</h3>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        Tying usability, feasibility and viability to accountability, cadence and vision.
+                      </p>
+                    </div>
+                  </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex items-start space-x-4">
-                <Code className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                <div>
-                  <h3 className="text-xl font-bold">Technical × Commercial DNA</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Computer‑science roots + quota‑carrying sales + PLG chops.
-                  </p>
+                  <div className="flex items-start space-x-4">
+                    <TrendingUp className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                    <div>
+                      <h3 className="text-xl font-bold">Operator's POV</h3>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        I've owned burn multiple, retention, product-market fit, then lived the results in board rooms.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <Repeat className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                    <div>
+                      <h3 className="text-xl font-bold">Repeatable Playbooks</h3>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        Go To Market strategies chosen by unit economics, not fashion.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <Users className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                    <div>
+                      <h3 className="text-xl font-bold">Customer Obsession</h3>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        Focused on customer problems + value creation, not technical solutions.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <Bot className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
+                    <div>
+                      <h3 className="text-xl font-bold">AI Edge</h3>
+                      <p className="text-gray-700 dark:text-gray-300">
+                        Innovating the next generation of product and tactics with AI copilots, agent workflows, and RAG
+                        systems that cut CAC and COGS now, not next quarter.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <Building className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                <div>
-                  <h3 className="text-xl font-bold">Company OS</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Tying usability, feasibility and viability to accountability, cadence and vision.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <TrendingUp className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                <div>
-                  <h3 className="text-xl font-bold">Operator's POV</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    I've owned burn multiple, retention, product-market fit, then lived the results in board rooms.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <Repeat className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                <div>
-                  <h3 className="text-xl font-bold">Repeatable Playbooks</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Go To Market strategies chosen by unit economics, not fashion.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <Users className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                <div>
-                  <h3 className="text-xl font-bold">Customer Obsession</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Focused on customer problems + value creation, not technical solutions.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <Bot className="h-6 w-6 mt-1 flex-shrink-0 text-gray-700 dark:text-gray-300" />
-                <div>
-                  <h3 className="text-xl font-bold">AI Edge</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Innovating the next generation of product and tactics with AI copilots, agent workflows, and RAG
-                    systems that cut CAC and COGS now, not next quarter.
-                  </p>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Partners Section - Cloud of Pills with Filtering */}
-          <div id="partners" className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">I've Worked with Amazing Companies</h2>
-
-            <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md border border-gray-200 dark:border-gray-800 overflow-hidden">
-              <div className="p-6 pills-container" onClick={handleBackgroundClick}>
-                {/* Category Pills - Centered */}
-                <div className="mb-6 text-center">
-                  <div className="inline-flex flex-wrap justify-center gap-3">
-                    {Object.keys(companyData).map((category) => (
-                      <div
-                        key={category}
-                        className={`px-4 py-2 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
-                          selectedCategory === category ? "ring-2 ring-offset-2 ring-gray-400 dark:ring-gray-600" : ""
-                        } ${categoryColors[category]}`}
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          handleCategoryClick(category)
-                        }}
-                      >
-                        {category}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Divider */}
-                <div className="border-t border-gray-200 dark:border-gray-800 my-6"></div>
-
-                {/* Company Pills - Centered and Randomized */}
-                <div className="flex flex-wrap justify-center gap-3">
-                  {allCompanies
-                    .filter((company) => !selectedCategory || company.category === selectedCategory)
-                    .map((company) => (
-                      <div
-                        key={`${company.category}-${company.name}`}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${categoryColors[company.category]}`}
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          handleCategoryClick(company.category)
-                        }}
-                      >
-                        {company.name}
-                      </div>
-                    ))}
-                </div>
-
-                {/* Instructions - only show when filtering */}
-                {selectedCategory && (
-                  <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
-                    Click anywhere or on the same category again to clear filter
-                  </div>
-                )}
-              </div>
+          <div id="partners">
+            <div className="space-y-4 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">I've Worked with Amazing Companies</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Over two decades, I've collaborated with companies across diverse industries and sectors.
+              </p>
             </div>
+
+            <Card className="overflow-hidden">
+              <CardHeader>
+                <CardTitle>Company Partners</CardTitle>
+                <CardDescription>
+                  Filter by industry category or click on any company to see related organizations
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-6 md:p-8">
+                <div className="pills-container" onClick={handleBackgroundClick}>
+                  {/* Category Pills - Centered */}
+                  <div className="mb-6 text-center">
+                    <div className="inline-flex flex-wrap justify-center gap-3">
+                      {Object.keys(companyData).map((category) => (
+                        <div
+                          key={category}
+                          className={`px-4 py-2 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
+                            selectedCategory === category ? "ring-2 ring-offset-2 ring-gray-400 dark:ring-gray-600" : ""
+                          } ${categoryColors[category]}`}
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleCategoryClick(category)
+                          }}
+                        >
+                          {category}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="border-t border-gray-200 dark:border-gray-800 my-6"></div>
+
+                  {/* Company Pills - Centered and Randomized */}
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {allCompanies
+                      .filter((company) => !selectedCategory || company.category === selectedCategory)
+                      .map((company) => (
+                        <div
+                          key={`${company.category}-${company.name}`}
+                          className={`px-3 py-1.5 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${categoryColors[company.category]}`}
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleCategoryClick(company.category)
+                          }}
+                        >
+                          {company.name}
+                        </div>
+                      ))}
+                  </div>
+
+                  {/* Instructions - only show when filtering */}
+                  {selectedCategory && (
+                    <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+                      Click anywhere or on the same category again to clear filter
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Operating Principles */}
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Operating Principles</h2>
+            <div className="space-y-4 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Operating Principles</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Core philosophies that guide my approach to building successful companies.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold">Revenue Acceleration</h3>
-                    <p className="text-gray-700 dark:text-gray-300">
-                      Nail ICP, craft an offer that hits "must-have," cut time-to-value.
-                    </p>
-                  </div>
+              <Card className="flex flex-col h-full">
+                <CardHeader>
+                  <CardTitle>Revenue Acceleration</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Nail ICP, craft an offer that hits "must-have," cut time-to-value.
+                  </p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold">Focused Innovation</h3>
-                    <p className="text-gray-700 dark:text-gray-300">
-                      Every feature pays rent in revenue or differentiation.
-                    </p>
-                  </div>
+              <Card className="flex flex-col h-full">
+                <CardHeader>
+                  <CardTitle>Focused Innovation</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Every feature pays rent in revenue or differentiation.
+                  </p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold">Capital Efficiency</h3>
-                    <p className="text-gray-700 dark:text-gray-300">Cash chases the highest-leverage move—always.</p>
-                  </div>
+              <Card className="flex flex-col h-full">
+                <CardHeader>
+                  <CardTitle>Capital Efficiency</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 dark:text-gray-300">Cash chases the highest-leverage move—always.</p>
                 </CardContent>
               </Card>
             </div>
@@ -630,12 +726,19 @@ We decreased operating costs 70% through extreme focus on only essential priorit
 
           {/* Off the Clock */}
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Off the Clock</h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-              Nashville-based. Father-to-be. Sort-of runner and biker. AI tinkerer. Likely sketching ideas on napkins or
-              quoting Clayton Christensen. Mentor at the Nashville Entrepreneur Center; guest-lecturer on pricing,
-              product strategy, and recession-proof growth.
-            </p>
+            <Card className="flex flex-col h-full">
+              <CardHeader>
+                <CardTitle>Off the Clock</CardTitle>
+                <CardDescription>Life beyond the office</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg text-gray-700 dark:text-gray-300">
+                  Nashville-based. Father-to-be. Sort-of runner and biker. AI tinkerer. Likely sketching ideas on
+                  napkins or quoting Clayton Christensen. Mentor at the Nashville Entrepreneur Center; guest-lecturer on
+                  pricing, product strategy, and recession-proof growth.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
