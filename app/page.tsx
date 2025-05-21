@@ -15,27 +15,13 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       <Navbar />
       <HeroSection />
-      <div className="about-impact-wrapper">
-        <AboutSection />
-        <div className="mt-[-3rem]">
-          {" "}
-          {/* Reduce space between About and Impact */}
-          <ImpactSection />
-        </div>
-      </div>
-      <div className="mt-[-3rem]">
-        {" "}
-        {/* Reduce space between Impact and Approach */}
-        <ApproachSection />
-      </div>
+      <AboutSection />
+      <ImpactSection />
+      <ApproachSection />
       <CompaniesSection />
       <StorySection />
       <SuperpowerSection />
-      <div className="mt-[-3rem]">
-        {" "}
-        {/* Reduce space between Superpower and Writing */}
-        <WritingSection />
-      </div>
+      <WritingSection />
       <OffTheClockSection />
       <Footer />
     </main>

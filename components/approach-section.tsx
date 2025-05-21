@@ -11,13 +11,13 @@ export default function ApproachSection() {
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Approach</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              I do this by uniting company <strong>mission</strong>, product <strong>vision</strong>, and go‑to‑market{" "}
-              <strong>execution</strong>. This alignment connects every function—from marketing and sales development
-              through engineering and support—driving focused, predictable results.
+              I've achieved strong results through uniting company <strong>mission</strong>, product <strong>vision</strong>, and go‑to‑market{" "}
+              <strong>execution</strong> in a codified way of operating. Every function, from marketing to engineering,
+              is tightly integrated to drive focused, predictable results.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              I've seen firsthand how dedicated, passionate teams will rally behind audacious missions with shared
-              purpose fueling growth‑oriented companies to transform their outcome.
+              This environment creates dedicated, passionate teams who rally behind audacious missions. Their shared
+              purpose fuels growth and transforms outcomes.
             </p>
           </div>
 
@@ -31,12 +31,12 @@ export default function ApproachSection() {
               <CardContent>
                 <div className="space-y-3">
                   <p className="text-gray-700 dark:text-gray-300">
-                    50 to 350‑person product companies needing support integrating <strong>Product Strategy</strong> and{" "}
+                    30 to 300‑person product companies needing support integrating <strong>Product Strategy</strong> and{" "}
                     <strong>Revenue Engines</strong>.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300">
-                    The role I'm best in carry different titles, but rhyme with <strong>CPRO</strong> (Product & Revenue
-                    Officer) or <strong>COO</strong>.
+                    The roles I'm best in carry different titles, but rhyme with <strong>CPRO</strong> (Product & Revenue
+                    Officer) CRO, CPO or <strong>COO</strong>.
                   </p>
                 </div>
               </CardContent>

@@ -137,7 +137,7 @@ export default function ImpactSection() {
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Impact</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              In collaboration with incredible teams, I've delivered meaningful business impact.
+              I help $5-50M ARR Product teams 2-4× revenue in &lt;12 mo by aligning product vision and go-to-market.
             </p>
           </div>
 
