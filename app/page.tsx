@@ -5,9 +5,8 @@ import StorySection from "@/components/story-section"
 import SuperpowerSection from "@/components/superpower-section"
 import ProjectsSection from "@/components/projects-section"
 import WritingSection from "@/components/writing-section"
-import ContactSection from "@/components/contact-section"
-import Footer from "@/components/footer"
 import OffTheClockSection from "@/components/off-the-clock-section"
+import Footer from "@/components/footer"
 
 export default function Home() {
   return (
@@ -20,7 +19,6 @@ export default function Home() {
       <ProjectsSection />
       <WritingSection />
       <OffTheClockSection />
-      <ContactSection />
       <Footer />
     </main>
   )
