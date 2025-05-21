@@ -2,8 +2,7 @@
 
 import type React from "react"
 import { useState, useEffect, useMemo } from "react"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { TrendingUp, BarChart2, Clock } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function AboutSection() {
   // Calculate current year for age calculations
@@ -151,7 +150,7 @@ export default function AboutSection() {
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">About Me</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-              I help venture-backed and profitability-focused teams achieve their <strong>company mission</strong>{" "}
+              I love helping venture-backed and profitability-focused teams achieve their <strong>company mission</strong>{" "}
               through tight integration of <strong>customer obsession</strong>, <strong>commercial strategy</strong>,{" "}
               <strong>innovative technology</strong> and <strong>intuitive design</strong>.
             </p>
@@ -242,17 +241,29 @@ export default function AboutSection() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                     Revenue Acceleration
                   </span>
-                  <span className="inline-block px-3 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-800 dark:text-violet-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
-                    AI‑Native Innovation
+                  <span className="inline-block px-3 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-800 dark:text-violet-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                    Innovative Disruption - AI
                   </span>
-                  <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                     Capital‑Efficient Scaling
                   </span>
-                  <span className="inline-block px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-block px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
                     ICP Value Creation
+                  </span>
+                  <span className="inline-block px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                    Strategic Narrative
+                  </span>
+                  <span className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                    Customer Obsession
+                  </span>
+                  <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                    High Velocity Delivery
+                  </span>
+                  <span className="inline-block px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                    Lean Operations
                   </span>
                 </div>
               </CardContent>
@@ -261,82 +272,6 @@ export default function AboutSection() {
 
           {/* Minimal spacing between cards */}
           <div className="h-2"></div>
-
-          {/* Key Results Card */}
-          <Card className="overflow-hidden bg-white dark:bg-black">
-            <CardHeader>
-              <CardTitle>Key Results</CardTitle>
-              <CardDescription>Real results delivered for clients and companies</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
-                  <div className="flex items-start">
-                    <TrendingUp className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
-                    <div>
-                      <h4 className="font-bold text-lg mb-2">Revenue Growth</h4>
-                      <ul className="space-y-1">
-                        <li className="flex items-baseline">
-                          <span className="font-semibold mr-2">Expansion revenue:</span>
-                          <span className="text-gray-700 dark:text-gray-300">+1,270%</span>
-                        </li>
-                        <li className="flex items-baseline">
-                          <span className="font-semibold mr-2">Median Contract Value:</span>
-                          <span className="text-gray-700 dark:text-gray-300">+427×</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
-                  <div className="flex items-start">
-                    <BarChart2 className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
-                    <div>
-                      <h4 className="font-bold text-lg mb-2">Customer Retention & Value</h4>
-                      <ul className="space-y-1">
-                        <li className="flex items-baseline">
-                          <span className="font-semibold mr-2">Logo LTV:</span>
-                          <span className="text-gray-700 dark:text-gray-300">+255%</span>
-                        </li>
-                        <li className="flex items-baseline">
-                          <span className="font-semibold mr-2">Gross Logo Retention:</span>
-                          <span className="text-gray-700 dark:text-gray-300">+41%</span>
-                        </li>
-                        <li className="flex items-baseline">
-                          <span className="font-semibold mr-2">Net Dollar Retention:</span>
-                          <span className="text-gray-700 dark:text-gray-300">+30%</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 dark:bg-gray-800 p-5 rounded-lg border-l-4 border-gray-400 dark:border-gray-600">
-                  <div className="flex items-start">
-                    <Clock className="h-6 w-6 mr-3 mt-1 text-gray-700 dark:text-gray-300" />
-                    <div>
-                      <h4 className="font-bold text-lg mb-2">Operational Efficiency</h4>
-                      <ul className="space-y-1">
-                        <li className="flex items-baseline">
-                          <span className="font-semibold mr-2">Sales Cycle:</span>
-                          <span className="text-gray-700 dark:text-gray-300">6–8 mo → 15 days</span>
-                        </li>
-                        <li className="flex items-baseline">
-                          <span className="font-semibold mr-2">Delivery Velocity:</span>
-                          <span className="text-gray-700 dark:text-gray-300">3×</span>
-                        </li>
-                        <li className="flex items-baseline">
-                          <span className="font-semibold mr-2">Support Response Time:</span>
-                          <span className="text-gray-700 dark:text-gray-300">23× faster</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
 
           {/* Partners Section - Cloud of Pills with Filtering */}
           <div id="partners">
@@ -356,7 +291,7 @@ export default function AboutSection() {
                       {Object.keys(companyData).map((category) => (
                         <div
                           key={category}
-                          className={`px-4 py-2 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
+                          className={`px-4 py-2 rounded-full text-xs font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
                             selectedCategory === category ? "ring-2 ring-offset-2 ring-gray-400 dark:ring-gray-600" : ""
                           } ${categoryColors[category]}`}
                           onClick={(e) => {
@@ -380,7 +315,7 @@ export default function AboutSection() {
                       .map((company) => (
                         <div
                           key={`${company.category}-${company.name}`}
-                          className={`px-3 py-1.5 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${categoryColors[company.category]}`}
+                          className={`px-3 py-1.5 rounded-full text-xs font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${categoryColors[company.category]}`}
                           onClick={(e) => {
                             e.stopPropagation()
                             handleCategoryClick(company.category)

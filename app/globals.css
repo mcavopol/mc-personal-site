@@ -122,6 +122,11 @@ a {
   @apply transition-opacity;
 }
 
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Optimize animations */
 @media (prefers-reduced-motion: reduce) {
   *,
