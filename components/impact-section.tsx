@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState, useCallback } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowUp, ArrowDown, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react"
@@ -10,13 +10,13 @@ export default function ImpactSection() {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -350, behavior: "smooth" })
+      carouselRef.current.scrollBy({ left: -348, behavior: "smooth" })
     }
   }
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 350, behavior: "smooth" })
+      carouselRef.current.scrollBy({ left: 348, behavior: "smooth" })
     }
   }
 
@@ -61,73 +61,76 @@ export default function ImpactSection() {
     },
   ]
 
+  const [isInView, setIsInView] = useState(false)
+  const [isDragging, setIsDragging] = useState(false)
+  const observerRef = useRef<IntersectionObserver | null>(null)
+  const autoScrollTimerRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Function to handle automatic scrolling
+  const autoScroll = useCallback(() => {
+    if (carouselRef.current && !isDragging) {
+      const carousel = carouselRef.current
+      const cardWidth = 348 + 24 // card width + margin
+
+      // If we're near the end, quickly jump back to the start without animation
+      if (carousel.scrollLeft > (projects.length - 3) * cardWidth) {
+        carousel.scrollTo({ left: 0, behavior: "auto" })
+      } else {
+        // Otherwise, smoothly scroll to the next item
+        carousel.scrollBy({ left: cardWidth, behavior: "smooth" })
+      }
+    }
+  }, [projects.length, isDragging])
+
+  // Set up intersection observer and auto-scrolling
   useEffect(() => {
     const carousel = carouselRef.current
     if (!carousel) return
 
-    let scrollingForward = true
-    let scrollInterval: NodeJS.Timeout
-    let pauseTimeout: NodeJS.Timeout
-    let isScrolling = false
+    // Create intersection observer to detect when carousel is in view
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries
+        setIsInView(entry.isIntersecting)
+      },
+      { threshold: 0.1 }, // Trigger when at least 10% of the carousel is visible
+    )
 
-    // Function to handle auto-scrolling
-    const startAutoScroll = () => {
-      if (isScrolling) return
+    observerRef.current.observe(carousel)
 
-      scrollInterval = setInterval(() => {
-        if (!carousel) return
-
-        const maxScroll = carousel.scrollWidth - carousel.clientWidth
-        const currentScroll = carousel.scrollLeft
-
-        // Change direction when reaching the ends
-        if (currentScroll >= maxScroll - 10) {
-          scrollingForward = false
-        } else if (currentScroll <= 10) {
-          scrollingForward = true
-        }
-
-        // Scroll slowly in the current direction
-        carousel.scrollBy({
-          left: scrollingForward ? 1 : -1,
-          behavior: "auto",
-        })
-      }, 30) // Slow scroll speed
-    }
-
-    // Function to pause scrolling
-    const pauseScrolling = () => {
-      isScrolling = true
-      clearInterval(scrollInterval)
-
-      // Resume after user stops interacting
-      clearTimeout(pauseTimeout)
-      pauseTimeout = setTimeout(() => {
-        isScrolling = false
-        startAutoScroll()
-      }, 5000) // Resume after 5 seconds of inactivity
-    }
-
-    // Start auto-scrolling
-    startAutoScroll()
-
-    // Pause on hover or user interaction
-    carousel.addEventListener("mouseenter", pauseScrolling)
-    carousel.addEventListener("touchstart", pauseScrolling)
-    carousel.addEventListener("wheel", pauseScrolling)
-
-    // Clean up event listeners
+    // Clean up
     return () => {
-      clearInterval(scrollInterval)
-      clearTimeout(pauseTimeout)
-      carousel.removeEventListener("mouseenter", pauseScrolling)
-      carousel.removeEventListener("touchstart", pauseScrolling)
-      carousel.removeEventListener("wheel", pauseScrolling)
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+      if (autoScrollTimerRef.current) {
+        clearInterval(autoScrollTimerRef.current)
+      }
     }
   }, [])
 
+  // Handle auto-scrolling when in view
+  useEffect(() => {
+    if (isInView && !isDragging) {
+      // Start auto-scrolling every 4 seconds
+      autoScrollTimerRef.current = setInterval(autoScroll, 4000)
+    } else {
+      // Clear the timer when not in view or when user is interacting
+      if (autoScrollTimerRef.current) {
+        clearInterval(autoScrollTimerRef.current)
+        autoScrollTimerRef.current = null
+      }
+    }
+
+    return () => {
+      if (autoScrollTimerRef.current) {
+        clearInterval(autoScrollTimerRef.current)
+      }
+    }
+  }, [isInView, isDragging, autoScroll])
+
   return (
-    <section id="impact" className="section-padding bg-white dark:bg-black pt-0">
+    <section id="impact" className="section-padding bg-white dark:bg-black pt-0 pb-12">
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-12">
           {/* Section Header */}
@@ -138,62 +141,52 @@ export default function ImpactSection() {
             </p>
           </div>
 
-          {/* Impact Card - Clean Design with Dividers */}
-          <Card className="overflow-hidden">
-            <CardContent className="p-6 md:p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-gray-200 dark:divide-gray-800">
-                {/* First Column */}
-                <div className="grid grid-rows-2 gap-y-4">
-                  {/* Metric 1 */}
-                  <div className="p-8 text-center flex flex-col justify-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <ArrowUp className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
-                      <h3 className="text-3xl font-bold">12.7× ARR Growth</h3>
-                    </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 font-medium max-w-[80%] mx-auto">
-                      Contract Value +427×
-                    </p>
+          {/* Impact Metrics - Directly on background */}
+          <div className="py-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* First Column */}
+              <div className="grid grid-rows-2 gap-y-8">
+                {/* Metric 1 */}
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2">
+                    <ArrowUp className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
+                    <h3 className="text-3xl font-bold">12.7× ARR Growth</h3>
                   </div>
-
-                  {/* Metric 3 */}
-                  <div className="p-8 text-center flex flex-col justify-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <ArrowDown className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
-                      <h3 className="text-3xl font-bold">3× Burn Reduction</h3>
-                    </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 font-medium max-w-[80%] mx-auto">
-                      ↓70% OpEx & ↑38% NDR
-                    </p>
-                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Contract Value +427×</p>
                 </div>
 
-                {/* Second Column */}
-                <div className="grid grid-rows-2 gap-y-4">
-                  {/* Metric 2 */}
-                  <div className="p-8 text-center flex flex-col justify-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <ArrowUp className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
-                      <h3 className="text-3xl font-bold">3× R&D Impact</h3>
-                    </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 font-medium max-w-[80%] mx-auto">
-                      Ship Speed ↑14× & Bugs ↓70%
-                    </p>
+                {/* Metric 3 */}
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2">
+                    <ArrowDown className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
+                    <h3 className="text-3xl font-bold">3× Burn Reduction</h3>
                   </div>
-
-                  {/* Metric 4 */}
-                  <div className="p-8 text-center flex flex-col justify-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <span className="text-2xl font-bold mr-2 text-gray-800 dark:text-gray-200">+</span>
-                      <h3 className="text-3xl font-bold">150% Net Revenue</h3>
-                    </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 font-medium max-w-[80%] mx-auto">
-                      LTV 12.6× & NPS 135pts
-                    </p>
-                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">↓70% OpEx & ↑38% NDR</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+
+              {/* Second Column */}
+              <div className="grid grid-rows-2 gap-y-8">
+                {/* Metric 2 */}
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2">
+                    <ArrowUp className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
+                    <h3 className="text-3xl font-bold">3× R&D Impact</h3>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Ship Speed ↑14× & Bugs ↓70%</p>
+                </div>
+
+                {/* Metric 4 */}
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2">
+                    <span className="text-2xl font-bold mr-2 text-gray-800 dark:text-gray-200">+</span>
+                    <h3 className="text-3xl font-bold">150% Net Revenue</h3>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">LTV 12.6× & NPS 135pts</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Project Carousel */}
           <div className="relative group">
@@ -223,13 +216,42 @@ export default function ImpactSection() {
               ref={carouselRef}
               className="flex overflow-x-auto space-x-6 pb-6 px-2 scrollbar-hide snap-x snap-mandatory"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              onMouseLeave={() => {
-                // This empty handler is needed to work with the useEffect hook
-                // The actual logic is in the useEffect
-              }}
+              onMouseDown={() => setIsDragging(true)}
+              onMouseUp={() => setIsDragging(false)}
+              onMouseLeave={() => setIsDragging(false)}
+              onTouchStart={() => setIsDragging(true)}
+              onTouchEnd={() => setIsDragging(false)}
             >
+              {/* Render all projects, then repeat the first few to create the infinite effect */}
               {projects.map((project, index) => (
-                <Card key={index} className="flex-none w-[350px] snap-start">
+                <Card key={`original-${index}`} className="flex-none w-[348px] snap-start">
+                  <CardHeader>
+                    <CardTitle className="text-xl">{project.title}</CardTitle>
+                    <CardDescription className="text-sm mt-2">{project.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {project.outcomes.map((outcome, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="text-gray-400 mr-2">•</span>
+                          <span>{outcome}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter>
+                    <Button variant="ghost" size="sm" className="text-gray-600 dark:text-gray-400" asChild>
+                      <a href={project.link} className="flex items-center">
+                        Learn more <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              ))}
+
+              {/* Clone the first 3 projects to create the infinite loop effect */}
+              {projects.slice(0, 3).map((project, index) => (
+                <Card key={`clone-${index}`} className="flex-none w-[348px] snap-start">
                   <CardHeader>
                     <CardTitle className="text-xl">{project.title}</CardTitle>
                     <CardDescription className="text-sm mt-2">{project.description}</CardDescription>

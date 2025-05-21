@@ -3,7 +3,7 @@ import { Code, Building, TrendingUp, Repeat, Users, Bot } from "lucide-react"
 
 export default function SuperpowerSection() {
   return (
-    <section id="superpower" className="section-padding bg-white dark:bg-black">
+    <section id="superpower" className="section-padding bg-white dark:bg-black pb-12">
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-12">
           <div className="space-y-4">

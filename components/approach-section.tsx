@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function ApproachSection() {
   return (
-    <section id="approach" className="section-padding bg-white dark:bg-black">
+    <section id="approach" className="section-padding bg-white dark:bg-black pt-12">
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-12">
           {/* Section Header */}

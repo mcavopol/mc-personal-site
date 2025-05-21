@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react"
 
 export default function WritingSection() {
   return (
-    <section id="writing" className="section-padding">
+    <section id="writing" className="section-padding pt-12">
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-12">
           <div className="space-y-4">
