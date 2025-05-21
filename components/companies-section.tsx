@@ -1,18 +1,10 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useMemo } from "react"
+import { useState, useMemo } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { ExternalLink } from "lucide-react"
 
-export default function AboutSection() {
-  // Calculate current year for age calculations
-  const [currentYear, setCurrentYear] = useState(2024)
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear())
-  }, [])
-
+export default function CompaniesSection() {
   // State for filtering companies
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
 
@@ -144,42 +136,66 @@ export default function AboutSection() {
   }
 
   return (
-    <section id="about" className="section-padding bg-white dark:bg-black">
+    <section id="companies" className="section-padding bg-gray-50 dark:bg-gray-950">
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-8">
-          {/* Section Header */}
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">I've Worked with Amazing Companies</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              I love helping venture-backed and profitability-focused teams achieve their{" "}
-              <strong>company mission</strong> through tight integration of <strong>customer obsession</strong>,{" "}
-              <strong>commercial strategy</strong>, <strong>innovative technology</strong> and{" "}
-              <strong>intuitive design</strong>.
+              Over two decades, I've collaborated with companies across diverse industries and sectors.
             </p>
           </div>
 
-          {/* Quote Card */}
           <Card className="overflow-hidden">
             <CardContent className="p-6 md:p-8">
-              <div className="flex">
-                <div className="w-1 bg-black dark:bg-white mr-6 flex-shrink-0"></div>
-                <div>
-                  <p className="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-200 leading-relaxed">
-                    "Michael turns messy product roadmaps and scattershot revenue efforts into compounding revenue
-                    machines."
-                  </p>
-                  <div className="mt-4 flex items-center text-gray-600 dark:text-gray-400">
-                    <span className="font-medium">— CEO, LeanKit</span>
-                    <a
-                      href="https://www.venturenashville.com/leankits-16mm-raise-shows-resolve-to-grow-local-techco-that-matters-cms-1131"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-2 inline-flex items-center hover:text-black dark:hover:text-white transition-colors"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
+              <div className="pills-container" onClick={handleBackgroundClick}>
+                {/* Category Pills - Centered */}
+                <div className="mb-6 text-center">
+                  <div className="inline-flex flex-wrap justify-center gap-3">
+                    {Object.keys(companyData).map((category) => (
+                      <div
+                        key={category}
+                        className={`px-4 py-2 rounded-full text-xs font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
+                          selectedCategory === category ? "ring-2 ring-offset-2 ring-gray-400 dark:ring-gray-600" : ""
+                        } ${categoryColors[category]}`}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleCategoryClick(category)
+                        }}
+                      >
+                        {category}
+                      </div>
+                    ))}
                   </div>
                 </div>
+
+                {/* Divider */}
+                <div className="border-t border-gray-200 dark:border-gray-800 my-6"></div>
+
+                {/* Company Pills - Centered and Randomized */}
+                <div className="flex flex-wrap justify-center gap-3">
+                  {allCompanies
+                    .filter((company) => !selectedCategory || company.category === selectedCategory)
+                    .map((company) => (
+                      <div
+                        key={`${company.category}-${company.name}`}
+                        className={`px-3 py-1.5 rounded-full text-xs font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${categoryColors[company.category]}`}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleCategoryClick(company.category)
+                        }}
+                      >
+                        {company.name}
+                      </div>
+                    ))}
+                </div>
+
+                {/* Instructions - only show when filtering */}
+                {selectedCategory && (
+                  <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+                    Click anywhere or on the same category again to clear filter
+                  </div>
+                )}
               </div>
             </CardContent>
           </Card>
