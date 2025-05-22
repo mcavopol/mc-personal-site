@@ -1,76 +1,30 @@
-# Logo Carousel Component
+# Personal Site
 
-A responsive, animated logo carousel component for Next.js applications.
+*Automatically synced with your [v0.dev](https://v0.dev) deployments*
 
-## Features
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/mcavopol-gmailcoms-projects/v0-personal-site)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/U8yUAyENia2)
 
-- Displays panorama images of logos organized by category
-- Automatically rotates through different categories
-- Expandable/collapsible view with smooth animations
-- Responsive design that adapts to different screen sizes
-- Automatic scrolling with pause/play controls
-- Smart detection of scrollable content
-- Center-justification for images narrower than the display
-- Left-justification for images wider than the display
+## Overview
 
-## Usage
+This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
+Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
 
-\`\`\`jsx
-import MultiRowPanoramaWall from "@/components/multi-row-panorama-wall"
+## Deployment
 
-// Define your panorama rows
-const panoramaRows = [
-  {
-    src: "/path/to/your/image.png",
-    alt: "Description of logos in this image",
-    category: "Category Name",
-  },
-  // Add more rows as needed
-]
+Your project is live at:
 
-// Use the component
-export default function YourPage() {
-  return (
-    <div>
-      <MultiRowPanoramaWall 
-        panoramaRows={panoramaRows} 
-        showCategories={true} 
-        title="Trusted by industry leaders" 
-      />
-    </div>
-  )
-}
-\`\`\`
+**[https://vercel.com/mcavopol-gmailcoms-projects/v0-personal-site](https://vercel.com/mcavopol-gmailcoms-projects/v0-personal-site)**
 
-## Props
+## Build your app
 
-### MultiRowPanoramaWall
+Continue building your app on:
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `panoramaRows` | `PanoramaRow[]` | Required | Array of panorama row objects |
-| `title` | `string` | "Trusted by industry leaders" | Title displayed above the carousel |
-| `showCategories` | `boolean` | `false` | Whether to show category labels |
-| `className` | `string` | `undefined` | Additional CSS classes |
+**[https://v0.dev/chat/projects/U8yUAyENia2](https://v0.dev/chat/projects/U8yUAyENia2)**
 
-### PanoramaRow
+## How It Works
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `src` | `string` | URL of the panorama image |
-| `alt` | `string` | Alt text for the image |
-| `category` | `string` | Optional category name |
-
-## Dependencies
-
-This component requires:
-
-- Next.js 13+ with App Router
-- Tailwind CSS
-- shadcn/ui Button component
-- lucide-react icons
-- clsx and tailwind-merge for className utilities
-
-## License
-
-MIT
+1. Create and modify your project using [v0.dev](https://v0.dev)
+2. Deploy your chats from the v0 interface
+3. Changes are automatically pushed to this repository
+4. Vercel deploys the latest version from this repository
