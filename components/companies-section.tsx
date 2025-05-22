@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState, useMemo } from "react"
-import { Card, CardContent } from "@/components/ui/card"
+import LogoBanners from "./logo-banners"
 
 export default function CompaniesSection() {
   // State for filtering companies
@@ -136,7 +136,7 @@ export default function CompaniesSection() {
   }
 
   return (
-    <section id="companies" className="section-padding bg-gray-50 dark:bg-gray-950">
+    <section id="companies" className="section-padding bg-white dark:bg-black">
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-8">
           <div className="space-y-4">
@@ -146,14 +146,8 @@ export default function CompaniesSection() {
             </p>
           </div>
 
-          <Card className="overflow-hidden">
-            <CardContent className="p-6 md:p-8">
-              <div className="min-h-[200px] flex items-center justify-center">
-                {/* Placeholder for future component */}
-                <p className="text-gray-500 dark:text-gray-400 text-center">Ready for new component integration</p>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Logo Banners Component */}
+          <LogoBanners />
         </div>
       </div>
     </section>

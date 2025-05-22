@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Michael Cavopol | Chief Revenue & Product Operator",
     description: "B2B-SaaS operator with two decades of experience welding product insight to revenue mechanics.",
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
