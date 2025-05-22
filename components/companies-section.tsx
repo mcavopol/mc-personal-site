@@ -140,7 +140,7 @@ export default function CompaniesSection() {
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-8">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">I've Worked with Amazing Companies</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Trusted by Industry Leaders</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300">
               Over two decades, I've collaborated with companies across diverse industries and sectors.
             </p>
@@ -148,54 +148,9 @@ export default function CompaniesSection() {
 
           <Card className="overflow-hidden">
             <CardContent className="p-6 md:p-8">
-              <div className="pills-container" onClick={handleBackgroundClick}>
-                {/* Category Pills - Centered */}
-                <div className="mb-6 text-center">
-                  <div className="inline-flex flex-wrap justify-center gap-3">
-                    {Object.keys(companyData).map((category) => (
-                      <div
-                        key={category}
-                        className={`px-4 py-2 rounded-full text-xs font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
-                          selectedCategory === category ? "ring-2 ring-offset-2 ring-gray-400 dark:ring-gray-600" : ""
-                        } ${categoryColors[category]}`}
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          handleCategoryClick(category)
-                        }}
-                      >
-                        {category}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Divider */}
-                <div className="border-t border-gray-200 dark:border-gray-800 my-6"></div>
-
-                {/* Company Pills - Centered and Randomized */}
-                <div className="flex flex-wrap justify-center gap-3">
-                  {allCompanies
-                    .filter((company) => !selectedCategory || company.category === selectedCategory)
-                    .map((company) => (
-                      <div
-                        key={`${company.category}-${company.name}`}
-                        className={`px-3 py-1.5 rounded-full text-xs font-medium border cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${categoryColors[company.category]}`}
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          handleCategoryClick(company.category)
-                        }}
-                      >
-                        {company.name}
-                      </div>
-                    ))}
-                </div>
-
-                {/* Instructions - only show when filtering */}
-                {selectedCategory && (
-                  <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
-                    Click anywhere or on the same category again to clear filter
-                  </div>
-                )}
+              <div className="min-h-[200px] flex items-center justify-center">
+                {/* Placeholder for future component */}
+                <p className="text-gray-500 dark:text-gray-400 text-center">Ready for new component integration</p>
               </div>
             </CardContent>
           </Card>
