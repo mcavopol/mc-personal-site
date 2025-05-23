@@ -91,6 +91,8 @@ body {
 
   html {
     overflow-x: hidden;
+    /* Add scroll padding to account for fixed header */
+    scroll-padding-top: 80px;
   }
 
   body {
@@ -103,6 +105,22 @@ body {
   .container-padding {
     max-width: 100%;
     box-sizing: border-box;
+  }
+
+  /* Add scroll margin to all sections for proper anchor positioning */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
+  /* Specific scroll margin for mobile where header might be different height */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 90px;
+    }
+
+    section[id] {
+      scroll-margin-top: 90px;
+    }
   }
 }
 
@@ -271,5 +289,30 @@ a {
   #hero .container-padding,
   #about .container-padding {
     @apply px-6;
+  }
+}
+
+/* Position adjustments for navigation buttons near footer */
+.section-nav-button,
+.scroll-to-top-button {
+  transition: bottom 0.3s ease;
+}
+
+/* Default position when not near footer */
+.section-nav-button,
+.scroll-to-top-button {
+  bottom: 32px; /* Default position */
+}
+
+/* Position when near footer */
+html.near-footer .section-nav-button,
+html.near-footer .scroll-to-top-button {
+  bottom: 80px; /* Reduced from 120px to move down 40px */
+}
+
+@media (max-width: 768px) {
+  html.near-footer .section-nav-button,
+  html.near-footer .scroll-to-top-button {
+    bottom: 100px; /* Reduced from 140px to move down 40px on mobile */
   }
 }

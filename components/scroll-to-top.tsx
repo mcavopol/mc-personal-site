@@ -14,9 +14,25 @@ export default function ScrollToTop() {
       } else {
         setIsVisible(false)
       }
+
+      // Check if we're near the footer to adjust position
+      const footer = document.querySelector("footer")
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top
+        const windowHeight = window.innerHeight
+
+        // Add a class when near footer
+        if (footerTop - windowHeight < 100) {
+          document.documentElement.classList.add("near-footer")
+        } else {
+          document.documentElement.classList.remove("near-footer")
+        }
+      }
     }
 
     window.addEventListener("scroll", toggleVisibility)
+    toggleVisibility() // Check initial position
+
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
 
@@ -35,7 +51,7 @@ export default function ScrollToTop() {
     <Button
       onClick={scrollToTop}
       size="icon"
-      className="fixed bottom-8 right-8 z-50 rounded-full shadow-lg bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-all duration-300"
+      className="fixed right-8 z-50 rounded-full shadow-lg bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-all duration-300 scroll-to-top-button"
       aria-label="Scroll to top"
     >
       <ArrowUp className="h-5 w-5" />

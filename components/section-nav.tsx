@@ -19,8 +19,28 @@ const sections = [
 export default function SectionNav() {
   const [activeSection, setActiveSection] = useState("hero")
   const [isOpen, setIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    const handleScroll = () => {
+      // Only show navigation after scrolling down 300px (same as scroll-to-top)
+      setIsVisible(window.pageYOffset > 300)
+
+      // Check if we're near the footer to adjust position
+      const footer = document.querySelector("footer")
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top
+        const windowHeight = window.innerHeight
+
+        // Add a class when near footer
+        if (footerTop - windowHeight < 100) {
+          document.documentElement.classList.add("near-footer")
+        } else {
+          document.documentElement.classList.remove("near-footer")
+        }
+      }
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -42,7 +62,13 @@ export default function SectionNav() {
       }
     })
 
-    return () => observer.disconnect()
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // Check initial position
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
 
   const scrollToSection = (sectionId: string) => {
@@ -55,8 +81,12 @@ export default function SectionNav() {
 
   const activeLabel = sections.find((s) => s.id === activeSection)?.label || "Navigate"
 
+  if (!isVisible) {
+    return null
+  }
+
   return (
-    <div className="fixed bottom-8 left-8 z-50 md:hidden">
+    <div className="fixed left-8 z-50 md:hidden section-nav-button">
       <div className="relative">
         <Button
           onClick={() => setIsOpen(!isOpen)}
