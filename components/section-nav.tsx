@@ -86,7 +86,7 @@ export default function SectionNav() {
   }
 
   return (
-    <div className="fixed left-8 z-50 md:hidden section-nav-button">
+    <div className="fixed bottom-8 left-8 z-50 md:hidden section-nav-button">
       <div className="relative">
         <Button
           onClick={() => setIsOpen(!isOpen)}

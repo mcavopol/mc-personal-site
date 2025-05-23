@@ -321,7 +321,7 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
     // Only start animations when the component is visible in the viewport
     if (!isVisible || prefersReducedMotion || maxScroll <= 0 || isAnimating || isCentered) return
 
-    const startDelay = 1000 + index * 500
+    const startDelay = 2000 + index * 500
 
     const startTimer = setTimeout(() => {
       setIsAnimating(true)
@@ -330,7 +330,7 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
       const newPosition = direction > 0 ? maxScroll : 0
 
       // Fixed duration for more predictable performance
-      const duration = 1200
+      const duration = 2400
 
       // Simple animation
       const startTime = performance.now()
