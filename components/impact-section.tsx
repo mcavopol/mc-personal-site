@@ -161,7 +161,7 @@ export default function ImpactSection() {
                     <ArrowDown className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
                     <h3 className="text-3xl font-bold">3× Burn Reduction</h3>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">↓70% OpEx  //  ↑38% NDR</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">↓70% OpEx // ↑38% NDR</p>
                 </div>
               </div>
 
@@ -173,7 +173,9 @@ export default function ImpactSection() {
                     <ArrowUp className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
                     <h3 className="text-3xl font-bold">3× R&D Impact</h3>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Delivery Speed ↑14×  //  Bugs ↓70%</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                    Delivery Speed ↑14× // Bugs ↓70%
+                  </p>
                 </div>
 
                 {/* Metric 4 */}
@@ -182,7 +184,7 @@ export default function ImpactSection() {
                     <span className="text-2xl font-bold mr-2 text-gray-800 dark:text-gray-200">+</span>
                     <h3 className="text-3xl font-bold">150% Net Revenue</h3>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">LTV 12.6×  //  NPS 135pts</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">LTV 12.6× // NPS 135pts</p>
                 </div>
               </div>
             </div>

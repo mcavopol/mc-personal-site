@@ -24,7 +24,7 @@ export default function WritingSection() {
                 <div className="flex-shrink-0 w-full md:w-2/5 lg:w-1/2 mx-auto md:mx-0">
                   <img
                     src="/images/substack-content.png"
-                    alt="Hedgehog Growth Newsletter Articles"
+                    alt="Screenshot of Hedgehog Growth newsletter articles showing topics on revenue engineering and product strategy"
                     className="w-full h-auto rounded-md shadow-sm"
                     loading="lazy"
                     width="600"

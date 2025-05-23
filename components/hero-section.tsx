@@ -36,7 +36,7 @@ export default function HeroSection() {
               <div className="relative aspect-square max-w-md mx-auto">
                 <img
                   src="/michael-headshot.jpg"
-                  alt="Michael Cavopol"
+                  alt="Michael Cavopol - Professional headshot of a man with dark hair and a blue shirt"
                   className="rounded-lg object-cover shadow-lg"
                   width="400"
                   height="400"

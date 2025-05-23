@@ -15,7 +15,8 @@ const baseUrl = "https://michael.cavopol.me" // Replace with your actual domain
 
 export const metadata: Metadata = {
   title: "Michael Cavopol | Chief Revenue & Product Operator",
-  description: "B2B-SaaS operator with two decades of experience welding product insight to revenue mechanics.",
+  description:
+    "Product & Revenue leader with 20+ years experience integrating product vision, go-to-market execution, and data-driven operations to build capital-efficient product companies.",
   metadataBase: new URL(baseUrl),
   alternates: {
     canonical: "/",
@@ -29,13 +30,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     title: "Michael Cavopol | Chief Revenue & Product Operator",
-    description: "B2B-SaaS operator with two decades of experience welding product insight to revenue mechanics.",
+    description:
+      "Product & Revenue leader with 20+ years experience integrating product vision, go-to-market execution, and data-driven operations to build capital-efficient product companies.",
     siteName: "Michael Cavopol",
   },
   twitter: {
     card: "summary_large_image",
     title: "Michael Cavopol | Chief Revenue & Product Operator",
-    description: "B2B-SaaS operator with two decades of experience welding product insight to revenue mechanics.",
+    description:
+      "Product & Revenue leader with 20+ years experience integrating product vision, go-to-market execution, and data-driven operations to build capital-efficient product companies.",
   },
   generator: "v0.dev",
 }
@@ -131,7 +134,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>

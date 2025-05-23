@@ -426,10 +426,10 @@ function TimelineCard({
             {/* Achievements */}
             {achievements.length > 0 && (
               <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
-                <h4 className="text-sm font-semibold mb-2 flex items-center">
+                <h3 className="text-sm font-semibold mb-2 flex items-center">
                   <ChevronRight className="h-4 w-4 mr-1" />
                   Key Outcomes
-                </h4>
+                </h3>
                 <ul className="space-y-1">
                   {achievements.map((achievement, index) => (
                     <li key={index} className="text-gray-600 dark:text-gray-400 text-sm flex items-start">
