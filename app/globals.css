@@ -143,3 +143,67 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+/* Animation preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-banner {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Smooth transitions for logo banners */
+.logo-banner-transition {
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Slot machine animation */
+@keyframes slotMachine {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  21% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slot-machine {
+  animation: slotMachine 0.5s ease-in-out;
+}
+
+/* Banner container and animation wrapper */
+.banner-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-animation-wrapper {
+  position: relative;
+  width: 100%;
+}

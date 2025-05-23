@@ -142,7 +142,7 @@ export default function CompaniesSection() {
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Trusted by Industry Leaders</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              Over two decades, I've collaborated with companies across diverse industries and sectors.
+              Over two decades, I've collaborated with great companies across diverse industries and sectors.
             </p>
           </div>
 
