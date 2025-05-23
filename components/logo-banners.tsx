@@ -375,7 +375,7 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
   ])
 
   return (
-    <div className="w-full animate-fade-in overflow-x-hidden">
+    <div className="w-full animate-fade-in">
       {/* Category label - smaller on mobile */}
       <h3
         className="text-xs md:text-sm font-medium text-left text-gray-600 dark:text-gray-300"
@@ -387,14 +387,13 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
       {/* Scroll container - always full width */}
       <div
         ref={containerRef}
-        className="w-full overflow-x-hidden bg-transparent max-w-full"
+        className="w-full overflow-x-hidden bg-transparent"
         style={{
           WebkitOverflowScrolling: "touch",
           maskImage:
             "linear-gradient(to right, transparent 0px, black 16px, black calc(100% - 16px), transparent 100%)",
           WebkitMaskImage:
             "linear-gradient(to right, transparent 0px, black 16px, black calc(100% - 16px), transparent 100%)",
-          maxWidth: "100%", // Add this line
         }}
       >
         {/* Content container - handles animation or centering */}

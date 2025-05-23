@@ -153,8 +153,14 @@ export default function AboutSection() {
             <p className="text-lg text-gray-700 dark:text-gray-300">
               I love helping venture-backed and profitability-focused teams achieve their{" "}
               <strong>company mission</strong> through tight integration of <strong>customer obsession</strong>,{" "}
-              <strong>commercial strategy</strong>, <strong>innovative technology</strong> and{" "}
-              <strong>intuitive design</strong>.
+              <a
+                href="#impact"
+                className="underline font-medium hover:text-black dark:hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white rounded-sm"
+                aria-label="Learn more about my commercial strategy impact"
+              >
+                <strong>commercial strategy</strong>
+              </a>
+              , <strong>innovative technology</strong> and <strong>intuitive design</strong>.
             </p>
           </div>
 
