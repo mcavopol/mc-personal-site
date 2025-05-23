@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Linkedin, Mail, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -15,10 +15,9 @@ export default function OffTheClockSection() {
             <Card className="flex flex-col h-full">
               <CardHeader>
                 <CardTitle className="text-2xl">Life Beyond the Office</CardTitle>
-                <CardDescription>Personal interests and activities</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-lg text-gray-700 dark:text-gray-300">
+              <CardContent>
+                <p className="text-gray-700 dark:text-gray-300 mb-5">
                   Nashville-based. Father-to-be. Sort-of runner and biker. Tech tinkerer. Likely sketching ideas in
                   overpriced coffee shops. Costco evangelist. Warner Parks resident. Mentor at the Nashville
                   Entrepreneur Center; guest-lecturer on pricing, product strategy, and recession-proof growth. Always
@@ -28,9 +27,8 @@ export default function OffTheClockSection() {
             </Card>
 
             <Card className="flex flex-col h-full">
-              <CardHeader className="pb-2">
+              <CardHeader>
                 <CardTitle className="text-2xl">Let's Connect</CardTitle>
-                <CardDescription>Find me online</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 dark:text-gray-300 mb-5">
