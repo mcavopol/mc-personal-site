@@ -11,9 +11,9 @@ export default function ApproachSection() {
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Approach</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              I've achieved strong results through uniting company <strong>mission</strong>, product <strong>vision</strong>, and go‑to‑market{" "}
-              <strong>execution</strong> in a codified way of operating. Every function, from marketing to engineering,
-              is tightly integrated to drive focused, predictable results.
+              I've achieved strong results through uniting company <strong>mission</strong>, product{" "}
+              <strong>vision</strong>, and go‑to‑market <strong>execution</strong> in a codified way of operating. Every
+              function, from marketing to engineering, is tightly integrated to drive focused, predictable results.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300">
               This environment creates dedicated, passionate teams who rally behind audacious missions. Their shared
@@ -35,8 +35,8 @@ export default function ApproachSection() {
                     <strong>Revenue Engines</strong>.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300">
-                    The roles I'm best in carry different titles, but rhyme with <strong>CPRO</strong> (Product & Revenue
-                    Officer) CRO, CPO or <strong>COO</strong>.
+                    The roles I'm best in carry different titles, but rhyme with <strong>CPRO</strong> (Product &
+                    Revenue Officer) CRO, CPO or <strong>COO</strong>.
                   </p>
                 </div>
               </CardContent>
@@ -75,28 +75,28 @@ export default function ApproachSection() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-flex items-center border border-gray-200 dark:border-gray-800 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
                     Revenue Acceleration
                   </span>
-                  <span className="inline-block px-3 py-1 bg-violet-100 dark:bg-violet-900/30 text-violet-800 dark:text-violet-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-flex items-center border border-gray-200 dark:border-gray-800 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
                     Innovative Disruption - AI
                   </span>
-                  <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-flex items-center border border-gray-200 dark:border-gray-800 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
                     Capital‑Efficient Scaling
                   </span>
-                  <span className="inline-block px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-flex items-center border border-gray-200 dark:border-gray-800 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
                     ICP Value Creation
                   </span>
-                  <span className="inline-block px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-flex items-center border border-gray-200 dark:border-gray-800 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
                     Strategic Narrative
                   </span>
-                  <span className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-flex items-center border border-gray-200 dark:border-gray-800 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
                     Customer Obsession
                   </span>
-                  <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-flex items-center border border-gray-200 dark:border-gray-800 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
                     High Velocity Delivery
                   </span>
-                  <span className="inline-block px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 rounded-full text-xs font-medium transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-flex items-center border border-gray-200 dark:border-gray-800 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
                     Lean Operations
                   </span>
                 </div>
