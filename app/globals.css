@@ -114,3 +114,162 @@ body {
     box-sizing: border-box;
   }
 }
+
+.section-padding {
+  @apply py-12 md:py-16;
+}
+
+.container-padding {
+  @apply px-6 sm:px-8 lg:px-8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure timeline cards don't get cut off */
+@media (max-width: 768px) {
+  .timeline-card {
+    width: calc(100% - 1rem);
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+/* Fix for timeline cards on mobile */
+@media (max-width: 768px) {
+  #career .container-padding {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #career .card-content {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+}
+
+/* Reduce layout shifts */
+img,
+button,
+a {
+  @apply transition-opacity;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Animation preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-banner {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Smooth transitions for logo banners */
+.logo-banner-transition {
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Slot machine animation */
+@keyframes slotMachine {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  21% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slot-machine {
+  animation: slotMachine 0.5s ease-in-out;
+}
+
+/* Banner container and animation wrapper */
+.banner-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-animation-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Enhanced mobile padding */
+@media (max-width: 640px) {
+  .container-padding {
+    @apply px-6;
+  }
+
+  /* Extra padding for hero section on mobile */
+  #hero .container-padding {
+    @apply px-8;
+  }
+
+  /* Extra padding for about section on mobile */
+  #about .container-padding {
+    @apply px-8;
+  }
+}
+
+/* Very small screens need even more padding */
+@media (max-width: 375px) {
+  .container-padding {
+    @apply px-5;
+  }
+
+  #hero .container-padding,
+  #about .container-padding {
+    @apply px-6;
+  }
+}

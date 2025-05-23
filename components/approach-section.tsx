@@ -11,8 +11,9 @@ export default function ApproachSection() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Approach</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300">
             I've achieved strong results through uniting company <strong>mission</strong>, product{" "}
-            <strong>vision</strong>, and go‑to‑market <strong>execution</strong> in a codified way of operating. Every
-            function, from marketing to engineering, is tightly integrated to drive focused, predictable results.
+            <strong>vision</strong>, and go‑to‑market <strong>execution</strong> in a codified{" "}
+            <strong>way of operating</strong>. Every function, from marketing to engineering, is tightly integrated to
+            drive focused, predictable results.
           </p>
           <p className="text-lg text-gray-700 dark:text-gray-300">
             This environment creates dedicated, passionate teams who rally behind audacious missions. Their shared
@@ -30,8 +31,10 @@ export default function ApproachSection() {
             <CardContent>
               <div className="space-y-3">
                 <p className="text-gray-700 dark:text-gray-300">
-                  30 to 300‑person product companies needing support integrating <strong>Product Strategy</strong> and{" "}
-                  <strong>Revenue Engines</strong>.
+                  30 to 300‑person product companies transforming early success into compounding revenue engines by tighly coordinating <strong>Product Strategy</strong>, {" "}
+                   <strong>Market Demand</strong> and{" "}
+                  <strong>Customer Growth</strong>
+                  .
                 </p>
                 <p className="text-gray-700 dark:text-gray-300">
                   The roles I'm best in carry different titles, but rhyme with <strong>CPRO</strong> (Product & Revenue
