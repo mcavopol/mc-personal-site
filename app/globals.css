@@ -207,3 +207,71 @@ a {
   position: relative;
   width: 100%;
 }
+
+/* Prevent horizontal overflow on mobile */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Ensure all containers respect viewport width */
+* {
+  box-sizing: border-box;
+}
+
+/* Fix for any elements that might cause overflow */
+.container-padding {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Specific fixes for mobile */
+@media (max-width: 768px) {
+  /* Ensure main content doesn't overflow */
+  main {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Fix for any wide elements */
+  section {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Ensure cards don't overflow */
+  .card {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Fix for timeline cards specifically */
+  .timeline-card {
+    max-width: calc(100vw - 2rem);
+    overflow-x: hidden;
+  }
+
+  /* Fix for logo banners */
+  .banner-container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Fix for impact metrics */
+  .grid {
+    overflow-x: hidden;
+  }
+
+  /* Ensure text doesn't cause overflow */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}

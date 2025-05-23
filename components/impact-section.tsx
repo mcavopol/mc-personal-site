@@ -130,7 +130,7 @@ export default function ImpactSection() {
   }, [isInView, isDragging, autoScroll])
 
   return (
-    <div className="container-padding mx-auto max-w-6xl">
+    <div className="container-padding mx-auto max-w-6xl overflow-x-hidden">
       <div className="space-y-12">
         {/* Section Header */}
         <div className="space-y-4">

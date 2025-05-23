@@ -6,7 +6,7 @@ import Image from "next/image"
 export default function HeroSection() {
   return (
     <section id="hero" className="min-h-screen flex items-center pt-16 container-padding mx-auto">
-      <div className="mx-auto max-w-6xl w-full">
+      <div className="mx-auto max-w-6xl w-full overflow-x-hidden">
         <Card className="bg-transparent border-none shadow-none">
           <CardContent className="p-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
