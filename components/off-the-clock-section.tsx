@@ -14,12 +14,15 @@ export default function OffTheClockSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Card className="flex flex-col h-full">
               <CardHeader>
-                <CardTitle>Life Beyond the Office</CardTitle>
+                <CardTitle className="text-2xl">Life Beyond the Office</CardTitle>
                 <CardDescription>Personal interests and activities</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-lg text-gray-700 dark:text-gray-300">
-                  Nashville-based. Father-to-be. Sort-of runner and biker. Tech tinkerer. Likely sketching ideas in overpriced coffee shops. Costco evangelist.  Warner Parks resident. Mentor at the Nashville Entrepreneur Center; guest-lecturer on pricing, product strategy, and recession-proof growth. Always game for a good problem, and a better cup of coffee.
+                  Nashville-based. Father-to-be. Sort-of runner and biker. Tech tinkerer. Likely sketching ideas in
+                  overpriced coffee shops. Costco evangelist. Warner Parks resident. Mentor at the Nashville
+                  Entrepreneur Center; guest-lecturer on pricing, product strategy, and recession-proof growth. Always
+                  game for a good problem, and a better cup of coffee.
                 </p>
               </CardContent>
             </Card>
