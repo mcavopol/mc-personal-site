@@ -21,7 +21,7 @@ export default function HeroSection() {
                   <strong>execution</strong>, and data‑driven <strong>operations</strong> to build capital‑efficient
                   product companies.
                 </p>
-                <div className="flex flex-wrap gap-4">
+                <div className="hidden md:flex flex-wrap gap-4">
                   <Button asChild size="lg">
                     <a href="https://cal.com/hedgehog-growth/30min">Let's Meet</a>
                   </Button>
@@ -41,6 +41,19 @@ export default function HeroSection() {
                   width="400"
                   height="400"
                 />
+              </div>
+              <div className="md:hidden flex justify-center mt-6 col-span-1">
+                <div className="flex flex-wrap gap-4 justify-center">
+                  <Button asChild size="lg">
+                    <a href="https://cal.com/hedgehog-growth/30min">Let's Meet</a>
+                  </Button>
+                  <Button variant="outline" size="lg" asChild>
+                    <a href="#about">
+                      Learn More
+                      <ArrowDown className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
           </CardContent>
