@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-16 container-padding mx-auto">
+    <section id="hero" className="min-h-screen flex items-center pt-16 container-padding mx-auto overflow-x-hidden">
       <div className="mx-auto max-w-6xl w-full">
         <Card className="bg-transparent border-none shadow-none">
           <CardContent className="p-0">

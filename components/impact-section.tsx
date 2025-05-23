@@ -130,21 +130,13 @@ export default function ImpactSection() {
   }, [isInView, isDragging, autoScroll])
 
   return (
-    <div className="container-padding mx-auto max-w-6xl">
+    <div className="container-padding mx-auto max-w-6xl overflow-x-hidden">
       <div className="space-y-12">
         {/* Section Header */}
         <div className="space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Impact</h2>
           <p className="text-lg text-gray-800 dark:text-gray-200">
-            I help $5-50M ARR Product teams 2-4× revenue in &lt;12 mo by aligning{" "}
-            <a
-              href="#approach"
-              className="underline font-medium hover:text-black dark:hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white rounded-sm"
-              aria-label="Learn more about my approach to product vision and go-to-market alignment"
-            >
-              product vision and go-to-market
-            </a>
-            .
+            I help $5-50M ARR Product teams 2-4× revenue in &lt;12 mo by aligning product vision and go-to-market .
           </p>
         </div>
 
@@ -207,7 +199,7 @@ export default function ImpactSection() {
         </div>
 
         {/* Project Carousel */}
-        <div className="relative group">
+        <div className="relative group overflow-hidden">
           <h3 className="text-xl font-semibold mb-6">Recent Project Highlights</h3>
 
           {/* Overlay navigation arrows that only appear on hover */}

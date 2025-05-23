@@ -74,7 +74,7 @@ export default function StorySection() {
   }, [])
 
   return (
-    <div ref={sectionRef} className="container-padding mx-auto max-w-6xl">
+    <div ref={sectionRef} className="container-padding mx-auto max-w-6xl overflow-x-hidden">
       <div className="space-y-12">
         {/* Career Timeline */}
         <div className="space-y-6">
@@ -98,6 +98,8 @@ export default function StorySection() {
             style={{
               maxHeight: isExpanded ? "5000px" : timelineHeight ? `${timelineHeight}px` : "600px",
               position: "relative",
+              maxWidth: "100%",
+              overflowX: "hidden",
             }}
             aria-expanded={isExpanded}
             role="region"
