@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
+import Image from "next/image"
 
 export default function WritingSection() {
   return (
@@ -22,13 +23,15 @@ export default function WritingSection() {
             <CardContent className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
                 <div className="flex-shrink-0 w-full md:w-2/5 lg:w-1/2 mx-auto md:mx-0">
-                  <img
+                  <Image
                     src="/images/substack-content.png"
                     alt="Screenshot of Hedgehog Growth newsletter articles showing topics on revenue engineering and product strategy"
                     className="w-full h-auto rounded-md shadow-sm"
+                    width={600}
+                    height={450}
                     loading="lazy"
-                    width="600"
-                    height="450"
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                   />
                 </div>
                 <div className="space-y-4 flex-1">

@@ -136,32 +136,45 @@ export default function ImpactSection() {
           {/* Section Header */}
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Impact</h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              I help $5-50M ARR Product teams 2-4× revenue in &lt;12 mo by aligning product vision and go-to-market.
+            <p className="text-lg text-gray-800 dark:text-gray-200">
+              I help $5-50M ARR Product teams 2-4× revenue in &lt;12 mo by aligning{" "}
+              <a
+                href="#approach"
+                className="underline font-medium hover:text-black dark:hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white rounded-sm"
+                aria-label="Learn more about my approach to product vision and go-to-market alignment"
+              >
+                product vision and go-to-market
+              </a>
+              .
             </p>
           </div>
 
-          {/* Impact Metrics - Directly on background */}
+          {/* Impact Metrics */}
           <div className="py-4">
+            <h3 className="sr-only">Key Performance Metrics</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* First Column */}
               <div className="grid grid-rows-2 gap-y-8">
                 {/* Metric 1 */}
                 <div className="text-center">
                   <div className="flex items-center justify-center mb-2">
-                    <ArrowUp className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
-                    <h3 className="text-3xl font-bold">12.7× ARR Growth</h3>
+                    <ArrowUp className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" aria-hidden="true" />
+                    <h4 className="text-3xl font-bold">12.7× ARR Growth</h4>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Contract Value +427×</p>
+                  <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 font-medium">
+                    Contract Value +427×
+                  </p>
                 </div>
 
                 {/* Metric 3 */}
                 <div className="text-center">
                   <div className="flex items-center justify-center mb-2">
-                    <ArrowDown className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
-                    <h3 className="text-3xl font-bold">3× Burn Reduction</h3>
+                    <ArrowDown className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" aria-hidden="true" />
+                    <h4 className="text-3xl font-bold">3× Burn Reduction</h4>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">↓70% OpEx // ↑38% NDR</p>
+                  <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 font-medium">
+                    ↓70% OpEx // ↑38% NDR
+                  </p>
                 </div>
               </div>
 
@@ -170,10 +183,10 @@ export default function ImpactSection() {
                 {/* Metric 2 */}
                 <div className="text-center">
                   <div className="flex items-center justify-center mb-2">
-                    <ArrowUp className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" />
-                    <h3 className="text-3xl font-bold">3× R&D Impact</h3>
+                    <ArrowUp className="h-7 w-7 mr-2 text-gray-800 dark:text-gray-200" aria-hidden="true" />
+                    <h4 className="text-3xl font-bold">3× R&D Impact</h4>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                  <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 font-medium">
                     Delivery Speed ↑14× // Bugs ↓70%
                   </p>
                 </div>
@@ -181,10 +194,14 @@ export default function ImpactSection() {
                 {/* Metric 4 */}
                 <div className="text-center">
                   <div className="flex items-center justify-center mb-2">
-                    <span className="text-2xl font-bold mr-2 text-gray-800 dark:text-gray-200">+</span>
-                    <h3 className="text-3xl font-bold">150% Net Revenue</h3>
+                    <span className="text-2xl font-bold mr-2 text-gray-800 dark:text-gray-200" aria-hidden="true">
+                      +
+                    </span>
+                    <h4 className="text-3xl font-bold">150% Net Revenue</h4>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">LTV 12.6× // NPS 135pts</p>
+                  <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 font-medium">
+                    LTV 12.6× // NPS 135pts
+                  </p>
                 </div>
               </div>
             </div>
@@ -192,13 +209,15 @@ export default function ImpactSection() {
 
           {/* Project Carousel */}
           <div className="relative group">
+            <h3 className="text-xl font-semibold mb-6">Recent Project Highlights</h3>
+
             {/* Overlay navigation arrows that only appear on hover */}
             <Button
               variant="ghost"
               size="icon"
               onClick={scrollLeft}
-              aria-label="Scroll left"
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-black/80 shadow-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              aria-label="Scroll projects left"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-black/80 shadow-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity focus:opacity-100"
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>
@@ -207,8 +226,8 @@ export default function ImpactSection() {
               variant="ghost"
               size="icon"
               onClick={scrollRight}
-              aria-label="Scroll right"
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-black/80 shadow-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              aria-label="Scroll projects right"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-black/80 shadow-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity focus:opacity-100"
             >
               <ChevronRight className="h-5 w-5" />
             </Button>
@@ -223,6 +242,8 @@ export default function ImpactSection() {
               onMouseLeave={() => setIsDragging(false)}
               onTouchStart={() => setIsDragging(true)}
               onTouchEnd={() => setIsDragging(false)}
+              role="region"
+              aria-label="Project highlights carousel"
             >
               {/* Render all projects, then repeat the first few to create the infinite effect */}
               {projects.map((project, index) => (
@@ -232,10 +253,13 @@ export default function ImpactSection() {
                     <CardDescription className="text-sm mt-2">{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
+                    <h5 className="sr-only">Project Outcomes</h5>
                     <ul className="space-y-2">
                       {project.outcomes.map((outcome, i) => (
                         <li key={i} className="flex items-start">
-                          <span className="text-gray-400 mr-2">•</span>
+                          <span className="text-gray-400 mr-2" aria-hidden="true">
+                            •
+                          </span>
                           <span>{outcome}</span>
                         </li>
                       ))}
@@ -259,10 +283,13 @@ export default function ImpactSection() {
                     <CardDescription className="text-sm mt-2">{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
+                    <h5 className="sr-only">Project Outcomes</h5>
                     <ul className="space-y-2">
                       {project.outcomes.map((outcome, i) => (
                         <li key={i} className="flex items-start">
-                          <span className="text-gray-400 mr-2">•</span>
+                          <span className="text-gray-400 mr-2" aria-hidden="true">
+                            •
+                          </span>
                           <span>{outcome}</span>
                         </li>
                       ))}

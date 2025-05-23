@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 
 export default function HeroSection() {
   return (
@@ -10,12 +11,12 @@ export default function HeroSection() {
           <CardContent className="p-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
-                <h2 className="text-lg md:text-xl font-medium text-gray-600 dark:text-gray-400">
-                  AI-Focused, Product & Revenue Operator
-                </h2>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                   <span className="text-black dark:text-white">Hi, I'm Michael</span>
                 </h1>
+                <h2 className="text-lg md:text-xl font-medium text-gray-600 dark:text-gray-400">
+                  AI-Focused, Product & Revenue Operator
+                </h2>
                 <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl">
                   My unique background integrates product <strong>vision</strong>, go‑to‑market{" "}
                   <strong>execution</strong>, and data‑driven <strong>operations</strong> to build capital‑efficient
@@ -34,12 +35,15 @@ export default function HeroSection() {
                 </div>
               </div>
               <div className="relative aspect-square max-w-md mx-auto">
-                <img
+                <Image
                   src="/michael-headshot.jpg"
                   alt="Michael Cavopol - Professional headshot of a man with dark hair and a blue shirt"
                   className="rounded-lg object-cover shadow-lg"
-                  width="400"
-                  height="400"
+                  width={400}
+                  height={400}
+                  priority
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                 />
               </div>
               <div className="md:hidden flex justify-center mt-6 col-span-1">

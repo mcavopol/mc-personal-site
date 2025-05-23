@@ -321,56 +321,38 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
     // Only start animations when the component is visible in the viewport
     if (!isVisible || prefersReducedMotion || maxScroll <= 0 || isAnimating || isCentered) return
 
-    // Stagger the start times based on index
-    const startDelay = 1000 + index * 1500
+    const startDelay = 1000 + index * 500
 
     const startTimer = setTimeout(() => {
       setIsAnimating(true)
 
-      // Instead of a random distance, scroll to either the beginning or end
-      // based on the current direction
-      let newPosition = direction > 0 ? maxScroll : 0
+      // Simplified animation - just toggle between start and end
+      const newPosition = direction > 0 ? maxScroll : 0
 
-      // If we're already near the target position, flip the direction and set the opposite end
-      const isNearTarget = direction > 0 ? maxScroll - scrollPosition < 100 : scrollPosition < 100
+      // Fixed duration for more predictable performance
+      const duration = 1200
 
-      if (isNearTarget) {
-        // Flip direction and set the opposite end as target
-        const newDirection = direction * -1
-        setDirection(newDirection)
-        newPosition = newDirection > 0 ? maxScroll : 0
-      }
-
-      // Make duration proportional to distance for consistent speed
-      const distance = Math.abs(newPosition - scrollPosition)
-      const duration = Math.min(1500, Math.max(800, distance * 1.5)) // Between 800-1500ms based on distance
-
-      // Animate the scroll
+      // Simple animation
       const startTime = performance.now()
       const startPosition = scrollPosition
+      const distance = newPosition - startPosition
+
       const animateScroll = (timestamp: number) => {
         const elapsed = timestamp - startTime
         const progress = Math.min(elapsed / duration, 1)
-        // Use easeInOutQuad easing function
         const easeProgress = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2
 
-        const currentPosition = startPosition + distance * easeProgress
-        setScrollPosition(currentPosition)
+        setScrollPosition(startPosition + distance * easeProgress)
 
         if (progress < 1) {
           requestAnimationFrame(animateScroll)
         } else {
-          // Animation complete
           setScrollPosition(newPosition)
           setIsAnimating(false)
+          setDirection((prev) => prev * -1)
 
-          // Count this as a complete horizontal scroll
-          setHorizontalScrollCount((prev) => prev + 1)
-
-          // If we've completed 2 horizontal scrolls, notify parent
-          if (horizontalScrollCount >= 1 && !isExpanded) {
+          if (!isExpanded) {
             onScrollComplete()
-            setHorizontalScrollCount(0)
           }
         }
       }
@@ -387,10 +369,9 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
     index,
     prefersReducedMotion,
     isCentered,
-    horizontalScrollCount,
     isExpanded,
     onScrollComplete,
-    isVisible, // Added isVisible dependency
+    isVisible,
   ])
 
   return (

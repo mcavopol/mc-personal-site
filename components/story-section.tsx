@@ -99,6 +99,9 @@ export default function StorySection() {
                 maxHeight: isExpanded ? "5000px" : timelineHeight ? `${timelineHeight}px` : "600px",
                 position: "relative",
               }}
+              aria-expanded={isExpanded}
+              role="region"
+              aria-label="Career Timeline"
             >
               {/* Gradient overlay when collapsed */}
               {!isExpanded && (
@@ -111,7 +114,13 @@ export default function StorySection() {
               {/* Expand button when collapsed */}
               {!isExpanded && (
                 <div ref={expandButtonRef} className="absolute bottom-0 left-0 right-0 flex justify-center z-30 pb-2">
-                  <Button onClick={toggleExpanded} variant="outline" className="flex items-center gap-2">
+                  <Button
+                    onClick={toggleExpanded}
+                    variant="outline"
+                    className="flex items-center gap-2"
+                    aria-expanded={isExpanded}
+                    aria-controls="career-timeline"
+                  >
                     <span>Read More</span>
                     <ChevronDown className="h-4 w-4" />
                   </Button>
@@ -277,7 +286,13 @@ We decreased operating costs 70% through extreme focus on only essential priorit
             {/* Collapse button when expanded - shown at the bottom */}
             {isExpanded && (
               <div className="flex justify-center mt-8">
-                <Button onClick={toggleExpanded} variant="outline" className="flex items-center gap-2">
+                <Button
+                  onClick={toggleExpanded}
+                  variant="outline"
+                  className="flex items-center gap-2"
+                  aria-expanded={isExpanded}
+                  aria-controls="career-timeline"
+                >
                   <span>See Less</span>
                   <ChevronUp className="h-4 w-4" />
                 </Button>

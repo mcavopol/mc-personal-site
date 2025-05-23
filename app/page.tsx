@@ -12,18 +12,20 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <>
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ImpactSection />
-      <ApproachSection />
-      <SuperpowerSection />
-      <CompaniesSection />
-      <StorySection />
-      <WritingSection />
-      <OffTheClockSection />
+      <main id="main-content" className="min-h-screen flex flex-col">
+        <HeroSection />
+        <AboutSection />
+        <ImpactSection />
+        <ApproachSection />
+        <SuperpowerSection />
+        <CompaniesSection />
+        <StorySection />
+        <WritingSection />
+        <OffTheClockSection />
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }
