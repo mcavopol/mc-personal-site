@@ -91,6 +91,8 @@ body {
 
   html {
     overflow-x: hidden;
+    /* Reduced scroll padding by 50% */
+    scroll-padding-top: 40px;
   }
 
   body {
@@ -103,6 +105,22 @@ body {
   .container-padding {
     max-width: 100%;
     box-sizing: border-box;
+  }
+
+  /* Add scroll margin to all sections for proper anchor positioning - reduced by 50% */
+  section[id] {
+    scroll-margin-top: 40px;
+  }
+
+  /* Specific scroll margin for mobile where header might be different height - reduced by 50% */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 45px;
+    }
+
+    section[id] {
+      scroll-margin-top: 45px;
+    }
   }
 }
 
@@ -243,6 +261,7 @@ a {
 .banner-animation-wrapper {
   position: relative;
   width: 100%;
+  transform: translateZ(0); /* Hardware acceleration */
 }
 
 /* Enhanced mobile padding */
@@ -280,14 +299,28 @@ a {
   transition: bottom 0.3s ease;
 }
 
+/* Default position when not near footer */
+.section-nav-button,
+.scroll-to-top-button {
+  bottom: 32px; /* Default position */
+}
+
+/* Position when near footer */
 html.near-footer .section-nav-button,
 html.near-footer .scroll-to-top-button {
-  bottom: 160px; /* Moved down 40px from 120px to avoid social icons */
+  bottom: 80px; /* Reduced from 120px to move down 40px */
 }
 
 @media (max-width: 768px) {
   html.near-footer .section-nav-button,
   html.near-footer .scroll-to-top-button {
-    bottom: 180px; /* Moved down 40px from 140px for mobile */
+    bottom: 100px; /* Reduced from 140px to move down 40px on mobile */
   }
+}
+
+/* Hardware acceleration for animations */
+.will-change-transform {
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }

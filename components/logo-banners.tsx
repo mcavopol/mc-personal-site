@@ -120,7 +120,7 @@ export default function LogoBanners() {
     const newCount = row1ScrollCount + 1
     setRow1ScrollCount(newCount)
 
-    // After 2 horizontal scrolls, trigger vertical roll-over
+    // After 2 horizontal scrolls or if triggered by timer, trigger vertical roll-over
     if (newCount >= 2) {
       setRow1ScrollCount(0) // Reset scroll count
       setIsRow1Animating(true) // Start animation
@@ -142,7 +142,7 @@ export default function LogoBanners() {
     const newCount = row2ScrollCount + 1
     setRow2ScrollCount(newCount)
 
-    // After 2 horizontal scrolls, trigger vertical roll-over
+    // After 2 horizontal scrolls or if triggered by timer, trigger vertical roll-over
     if (newCount >= 2) {
       setRow2ScrollCount(0) // Reset scroll count
       setIsRow2Animating(true) // Start animation
@@ -233,15 +233,20 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
   const [isAnimating, setIsAnimating] = useState(false)
   const [maxScroll, setMaxScroll] = useState(0)
   const [isCentered, setIsCentered] = useState(false)
-  const [horizontalScrollCount, setHorizontalScrollCount] = useState(0)
-  const [directionChanges, setDirectionChanges] = useState(0)
   const { resolvedTheme } = useTheme()
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  const [isIOS, setIsIOS] = useState(false)
 
-  // Check for reduced motion preference
+  // Check for reduced motion preference and iOS device
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
     setPrefersReducedMotion(mediaQuery.matches)
+
+    // Detect iOS device
+    const isIOSDevice =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+    setIsIOS(isIOSDevice)
 
     const handleChange = () => setPrefersReducedMotion(mediaQuery.matches)
     mediaQuery.addEventListener("change", handleChange)
@@ -308,56 +313,104 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
     setIsLoaded(true)
   }
 
-  // Reset counters when expanded state changes
-  useEffect(() => {
-    if (isExpanded) {
-      setHorizontalScrollCount(0)
-      setDirectionChanges(0)
-    }
-  }, [isExpanded])
-
   // Animation logic - only run if component is visible and not centered
   useEffect(() => {
     // Only start animations when the component is visible in the viewport
-    if (!isVisible || prefersReducedMotion || maxScroll <= 0 || isAnimating || isCentered) return
+    // Allow animation to continue even for centered images (removed isCentered condition)
+    if (!isVisible || prefersReducedMotion || maxScroll <= 0 || isAnimating) return
 
-    const startDelay = 2000 + index * 500
+    const startDelay = 1000 + index * 500
 
     const startTimer = setTimeout(() => {
       setIsAnimating(true)
 
-      // Simplified animation - just toggle between start and end
-      const newPosition = direction > 0 ? maxScroll : 0
-
-      // Fixed duration for more predictable performance
-      const duration = 2400
-
-      // Simple animation
-      const startTime = performance.now()
-      const startPosition = scrollPosition
-      const distance = newPosition - startPosition
-
-      const animateScroll = (timestamp: number) => {
-        const elapsed = timestamp - startTime
-        const progress = Math.min(elapsed / duration, 1)
-        const easeProgress = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2
-
-        setScrollPosition(startPosition + distance * easeProgress)
-
-        if (progress < 1) {
-          requestAnimationFrame(animateScroll)
-        } else {
-          setScrollPosition(newPosition)
+      // If image is centered, we can't scroll horizontally, so just complete the animation
+      if (isCentered) {
+        // Skip animation and just trigger completion
+        setTimeout(() => {
           setIsAnimating(false)
-          setDirection((prev) => prev * -1)
-
           if (!isExpanded) {
             onScrollComplete()
           }
-        }
+        }, 1200) // Use same duration as normal animation
+        return
       }
 
-      requestAnimationFrame(animateScroll)
+      // Simplified animation - just toggle between start and end
+      const newPosition = direction > 0 ? maxScroll : 0
+
+      // Optimize animation for iOS devices
+      if (isIOS && isMobile) {
+        // For iOS mobile, use a simpler, faster animation to avoid juddering
+        // Skip the slow build-up and just do the fast swipe
+        const duration = 400 // Faster animation for iOS
+
+        // Simple animation with minimal intermediate steps
+        const startTime = performance.now()
+        const startPosition = scrollPosition
+        const distance = newPosition - startPosition
+
+        const animateScroll = (timestamp: number) => {
+          const elapsed = timestamp - startTime
+          const progress = Math.min(elapsed / duration, 1)
+
+          // Use a simpler easing function for iOS
+          const easeProgress = progress
+
+          // Apply hardware acceleration
+          if (contentRef.current) {
+            contentRef.current.style.transform = `translate3d(${-(startPosition + distance * easeProgress)}px, 0, 0)`
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll)
+          } else {
+            // Set final position
+            setScrollPosition(newPosition)
+            setIsAnimating(false)
+            setDirection((prev) => prev * -1)
+
+            if (!isExpanded) {
+              onScrollComplete()
+            }
+          }
+        }
+
+        requestAnimationFrame(animateScroll)
+      } else {
+        // For non-iOS devices, use the original animation
+        const duration = 1200
+
+        // Simple animation
+        const startTime = performance.now()
+        const startPosition = scrollPosition
+        const distance = newPosition - startPosition
+
+        const animateScroll = (timestamp: number) => {
+          const elapsed = timestamp - startTime
+          const progress = Math.min(elapsed / duration, 1)
+          const easeProgress = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2
+
+          // Apply hardware acceleration with translate3d
+          if (contentRef.current) {
+            contentRef.current.style.transform = `translate3d(${-(startPosition + distance * easeProgress)}px, 0, 0)`
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(animateScroll)
+          } else {
+            setScrollPosition(newPosition)
+            setIsAnimating(false)
+            setDirection((prev) => prev * -1)
+
+            if (!isExpanded) {
+              onScrollComplete()
+            }
+          }
+        }
+
+        requestAnimationFrame(animateScroll)
+      }
     }, startDelay)
 
     return () => clearTimeout(startTimer)
@@ -372,7 +425,33 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
     isExpanded,
     onScrollComplete,
     isVisible,
+    isIOS,
+    isMobile,
   ])
+
+  // Timer-based approach for vertical scrolling - ensures animation continues even without horizontal scrolling
+  useEffect(() => {
+    // Only run if component is visible and not expanded
+    if (!isVisible || isExpanded) return
+
+    // Set a timer to trigger vertical scrolling even if horizontal scrolling doesn't happen
+    const verticalScrollInterval = 8000 // 8 seconds between vertical scrolls (2 horizontal scrolls × 4 seconds)
+    const startDelay = 1000 + index * 500
+
+    const timer = setTimeout(() => {
+      // Start a recurring timer for vertical scrolling
+      const intervalId = setInterval(() => {
+        if (!isExpanded) {
+          onScrollComplete()
+          onScrollComplete() // Call twice to simulate 2 horizontal scrolls
+        }
+      }, verticalScrollInterval)
+
+      return () => clearInterval(intervalId)
+    }, startDelay)
+
+    return () => clearTimeout(timer)
+  }, [isVisible, isExpanded, index, onScrollComplete])
 
   return (
     <div className="w-full animate-fade-in">
@@ -399,13 +478,14 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
         {/* Content container - handles animation or centering */}
         <div
           ref={contentRef}
-          className={`transition-all duration-300 ${isCentered ? "mx-auto" : "w-max"}`}
+          className={`${isCentered ? "mx-auto" : "w-max"} will-change-transform`}
           style={{
-            transform: isCentered ? "none" : `translateX(${-scrollPosition}px)`,
+            transform: isCentered ? "none" : `translate3d(${-scrollPosition}px, 0, 0)`,
             display: isCentered ? "flex" : "block",
             justifyContent: isCentered ? "center" : "flex-start",
             width: isCentered ? "100%" : "max-content",
             margin: isCentered ? "0 auto" : "0", // Ensure centered content has auto margins
+            backfaceVisibility: "hidden", // Improve performance
           }}
         >
           <div className="bg-white dark:bg-black py-2 px-4 rounded-md">
@@ -417,6 +497,7 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, i
               style={{
                 maxWidth: "none", // Prevent image from scaling down
                 objectFit: "contain",
+                transform: "translateZ(0)", // Hardware acceleration
               }}
               onLoad={handleImageLoad}
               loading="lazy"
