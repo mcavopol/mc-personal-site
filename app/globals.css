@@ -91,8 +91,8 @@ body {
 
   html {
     overflow-x: hidden;
-    /* Add scroll padding to account for fixed header */
-    scroll-padding-top: 80px;
+    /* Reduced scroll padding by 50% */
+    scroll-padding-top: 40px;
   }
 
   body {
@@ -107,19 +107,19 @@ body {
     box-sizing: border-box;
   }
 
-  /* Add scroll margin to all sections for proper anchor positioning */
+  /* Add scroll margin to all sections for proper anchor positioning - reduced by 50% */
   section[id] {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 40px;
   }
 
-  /* Specific scroll margin for mobile where header might be different height */
+  /* Specific scroll margin for mobile where header might be different height - reduced by 50% */
   @media (max-width: 768px) {
     html {
-      scroll-padding-top: 90px;
+      scroll-padding-top: 45px;
     }
 
     section[id] {
-      scroll-margin-top: 90px;
+      scroll-margin-top: 45px;
     }
   }
 }
