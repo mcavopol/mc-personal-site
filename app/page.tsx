@@ -18,9 +18,9 @@ export default function Home() {
       <AboutSection />
       <ImpactSection />
       <ApproachSection />
+      <SuperpowerSection />
       <CompaniesSection />
       <StorySection />
-      <SuperpowerSection />
       <WritingSection />
       <OffTheClockSection />
       <Footer />

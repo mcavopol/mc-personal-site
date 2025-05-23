@@ -12,13 +12,14 @@ interface LogoBannerProps {
 }
 
 // Define the progression sequences for each row
-const ROW1_SEQUENCE = [0, 1, 4] // Technology -> Fintech/Ecommerce -> Healthcare/BPO
-const ROW2_SEQUENCE = [2, 3, 5] // Engineering/Construction -> Logistics & Supplychain -> Hospitality and Foodservice
+const ROW1_SEQUENCE = [0, 2, 4] // Technology -> Engineering & Construction -> Healthcare/BPO
+const ROW2_SEQUENCE = [1, 3, 5] // Fintech/Ecommerce -> Logistics & Supply Chain -> Hospitality and Foodservice
 
 export default function LogoBanners() {
   const [isExpanded, setIsExpanded] = useState(false)
   const [initialRows, setInitialRows] = useState<number[]>([])
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
 
   // Track current position in the sequence for each row
   const [row1Position, setRow1Position] = useState(0)
@@ -66,18 +67,45 @@ export default function LogoBanners() {
     },
   ]
 
-  // Randomly select which rows to show in the rolled-up state
+  // Set up intersection observer to detect when component is visible
   useEffect(() => {
-    // Randomly select starting position in the sequence for row 1
-    const row1StartPos = Math.floor(Math.random() * 2) // 0 or 1
-    setRow1Position(row1StartPos)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Update state when component enters viewport
+        if (entries[0].isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      {
+        root: null, // Use viewport as root
+        rootMargin: "0px",
+        threshold: 0.1, // Trigger when 10% of component is visible
+      },
+    )
 
-    // Randomly select starting position in the sequence for row 2
-    const row2StartPos = Math.floor(Math.random() * 2) // 0 or 1
-    setRow2Position(row2StartPos)
+    // Start observing the container
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
 
-    // Set initial rows based on the sequence positions
-    setInitialRows([ROW1_SEQUENCE[row1StartPos], ROW2_SEQUENCE[row2StartPos]])
+    // Cleanup observer on unmount
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current)
+      }
+    }
+  }, [])
+
+  // Set fixed initial rows instead of random selection
+  useEffect(() => {
+    // Always start with Technology (index 0) for the first row
+    setRow1Position(0)
+
+    // Always start with Fintech and E-commerce (index 1) for the second row
+    setRow2Position(0)
+
+    // Set initial rows to Technology (0) and Engineering & Construction (2)
+    setInitialRows([ROW1_SEQUENCE[0], ROW2_SEQUENCE[0]])
   }, [])
 
   // Toggle expanded state
@@ -156,6 +184,7 @@ export default function LogoBanners() {
                 index={index}
                 onScrollComplete={index === 0 ? handleRow1ScrollComplete : handleRow2ScrollComplete}
                 isExpanded={isExpanded}
+                isVisible={isVisible}
               />
             </div>
           </div>
@@ -190,9 +219,10 @@ export default function LogoBanners() {
 interface ExtendedLogoBannerProps extends LogoBannerProps {
   onScrollComplete: () => void
   isExpanded: boolean
+  isVisible: boolean
 }
 
-function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded }: ExtendedLogoBannerProps) {
+function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded, isVisible }: ExtendedLogoBannerProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
@@ -286,9 +316,10 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded }:
     }
   }, [isExpanded])
 
-  // Animation logic - only run if not centered
+  // Animation logic - only run if component is visible and not centered
   useEffect(() => {
-    if (prefersReducedMotion || maxScroll <= 0 || isAnimating || isCentered) return
+    // Only start animations when the component is visible in the viewport
+    if (!isVisible || prefersReducedMotion || maxScroll <= 0 || isAnimating || isCentered) return
 
     // Stagger the start times based on index
     const startDelay = 1000 + index * 1500
@@ -359,6 +390,7 @@ function LogoBanner({ src, alt, category, index, onScrollComplete, isExpanded }:
     horizontalScrollCount,
     isExpanded,
     onScrollComplete,
+    isVisible, // Added isVisible dependency
   ])
 
   return (

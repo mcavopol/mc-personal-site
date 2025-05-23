@@ -24,11 +24,9 @@ export default function Navbar() {
     { name: "About", href: "#about" },
     { name: "Impact", href: "#impact" },
     { name: "Approach", href: "#approach" },
-    { name: "Companies", href: "#companies" },
-    { name: "Story", href: "#career" },
     { name: "Superpower", href: "#superpower" },
+    { name: "Story", href: "#career" },
     { name: "Writing", href: "#writing" },
-    { name: "Contact", href: "#contact" },
   ]
 
   return (

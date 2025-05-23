@@ -1,9 +1,80 @@
 "use client"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, ChevronDown, ChevronUp } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
+import { Button } from "@/components/ui/button"
 
 export default function StorySection() {
+  const [isExpanded, setIsExpanded] = useState(false)
+  const timelineRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const expandButtonRef = useRef<HTMLDivElement>(null)
+  const [timelineHeight, setTimelineHeight] = useState<number | null>(null)
+
+  // Toggle expanded state
+  const toggleExpanded = () => {
+    setIsExpanded((prev) => {
+      const newExpanded = !prev
+
+      if (newExpanded) {
+        // When expanding, scroll to the section
+        setTimeout(() => {
+          const sectionElement = document.getElementById("career")
+          if (sectionElement) {
+            sectionElement.scrollIntoView({ behavior: "smooth", block: "start" })
+          }
+        }, 100)
+      } else {
+        // When collapsing, scroll to position where the "Read More" button is just visible
+        setTimeout(() => {
+          if (sectionRef.current && expandButtonRef.current) {
+            // Calculate the position to scroll to
+            const sectionTop = sectionRef.current.getBoundingClientRect().top + window.scrollY
+            const buttonHeight = expandButtonRef.current.offsetHeight
+            const collapsedHeight = timelineHeight || 600
+
+            // Position where the button would be (section top + content height - button height)
+            const targetPosition = sectionTop + collapsedHeight - buttonHeight
+
+            // Scroll to position with a small offset to ensure button is visible
+            window.scrollTo({
+              top: targetPosition - 20, // 20px offset to ensure button is visible
+              behavior: "smooth",
+            })
+          }
+        }, 300)
+      }
+
+      return newExpanded
+    })
+  }
+
+  // Calculate the collapsed height to show first card and half of second card
+  useEffect(() => {
+    const calculateCollapsedHeight = () => {
+      if (timelineRef.current) {
+        const cards = timelineRef.current.querySelectorAll(".relative.flex")
+        if (cards.length >= 3) {
+          const firstCardHeight = cards[0].getBoundingClientRect().height
+          const secondCardHeight = cards[1].getBoundingClientRect().height
+          const thirdCardHeight = cards[2].getBoundingClientRect().height
+          // Set height to show first card fully, second card fully, and about 1/5 of third card
+          // Reduced from 0.35 to 0.2 to show 1.5 fewer lines
+          setTimelineHeight(firstCardHeight + secondCardHeight + thirdCardHeight * 0.2)
+        }
+      }
+    }
+
+    // Calculate on mount and when window resizes
+    calculateCollapsedHeight()
+    window.addEventListener("resize", calculateCollapsedHeight)
+
+    return () => {
+      window.removeEventListener("resize", calculateCollapsedHeight)
+    }
+  }, [])
+
   return (
-    <section id="career" className="section-padding bg-gray-50 dark:bg-gray-950">
+    <section id="career" ref={sectionRef} className="section-padding bg-gray-50 dark:bg-gray-950">
       <div className="container-padding mx-auto max-w-6xl">
         <div className="space-y-12">
           {/* Career Timeline */}
@@ -22,11 +93,35 @@ export default function StorySection() {
               </p>
             </div>
 
-            <div className="relative mt-10 md:pb-12 overflow-hidden">
+            <div
+              className="relative mt-10 md:pb-12 overflow-hidden transition-all duration-500 ease-in-out"
+              style={{
+                maxHeight: isExpanded ? "5000px" : timelineHeight ? `${timelineHeight}px` : "600px",
+                position: "relative",
+              }}
+            >
+              {/* Gradient overlay when collapsed */}
+              {!isExpanded && (
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 dark:from-gray-950 to-transparent z-20 pointer-events-none"
+                  style={{ bottom: "0" }}
+                />
+              )}
+
+              {/* Expand button when collapsed */}
+              {!isExpanded && (
+                <div ref={expandButtonRef} className="absolute bottom-0 left-0 right-0 flex justify-center z-30 pb-2">
+                  <Button onClick={toggleExpanded} variant="outline" className="flex items-center gap-2">
+                    <span>Read More</span>
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+
               {/* Central timeline line */}
               <div className="absolute left-[22px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800 transform md:-translate-x-1/2 z-10"></div>
 
-              <div className="space-y-12 md:space-y-0">
+              <div ref={timelineRef} className="space-y-12 md:space-y-0">
                 <TimelineCard
                   age="9"
                   year="1996"
@@ -178,6 +273,16 @@ We decreased operating costs 70% through extreme focus on only essential priorit
                 />
               </div>
             </div>
+
+            {/* Collapse button when expanded - shown at the bottom */}
+            {isExpanded && (
+              <div className="flex justify-center mt-8">
+                <Button onClick={toggleExpanded} variant="outline" className="flex items-center gap-2">
+                  <span>See Less</span>
+                  <ChevronUp className="h-4 w-4" />
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </div>
