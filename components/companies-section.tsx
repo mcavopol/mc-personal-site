@@ -36,18 +36,12 @@ export default function CompaniesSection() {
   }, [])
 
   return (
-    <section
-      id="companies"
-      ref={sectionRef}
-      className="section-padding bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800"
-    >
-      <div className="container-padding mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Trusted by Industry Leaders</h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-          Over two decades, I've collaborated with great companies across diverse industries and sectors.
-        </p>
-        <LogoBanners />
-      </div>
-    </section>
+    <div ref={sectionRef} className="container-padding mx-auto max-w-6xl">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">Trusted by Industry Leaders</h2>
+      <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        Over two decades, I've collaborated with great companies across diverse industries and sectors.
+      </p>
+      <LogoBanners />
+    </div>
   )
 }
