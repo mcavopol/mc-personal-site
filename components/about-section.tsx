@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState, useEffect, useMemo } from "react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink } from "lucide-react"
 
 export default function AboutSection() {
@@ -150,12 +150,37 @@ export default function AboutSection() {
           {/* Section Header */}
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">About Me</h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              I love helping venture-backed and profitability-focused teams achieve their{" "}
-              <strong>company mission</strong> through tight integration of <strong>customer obsession</strong>,{" "}
-              <strong>commercial strategy</strong>, <strong>innovative technology</strong> and{" "}
-              <strong>intuitive design</strong>.
-            </p>
+          </div>
+
+          {/* On the Clock / Off the Clock Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <Card className="flex flex-col h-full">
+              <CardHeader>
+                <CardTitle className="text-2xl">On the Clock</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 dark:text-gray-300">
+                  I love helping venture-backed and profitability-focused teams achieve their{" "}
+                  <strong>company mission</strong> through tight integration of <strong>customer obsession</strong>,{" "}
+                  <strong>commercial strategy</strong>, <strong>innovative technology</strong> and{" "}
+                  <strong>intuitive design</strong>.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="flex flex-col h-full">
+              <CardHeader>
+                <CardTitle className="text-2xl">Off the Clock</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 dark:text-gray-300">
+                  Nashville-based. Father-to-be. Sort-of runner and biker. Tech tinkerer. Likely sketching ideas in
+                  overpriced coffee shops. Costco evangelist. Warner Parks resident. Mentor at the Nashville
+                  Entrepreneur Center; guest-lecturer on pricing, product strategy, and recession-proof growth. Always
+                  game for a good problem, and a better cup of coffee.
+                </p>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Quote Card */}

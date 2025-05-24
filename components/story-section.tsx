@@ -81,7 +81,7 @@ export default function StorySection() {
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">My Story</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-              I once worried my meandering career was unfocused. I now believe it's my{" "}
+              I once worried my meandering career was unfocused, crossing lanes across product, sales, marketing and customer success. I now believe it's my{" "}
               <a
                 href="#superpower"
                 className="font-bold underline hover:text-black dark:hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white rounded-sm"

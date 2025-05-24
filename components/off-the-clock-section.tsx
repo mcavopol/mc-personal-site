@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Linkedin, Mail, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -7,30 +7,13 @@ export default function OffTheClockSection() {
     <div className="container-padding mx-auto max-w-6xl">
       <div className="space-y-12">
         <div className="space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Off the Clock</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Let's Connect</h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card className="flex flex-col h-full">
-            <CardHeader>
-              <CardTitle className="text-2xl">Life Beyond the Office</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 dark:text-gray-300 mb-5">
-                Nashville-based. Father-to-be. Sort-of runner and biker. Tech tinkerer. Likely sketching ideas in
-                overpriced coffee shops. Costco evangelist. Warner Parks resident. Mentor at the Nashville Entrepreneur
-                Center; guest-lecturer on pricing, product strategy, and recession-proof growth. Always game for a good
-                problem, and a better cup of coffee.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="flex flex-col h-full">
-            <CardHeader>
-              <CardTitle className="text-2xl">Let's Connect</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 dark:text-gray-300 mb-5">
+        <div className="flex justify-center">
+          <Card className="flex flex-col h-full max-w-2xl w-full">
+            <CardContent className="p-6 md:p-8">
+              <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
                 I'm always eager to meet teams doing genuinely interesting work. If that's you, let's compare notes or
                 get coffee!
               </p>
