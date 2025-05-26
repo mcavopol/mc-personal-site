@@ -44,7 +44,8 @@ export default function CorrespondencePage() {
                 rel="noopener noreferrer"
                 className="hover:text-black dark:hover:text-white transition-colors"
               >
-                204 Harpeth Wood Drive, Nashville TN, 37221
+                <span className="whitespace-nowrap">204 Harpeth Wood Drive,</span>{" "}
+                <span className="whitespace-nowrap">Nashville TN, 37221</span>
               </a>
             </div>
             <div className="flex items-center justify-center gap-1">
