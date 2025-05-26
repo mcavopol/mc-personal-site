@@ -72,7 +72,7 @@ export default function CorrespondencePage() {
         </div>
 
         {/* Social Links */}
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center space-x-4 py-2">
           <a
             href="https://linkedin.com/in/michael-cavopol"
             target="_blank"
