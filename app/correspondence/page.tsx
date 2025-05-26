@@ -126,7 +126,7 @@ export default function CorrespondencePage() {
             <CardContent className="p-3 space-y-2">
               <h2 className="text-sm font-semibold text-black dark:text-white">Work with me personally</h2>
               <p className="text-xs text-gray-700 dark:text-gray-300">
-                Fractional Product, Revenue and Operations leadership for early and growing tech companies.
+                Fractional Product, Revenue and Operations leader or coach for early and growing tech companies.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 text-xs">
                 <div className="flex items-center justify-start sm:justify-center gap-1">
@@ -159,7 +159,7 @@ export default function CorrespondencePage() {
             <CardContent className="p-3 space-y-2">
               <h2 className="text-sm font-semibold text-black dark:text-white">Work with my firm</h2>
               <p className="text-xs text-gray-700 dark:text-gray-300">
-                Helping product companies get meaningful use from technology and AI to drive EBIDTA and revenue growth
+                Helping non-tech companies ≧$10mm get meaningful use from technology and AI to drive EBIDTA and revenue growth
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 text-xs">
                 <div className="flex items-center justify-start sm:justify-center gap-1">
