@@ -38,7 +38,14 @@ export default function CorrespondencePage() {
           <div className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
             <div className="flex items-center justify-center gap-1">
               <MapPin className="h-3 w-3" />
-              <span>204 Harpeth Wood Drive, Nashville TN, 37221</span>
+              <a
+                href="https://www.google.com/maps/dir//204+Harpeth+Wood+Dr,+Nashville,+TN+37221/@36.0734954,-86.9006586,17z/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black dark:hover:text-white transition-colors"
+              >
+                204 Harpeth Wood Drive, Nashville TN, 37221
+              </a>
             </div>
             <div className="flex items-center justify-center gap-1">
               <Phone className="h-3 w-3" />
@@ -126,10 +133,10 @@ export default function CorrespondencePage() {
             <CardContent className="p-3 space-y-2">
               <h2 className="text-sm font-semibold text-black dark:text-white">Work with me personally</h2>
               <p className="text-xs text-gray-700 dark:text-gray-300">
-                Fractional Product, Revenue and Operations leadership for early and growing tech companies.
+                Fractional Product, Revenue and Ops leader or coach for early and growing tech startups.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 text-xs">
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-start sm:justify-center gap-1">
                   <Mail className="h-3 w-3 text-gray-500" />
                   <a
                     href="mailto:michael.cavopol@gmail.com"
@@ -138,7 +145,7 @@ export default function CorrespondencePage() {
                     michael.cavopol@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-start sm:justify-center gap-1">
                   <span className="text-gray-700 dark:text-gray-300">Learn more:</span>
                   <a
                     href="https://michael.cavopol.me"
@@ -159,10 +166,11 @@ export default function CorrespondencePage() {
             <CardContent className="p-3 space-y-2">
               <h2 className="text-sm font-semibold text-black dark:text-white">Work with my firm</h2>
               <p className="text-xs text-gray-700 dark:text-gray-300">
-                Helping product companies get meaningful use from technology and AI to drive EBIDTA and revenue growth
+                Helping non-tech companies ≧$10mm get practical use from technology and AI; driving EBIDTA and revenue
+                growth.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 text-xs">
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-start sm:justify-center gap-1">
                   <Mail className="h-3 w-3 text-gray-500" />
                   <a
                     href="mailto:michael@hedgehoggrowth.com"
@@ -171,7 +179,7 @@ export default function CorrespondencePage() {
                     michael@hedgehoggrowth.com
                   </a>
                 </div>
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-start sm:justify-center gap-1">
                   <span className="text-gray-700 dark:text-gray-300">Learn more:</span>
                   <a
                     href="https://hedgehoggrowth.com"
