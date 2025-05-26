@@ -4,18 +4,18 @@ import { Download, Linkedin, Mail, Github, Instagram, BookOpen, Twitter, Globe, 
 
 export default function CorrespondencePage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center p-6">
-      <div className="w-full max-w-2xl mx-auto space-y-8">
+    <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center p-3 md:p-6">
+      <div className="w-full max-w-xl mx-auto space-y-4">
         {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-white">Michael Cavopol</h1>
-          <div className="space-y-2 text-gray-600 dark:text-gray-400">
-            <div className="flex items-center justify-center gap-2">
-              <MapPin className="h-4 w-4" />
+        <div className="text-center space-y-2">
+          <h1 className="text-2xl md:text-3xl font-bold text-black dark:text-white">Michael Cavopol</h1>
+          <div className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
+            <div className="flex items-center justify-center gap-1">
+              <MapPin className="h-3 w-3" />
               <span>204 Harpeth Wood Drive, Nashville TN, 37221</span>
             </div>
-            <div className="flex items-center justify-center gap-2">
-              <Phone className="h-4 w-4" />
+            <div className="flex items-center justify-center gap-1">
+              <Phone className="h-3 w-3" />
               <a href="tel:6159442954" className="hover:text-black dark:hover:text-white transition-colors">
                 (615) 944-2954
               </a>
@@ -23,14 +23,14 @@ export default function CorrespondencePage() {
           </div>
 
           {/* Add to Contacts CTA */}
-          <div className="pt-4">
+          <div className="pt-2">
             <Button
               asChild
-              size="lg"
+              size="sm"
               className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
             >
-              <a href="/vcard" className="flex items-center gap-2">
-                <Download className="h-4 w-4" />
+              <a href="/vcard" className="flex items-center gap-1">
+                <Download className="h-3 w-3" />
                 Add to Contacts
               </a>
             </Button>
@@ -38,7 +38,7 @@ export default function CorrespondencePage() {
         </div>
 
         {/* Social Links */}
-        <div className="flex justify-center space-x-6">
+        <div className="flex justify-center space-x-4">
           <a
             href="https://linkedin.com/in/michael-cavopol"
             target="_blank"
@@ -46,7 +46,7 @@ export default function CorrespondencePage() {
             aria-label="LinkedIn"
             className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
           >
-            <Linkedin className="h-6 w-6" />
+            <Linkedin className="h-4 w-4" />
           </a>
           <a
             href="https://x.com/cavopol"
@@ -55,7 +55,7 @@ export default function CorrespondencePage() {
             aria-label="Twitter (X)"
             className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
           >
-            <Twitter className="h-6 w-6" />
+            <Twitter className="h-4 w-4" />
           </a>
           <a
             href="https://www.instagram.com/cavopol/"
@@ -64,7 +64,7 @@ export default function CorrespondencePage() {
             aria-label="Instagram"
             className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
           >
-            <Instagram className="h-6 w-6" />
+            <Instagram className="h-4 w-4" />
           </a>
           <a
             href="https://cavopol.substack.com/"
@@ -73,14 +73,14 @@ export default function CorrespondencePage() {
             aria-label="Substack"
             className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
           >
-            <BookOpen className="h-6 w-6" />
+            <BookOpen className="h-4 w-4" />
           </a>
           <a
             href="mailto:mcavopol@gmail.com"
             aria-label="Email"
             className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
           >
-            <Mail className="h-6 w-6" />
+            <Mail className="h-4 w-4" />
           </a>
           <a
             href="https://github.com/mcavopol"
@@ -89,36 +89,36 @@ export default function CorrespondencePage() {
             aria-label="GitHub"
             className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
           >
-            <Github className="h-6 w-6" />
+            <Github className="h-4 w-4" />
           </a>
         </div>
 
         {/* Work Sections */}
-        <div className="space-y-6">
+        <div className="space-y-3">
           {/* Personal Work */}
           <Card className="border border-gray-200 dark:border-gray-800">
-            <CardContent className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-black dark:text-white">Work with me personally</h2>
-              <p className="text-gray-700 dark:text-gray-300">
+            <CardContent className="p-3 space-y-2">
+              <h2 className="text-sm font-semibold text-black dark:text-white">Work with me personally</h2>
+              <p className="text-xs text-gray-700 dark:text-gray-300">
                 Fractional Product, Revenue and Operations leadership for early and growing tech companies.
               </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <Globe className="h-4 w-4 text-gray-500" />
+              <div className="space-y-1">
+                <div className="flex items-center gap-1">
+                  <Globe className="h-3 w-3 text-gray-500" />
                   <a
                     href="https://michael.cavopol.me"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                    className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     michael.cavopol.me
                   </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-gray-500" />
+                <div className="flex items-center gap-1">
+                  <Mail className="h-3 w-3 text-gray-500" />
                   <a
                     href="mailto:michael.cavopol@gmail.com"
-                    className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                    className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     michael.cavopol@gmail.com
                   </a>
@@ -129,28 +129,28 @@ export default function CorrespondencePage() {
 
           {/* Firm Work */}
           <Card className="border border-gray-200 dark:border-gray-800">
-            <CardContent className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-black dark:text-white">Work with my firm</h2>
-              <p className="text-gray-700 dark:text-gray-300">
-                Focused Innovation & Revenue Acceleration for Capital-Efficient Product Companies
+            <CardContent className="p-3 space-y-2">
+              <h2 className="text-sm font-semibold text-black dark:text-white">Work with my firm</h2>
+              <p className="text-xs text-gray-700 dark:text-gray-300">
+                Helping product companies get meaningful use from technology and AI to drive EBIDTA and revenue growth
               </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <Globe className="h-4 w-4 text-gray-500" />
+              <div className="space-y-1">
+                <div className="flex items-center gap-1">
+                  <Globe className="h-3 w-3 text-gray-500" />
                   <a
                     href="https://hedgehoggrowth.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                    className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     hedgehoggrowth.com
                   </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-gray-500" />
+                <div className="flex items-center gap-1">
+                  <Mail className="h-3 w-3 text-gray-500" />
                   <a
                     href="mailto:michael@hedgehoggrowth.com"
-                    className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                    className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     michael@hedgehoggrowth.com
                   </a>
@@ -161,16 +161,18 @@ export default function CorrespondencePage() {
 
           {/* Services & AI */}
           <Card className="border border-gray-200 dark:border-gray-800">
-            <CardContent className="p-6 space-y-4">
-              <h2 className="text-xl font-semibold text-black dark:text-white">For services, bots and AI</h2>
-              <p className="text-gray-700 dark:text-gray-300">
-                For newsletters, user accounts and other non-human uses
+            <CardContent className="p-3 space-y-2">
+              <h2 className="text-sm font-semibold text-black dark:text-white">
+                For newsletters, user accounts and sign-ups
+              </h2>
+              <p className="text-xs text-gray-700 dark:text-gray-300">
+                Please use this address for any non-human correspondence.
               </p>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-gray-500" />
+              <div className="flex items-center gap-1">
+                <Mail className="h-3 w-3 text-gray-500" />
                 <a
                   href="mailto:mcavopol@gmail.com"
-                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                  className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                 >
                   mcavopol@gmail.com
                 </a>
