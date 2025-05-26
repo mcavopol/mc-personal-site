@@ -1,4 +1,7 @@
-BEGIN:VCARD
+import { NextResponse } from "next/server"
+
+export async function GET() {
+  const vCardContent = `BEGIN:VCARD
 VERSION:3.0
 N:Cavopol;Michael;;;
 FN:Michael Cavopol
@@ -14,4 +17,12 @@ PHOTO;TYPE=JPEG;VALUE=URI:https://michael.cavopol.me/michael-headshot.jpg
 X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/michael-cavopol/
 X-SOCIALPROFILE;TYPE=twitter:https://x.com/cavopol
 REV:20250526T031500Z
-END:VCARD
+END:VCARD`
+
+  return new NextResponse(vCardContent, {
+    headers: {
+      "Content-Type": "text/vcard",
+      "Content-Disposition": 'inline; filename="michael-cavopol.vcf"',
+    },
+  })
+}
