@@ -129,7 +129,7 @@ export default function CorrespondencePage() {
                 Fractional Product, Revenue and Operations leadership for early and growing tech companies.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 text-xs">
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-start sm:justify-center gap-1">
                   <Mail className="h-3 w-3 text-gray-500" />
                   <a
                     href="mailto:michael.cavopol@gmail.com"
@@ -138,7 +138,7 @@ export default function CorrespondencePage() {
                     michael.cavopol@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-start sm:justify-center gap-1">
                   <span className="text-gray-700 dark:text-gray-300">Learn more:</span>
                   <a
                     href="https://michael.cavopol.me"
@@ -162,7 +162,7 @@ export default function CorrespondencePage() {
                 Helping product companies get meaningful use from technology and AI to drive EBIDTA and revenue growth
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 text-xs">
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-start sm:justify-center gap-1">
                   <Mail className="h-3 w-3 text-gray-500" />
                   <a
                     href="mailto:michael@hedgehoggrowth.com"
@@ -171,7 +171,7 @@ export default function CorrespondencePage() {
                     michael@hedgehoggrowth.com
                   </a>
                 </div>
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-start sm:justify-center gap-1">
                   <span className="text-gray-700 dark:text-gray-300">Learn more:</span>
                   <a
                     href="https://hedgehoggrowth.com"
