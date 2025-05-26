@@ -1,13 +1,39 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Download, Linkedin, Mail, Github, Instagram, BookOpen, Twitter, Globe, Phone, MapPin } from "lucide-react"
+import {
+  Download,
+  Linkedin,
+  Mail,
+  Github,
+  Instagram,
+  BookOpen,
+  Twitter,
+  Phone,
+  MapPin,
+  ExternalLink,
+} from "lucide-react"
+import Image from "next/image"
 
 export default function CorrespondencePage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center p-3 md:p-6">
-      <div className="w-full max-w-xl mx-auto space-y-4">
+    <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center px-3 py-6 md:p-6">
+      <div className="w-full max-w-xl mx-auto space-y-2">
         {/* Header */}
         <div className="text-center space-y-2">
+          {/* Profile Photo */}
+          <div className="flex justify-center mb-3">
+            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 dark:border-gray-700">
+              <Image
+                src="/michael-headshot.jpg"
+                alt="Michael Cavopol"
+                width={80}
+                height={80}
+                className="w-full h-full object-cover grayscale"
+                priority
+              />
+            </div>
+          </div>
+
           <h1 className="text-2xl md:text-3xl font-bold text-black dark:text-white">Michael Cavopol</h1>
           <div className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
             <div className="flex items-center justify-center gap-1">
@@ -102,25 +128,26 @@ export default function CorrespondencePage() {
               <p className="text-xs text-gray-700 dark:text-gray-300">
                 Fractional Product, Revenue and Operations leadership for early and growing tech companies.
               </p>
-              <div className="space-y-1">
-                <div className="flex items-center gap-1">
-                  <Globe className="h-3 w-3 text-gray-500" />
+              <div className="grid grid-cols-2 gap-4 text-xs">
+                <div className="flex items-center justify-center gap-1">
+                  <Mail className="h-3 w-3 text-gray-500" />
+                  <a
+                    href="mailto:michael.cavopol@gmail.com"
+                    className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                  >
+                    michael.cavopol@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center justify-center gap-1">
+                  <span className="text-gray-700 dark:text-gray-300">Learn more:</span>
                   <a
                     href="https://michael.cavopol.me"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                    className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1"
                   >
                     michael.cavopol.me
-                  </a>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Mail className="h-3 w-3 text-gray-500" />
-                  <a
-                    href="mailto:michael.cavopol@gmail.com"
-                    className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
-                  >
-                    michael.cavopol@gmail.com
+                    <ExternalLink className="h-3 w-3" />
                   </a>
                 </div>
               </div>
@@ -134,25 +161,26 @@ export default function CorrespondencePage() {
               <p className="text-xs text-gray-700 dark:text-gray-300">
                 Helping product companies get meaningful use from technology and AI to drive EBIDTA and revenue growth
               </p>
-              <div className="space-y-1">
-                <div className="flex items-center gap-1">
-                  <Globe className="h-3 w-3 text-gray-500" />
+              <div className="grid grid-cols-2 gap-4 text-xs">
+                <div className="flex items-center justify-center gap-1">
+                  <Mail className="h-3 w-3 text-gray-500" />
+                  <a
+                    href="mailto:michael@hedgehoggrowth.com"
+                    className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                  >
+                    michael@hedgehoggrowth.com
+                  </a>
+                </div>
+                <div className="flex items-center justify-center gap-1">
+                  <span className="text-gray-700 dark:text-gray-300">Learn more:</span>
                   <a
                     href="https://hedgehoggrowth.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                    className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1"
                   >
                     hedgehoggrowth.com
-                  </a>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Mail className="h-3 w-3 text-gray-500" />
-                  <a
-                    href="mailto:michael@hedgehoggrowth.com"
-                    className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
-                  >
-                    michael@hedgehoggrowth.com
+                    <ExternalLink className="h-3 w-3" />
                   </a>
                 </div>
               </div>
@@ -168,11 +196,11 @@ export default function CorrespondencePage() {
               <p className="text-xs text-gray-700 dark:text-gray-300">
                 Please use this address for any non-human correspondence.
               </p>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center justify-center gap-1 text-xs">
                 <Mail className="h-3 w-3 text-gray-500" />
                 <a
                   href="mailto:mcavopol@gmail.com"
-                  className="text-xs text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                 >
                   mcavopol@gmail.com
                 </a>
