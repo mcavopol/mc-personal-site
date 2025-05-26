@@ -29,7 +29,7 @@ export default function CorrespondencePage() {
               size="lg"
               className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
             >
-              <a href="/michael-cavopol.vcf" download className="flex items-center gap-2">
+              <a href="/vcard" className="flex items-center gap-2">
                 <Download className="h-4 w-4" />
                 Add to Contacts
               </a>
