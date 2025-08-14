@@ -13,6 +13,32 @@ import {
   ExternalLink,
 } from "lucide-react"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+// Page-specific metadata with custom "Add to Contacts" button image
+export const metadata: Metadata = {
+  title: "Contact Michael Cavopol | Virtual Business Card",
+  description:
+    "Get in touch with Michael Cavopol for fractional product, revenue, and operations leadership. Personal and firm contact information.",
+  openGraph: {
+    title: "Contact Michael Cavopol | Virtual Business Card",
+    description: "Get in touch with Michael Cavopol for fractional product, revenue, and operations leadership.",
+    images: [
+      {
+        url: "/add-to-contacts-preview.png", // Custom button-style preview image
+        width: 1200,
+        height: 630,
+        alt: "Add Michael Cavopol to Contacts",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Michael Cavopol | Virtual Business Card",
+    description: "Get in touch with Michael Cavopol for fractional product, revenue, and operations leadership.",
+    images: ["/add-to-contacts-preview.png"], // Same button image for Twitter
+  },
+}
 
 export default function CorrespondencePage() {
   return (
