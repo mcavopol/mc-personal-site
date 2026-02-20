@@ -1,9 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import Script from "next/script"
+import { Inter, DM_Serif_Display } from "next/font/google"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,6 +8,15 @@ const inter = Inter({
   variable: "--font-inter",
   preload: true,
   fallback: ["system-ui", "sans-serif"],
+})
+
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-serif",
+  preload: true,
+  fallback: ["Georgia", "serif"],
 })
 
 // Define the base URL for the site
@@ -248,7 +254,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} ${inter.variable}`}>
+      <body className={`${inter.variable} ${dmSerif.variable} font-sans`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black dark:focus:bg-black dark:focus:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-black focus:ring-black dark:focus:ring-white"
