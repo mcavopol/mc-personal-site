@@ -23,12 +23,8 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Impact", href: "#impact" },
-    { name: "Approach", href: "#approach" },
-    { name: "Superpower", href: "#superpower" },
-    { name: "Story", href: "#career" },
-    { name: "Writing", href: "#writing" },
+    { name: "About", href: "/about" },
+    { name: "Correspondence", href: "/correspondence" },
   ]
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
