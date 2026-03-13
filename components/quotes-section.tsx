@@ -80,7 +80,7 @@ export default function QuotesSection() {
                 aria-hidden={index !== activeIndex}
               >
                 <blockquote className="space-y-4">
-                  <p className="text-lg md:text-xl leading-relaxed text-foreground/90 italic">
+                  <p className="text-lg md:text-xl leading-relaxed text-foreground/80">
                     &ldquo;{quote.text}&rdquo;
                   </p>
                   <footer className="text-sm font-medium text-muted-foreground">

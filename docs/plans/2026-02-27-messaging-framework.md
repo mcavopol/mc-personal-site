@@ -95,30 +95,50 @@ The old playbook says slow down, analyze longer, hire specialists for each funct
 
 | Company | Situation | Thesis | Result |
 |---------|-----------|--------|--------|
-| Prado | High-burn startup, unfocused product | 20% of logos = 90% of revenue → pivot to enterprise ICP | Burn 3x → 0x in 6 months |
-| Fresh Technology | Flat growth, legacy services org | Channel distribution via POS partnerships is the unlock | Sales cycle 8 mo → 15 days, 93% YoY growth |
-| Foresight | Founders couldn't articulate the big problem | Reframed strategic narrative | 2x discovery → opportunity conversion |
-| Arena Labs | Healthcare performance science (unfamiliar domain) | Building AI-native product capabilities as COO & CPO | Current role |
+| Prado | High-burn startup serving two conflicting ICPs (enterprise headless OMS vs. SMB all-in-one). Engineering spread thin. Embedded website builder forcing hosting on Prado infrastructure, blocking enterprise customers. | 20% of logos = 90% of revenue → pivot to enterprise ICP. Free resources to build payments system (Rainforest Payments), remove Stripe/Square as middlemen. | Burn 3x → 0x in 6 months |
+| Fresh Technology | Legacy mom-and-pop IT services company. COVID hit right as VC raise was happening. Delivery marketplaces (Uber Eats, DoorDash, GrubHub) disintermediating restaurants the way Amazon disintermediated booksellers. | Channel distribution via POS partnerships is the unlock. Built strategic narrative for customers to understand the shift. Pulled KDS off the shelf — became critical for demand routing, margin-aware prioritization, delivery driver coordination, ETA accuracy. | Sales cycle 8 mo → 15 days, 93% YoY growth |
+| Arena Labs | Pro services company that had failed multiple times to become a product company. Selling 8-week coaching programs to clinicians with discretionary budgets instead of C-suite P&L owners. Linear content product with bolt-on features. | Pivot GTM to hospital C-suite buyers (CNOs, CMOs, CEOs, CFOs). Rebuild product around JTBD: (1) acute intervention — physiological tools for in-the-moment stress, (2) longitudinal habit formation — personalized protocol toolkit. $25-45/mo subscription profitable without human coach. | 85% engagement vs. 3-5% industry baseline. AI strategy: coaches generate training data → AI runs recommendations in background → pre-compiles conversation starters to reduce coach cognitive load. |
+| LeanKit | Built custom reporting API for enterprise customers who needed performance data for budgeting/planning. Deployed it. Customers did nothing with it. | Gap wasn't data access — it was insight delivery. Customers weren't in the business of building reports. Built PS team with BI analysts to bridge capability-to-insight gap. | PS team → support/docs oversight → customer success leadership → ownership of majority of company revenue at exit. |
 
 ### Pillar 2: Four Disruption Cycles, Same Muscle
 
 | Cycle | Company | Years | What Happened |
 |-------|---------|-------|---------------|
-| Agile/Lean | LeanKit | 2013-2017 | Waterfall → agile transformation. $3M → $18M ARR. Planview acquisition. |
-| Cloud & SaaS | Ambition | 2017-2020 | Built customer success infrastructure for enterprise SaaS. NRR +30pts, expansion ARR 12.7x. |
-| COVID-era ops | Fresh Technology | 2020-2024 | Restaurant tech through a pandemic. Channel pivot. 93% YoY growth. |
-| AI | Arena Labs + HGP | 2024-present | AI-native healthcare products. Advisory on practical AI for non-tech companies. |
+| Agile/Lean | LeanKit | 2013-2017 | Joined as engineer (#~20), rose through PM, PS, CS to owning majority of revenue. Led tiger team to open construction vertical from first principles — one of the last industries ripe for Agile transformation. Customers included Walmart, BAE Systems, Rolls-Royce. $3M → $18M ARR. Planview acquisition. |
+| Cloud & SaaS | Ambition | 2017-2020 | Employee ~10. Tripled ARR from $2M → $6M (eventually $8M). Built everything post-sales. Key lesson: founders built for the buyer, not the user. Product should have been a Salesforce integration, not a standalone dashboard. Learned the cost of ignoring product-market fit — you can only paper over product gaps with great CS for so long. NRR +30pts, expansion ARR 12.7x. |
+| COVID-era ops | Fresh Technology | 2020-2024 | Restaurant tech through a pandemic. Built strategic narrative positioning delivery marketplaces as existential threat. Two products emerged: no-commission first-party online ordering + KDS for demand routing. Channel pivot to POS partnerships (Square, Clover, Lightspeed). 93% YoY growth. |
+| AI | Arena Labs + HGP | 2024-present | AI-native healthcare products. Tesla Autopilot model: human coaches generate training data while coaching, AI runs smart recommendations in background, pre-compiles conversation starters for coaches. Not replacing humans — using AI to scale quality. Advisory on practical AI for non-tech companies. |
 
 ### Pillar 3: Leading from the Front
 
+- Gets on calls, picks up the phone, gets on the plane — not managing from a distance
+- Clarity on what matters enables focused presence (not spread thin across everything)
+- Hires for human characteristics, not credentials: math teacher → support agent → support lead → product management; events coordinator → CSM → CSM manager → CSM director → CS function leader
+- People he's hired consistently rise to leadership positions — years later at Ambition, the leadership team was all his hires
+- Reorg approach (Prado): reframe the challenge as an opportunity ("these aren't difficult customers — we're just trying to serve everyone"), show the data (margin by segment), let the team self-organize toward the obvious answer. For those who don't fit, invest in their transition with care and support.
+- Genuine care for people AND mission. Transparency. No ego about the work. Willing to have hard conversations from a place of caring.
 - Built CS, SE, PS, and support functions from zero at Ambition
-- Restructured org alongside the team at Prado, picking up work during transition
 - Nashville Entrepreneur Center mentor and lecturer
-- [PLACEHOLDER: Additional quotes from CEOs and collaborators to be added]
 
-**Current quotes:**
-- "Michael turns messy product roadmaps and scattershot revenue efforts into compounding revenue machines." — CEO, LeanKit
-- [PLACEHOLDER: More quotes to come]
+### Quotes
+
+> "Michael is a self-starter who's always laser-focused on the one or two things slowing the company down. He's relentless about challenging the status quo and relentless in his pursuit of excellence — but he balances that with genuine care for the people around him."
+> — CEO, LeanKit
+
+> "Michael fundamentally changed how we thought about revenue growth. He helped us see that we didn't quite have product-market fit yet, and quickly went to work building a professional services team that could scale revenue while we addressed the gaps in our product. He's the unicorn who can play across revenue, product, and strategy."
+> — CEO, Ambition
+
+> "Michael learned more about our business in two weeks than top-tier consultants did in a deep evaluation. He has an uncanny ability to make sense of chaos. In his first month, he literally talked to every customer and helped us uncover gaps in our product — but more importantly, in our company strategy — that had been staring us in the face for years."
+> — CEO, Prado
+
+> "Michael balances a well-tuned product sense with an incredible instinct for commercial strategy. He spotted a critical issue with our distribution model right away, and despite overwhelming opposition, kept advocating for a channel-driven approach for months. We finally listened — and since then, we've restructured the entire business around channel partners. Revenue has tripled since that decision."
+> — CEO, Fresh Technology
+
+> "Michael is a product person's product person. He loves building incredible digital experiences and he deeply cares about user context. He has this ability to put himself in the user's shoes at the exact moment in the customer journey — he can predict what a user is thinking and feeling with insane precision. I was constantly baffled during user interviews at his ability to guess what a user would say."
+> — CPO, Ambition
+
+> "Michael is an incredibly versatile cross-functional leader. Just when you think you've got him figured out, you'll catch him writing code on a flight, then presenting the company's growth strategy to investors an hour later. You can't pin him down. Just when you think nobody can be great at sales, product, and leadership all at once — he proves you wrong."
+> — Board Member & Investor
 
 ---
 
@@ -164,6 +184,28 @@ Casual ←————————[HERE]————————→ Formal
 
 ---
 
+## AI Thesis
+
+### The Big Claim
+
+AI is a massive unlock for all companies, but *especially* for non-tech "Main Street" companies. They have the most to gain — and the most to lose as AI-powered competitors close the gap.
+
+### The Software Cost Collapse (Three Acts)
+
+1. **AI-native competitors outcompete incumbent SaaS** — same capabilities, better/faster/cheaper.
+2. **Companies use AI internally** to recreate what they're paying SaaS vendors for, killing those contracts.
+3. **Maintaining internal tools "won't make the beer taste better"** — smart companies outsource to AI-native firms at 1/10th to 1/100th the price, bringing us back to a vendor model at radically lower cost.
+
+**Net result:** Everyone gets deeply capable software at a fraction of today's cost.
+
+### Three Questions Every Business Owner Needs to Answer Fast
+
+1. **Growth:** How does AI supercharge sales & marketing to grow faster while staying capital-efficient?
+2. **Margins:** How does AI reduce opex to materially improve margins?
+3. **Core offering (most important):** How does AI-native thinking transform your offering to customers? Not bolt-on AI — rebuild in an AI-native way. Whether you're in charcoal, retail fashion, restaurants, manufacturing, or technology.
+
+---
+
 ## Current Context (for accuracy)
 
 - **Current role:** COO & CPO at Arena Labs (healthcare workforce wellness)
@@ -175,9 +217,27 @@ Casual ←————————[HERE]————————→ Formal
 
 ---
 
+## Key Lessons by Company (for About page narrative)
+
+### LeanKit (2013-2017)
+Passion isn't writing code — it's using technology to solve problems. Rose from engineer to owning the majority of revenue by consistently seeing gaps and filling them. First-principles approach to new markets (construction vertical). Learned that the gap between capability and customer value is where the real work lives.
+
+### Ambition (2017-2020)
+The anti-pattern. Learned what happens when you build for the buyer, not the user. You can paper over product gaps with great CS, but only for so long. This experience hardened the conviction about JTBD and user-first product thinking that drove every subsequent role.
+
+### Fresh Technology (2020-2024)
+Strategic narrative as a product. Helped customers understand an existential shift (delivery marketplace disintermediation) before selling them the solution. Proved that the chaos→thesis→momentum cycle works even when the disruption is external (COVID) and the industry is unfamiliar (restaurants).
+
+### Arena Labs (2024-present)
+AI-native product design in practice. Not bolt-on AI — fundamental rethinking of the product around JTBD. Human coaches and AI working together (Tesla Autopilot model), not AI replacing humans.
+
+### Prado
+Speed to clarity as a superpower. Two weeks to understand what consultants missed in months. The data told the story — 20% of logos generating 90% of revenue. Let the team self-organize around the obvious answer.
+
+---
+
 ## Open Items
 
-- [ ] Additional quotes from CEOs and collaborators (Michael to provide)
-- [ ] Case study / portfolio pieces for each major role (Michael to provide)
+- [ ] Case study / portfolio pieces for each major role (Michael to provide detail if desired)
 - [ ] Updated headshot (if desired)
 - [ ] Finalize which Arena Labs details to include vs. omit

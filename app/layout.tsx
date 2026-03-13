@@ -17,21 +17,22 @@ const inter = Inter({
 const baseUrl = "https://michael.cavopol.me" // Replace with your actual domain
 
 export const metadata: Metadata = {
-  title: "Michael Cavopol | Chief Revenue & Product Operator | Nashville",
+  title: "Michael Cavopol | Product & Revenue Leader | Nashville",
   description:
-    "Product & Revenue leader with 20+ years experience integrating product vision, go-to-market execution, and data-driven operations to build capital-efficient product companies. Based in Nashville, TN.",
+    "Product & revenue leader with 20 years across 4 disruption cycles. Fast to clarity. Fast to conviction. Fast to results.",
   keywords: [
-    "product operations",
-    "revenue operations",
+    "product leader",
+    "revenue leader",
+    "disruption cycles",
+    "AI strategy",
     "SaaS growth",
     "product strategy",
-    "AI innovation",
     "Nashville",
-    "fractional CRO",
-    "fractional CPO",
     "B2B SaaS",
     "go-to-market strategy",
-    "revenue engineering",
+    "product management",
+    "customer success",
+    "operational leadership",
   ],
   metadataBase: new URL(baseUrl),
   alternates: {
@@ -45,24 +46,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: baseUrl,
-    title: "Michael Cavopol | Chief Revenue & Product Operator",
+    title: "Michael Cavopol | Product & Revenue Leader",
     description:
-      "Product & Revenue leader with 20+ years experience integrating product vision, go-to-market execution, and data-driven operations to build capital-efficient product companies.",
+      "Product & revenue leader with 20 years across 4 disruption cycles. Fast to clarity. Fast to conviction. Fast to results.",
     siteName: "Michael Cavopol",
     images: [
       {
         url: `${baseUrl}/michael-headshot.jpg`,
         width: 1200,
         height: 630,
-        alt: "Michael Cavopol - Chief Revenue & Product Operator",
+        alt: "Michael Cavopol - Product & Revenue Leader",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Michael Cavopol | Chief Revenue & Product Operator",
+    title: "Michael Cavopol | Product & Revenue Leader",
     description:
-      "Product & Revenue leader with 20+ years experience integrating product vision, go-to-market execution, and data-driven operations to build capital-efficient product companies.",
+      "Product & revenue leader with 20 years across 4 disruption cycles. Fast to clarity. Fast to conviction. Fast to results.",
     images: [`${baseUrl}/michael-headshot.jpg`],
     creator: "@cavopol",
   },
@@ -76,7 +77,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  generator: "v0.dev",
   authors: [{ name: "Michael Cavopol" }],
   category: "Professional Portfolio",
   verification: {
@@ -89,9 +89,9 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Michael Cavopol",
-  jobTitle: "Chief Revenue & Product Operator",
+  jobTitle: "Product & Revenue Leader",
   description:
-    "Product & Revenue leader with 20+ years experience integrating product vision, go-to-market execution, and data-driven operations.",
+    "Product & revenue leader with 20 years across 4 disruption cycles. Moves quickly into complex environments, forms a sharp point of view on what matters, and drives teams to execute.",
   url: baseUrl,
   image: `${baseUrl}/michael-headshot.jpg`,
   sameAs: [
@@ -134,7 +134,7 @@ const organizationSchema = {
     name: "Michael Cavopol",
   },
   description:
-    "Boutique advisory practice specializing in product strategy, revenue operations, and AI innovation for B2B SaaS companies.",
+    "AI-focused product strategy and operational leadership for growth-stage companies.",
 }
 
 export default function RootLayout({
@@ -155,67 +155,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://linkedin.com" />
         <link rel="dns-prefetch" href="https://cavopol.substack.com" />
 
-        {/* Inline critical CSS for above-the-fold content */}
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-          /* Critical CSS for above-the-fold content */
-          :root {
-            --background: 0 0% 100%;
-            --foreground: 0 0% 3.9%;
-            --primary: 0 0% 9%;
-            --primary-foreground: 0 0% 98%;
-          }
-          .dark {
-            --background: 0 0% 3.9%;
-            --foreground: 0 0% 98%;
-            --primary: 0 0% 98%;
-            --primary-foreground: 0 0% 9%;
-          }
-          body {
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-          }
-          #hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 4rem;
-          }
-          .container-padding {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-          @media (min-width: 640px) {
-            .container-padding {
-              padding-left: 1.5rem;
-              padding-right: 1.5rem;
-            }
-          }
-          @media (min-width: 1024px) {
-            .container-padding {
-              padding-left: 2rem;
-              padding-right: 2rem;
-            }
-          }
-          header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 50;
-            transition: all 0.3s;
-          }
-          header.scrolled {
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(4px);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-          }
-          .dark header.scrolled {
-            background-color: rgba(0, 0, 0, 0.9);
-          }
-        `,
-          }}
-        />
 
         {/* Google Analytics with optimized loading */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-DPF519FPD1" strategy="afterInteractive" />
