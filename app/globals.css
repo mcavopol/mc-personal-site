@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -10,25 +14,25 @@
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
-    --foreground: 0 0% 10%;
-    --card: 40 20% 98%;
-    --card-foreground: 0 0% 10%;
-    --popover: 40 20% 98%;
-    --popover-foreground: 0 0% 10%;
-    --primary: 168 50% 33%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 40 10% 94%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 40 10% 94%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 168 50% 33%;
-    --accent-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 40 10% 88%;
-    --input: 40 10% 88%;
-    --ring: 168 50% 33%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -45,25 +49,25 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 40 5% 90%;
-    --card: 0 0% 10%;
-    --card-foreground: 40 5% 90%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 40 5% 90%;
-    --primary: 168 42% 40%;
-    --primary-foreground: 0 0% 8%;
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 40 5% 90%;
-    --muted: 0 0% 14%;
-    --muted-foreground: 40 5% 60%;
-    --accent: 168 42% 40%;
-    --accent-foreground: 0 0% 8%;
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
-    --ring: 168 42% 40%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -84,19 +88,53 @@
   * {
     @apply border-border;
   }
+
+  html {
+    overflow-x: hidden;
+    /* Reduced scroll padding by 50% */
+    scroll-padding-top: 40px;
+  }
+
   body {
     @apply bg-background text-foreground;
-    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Ensure all main containers don't exceed viewport width */
+  .container-padding {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Add scroll margin to all sections for proper anchor positioning - reduced by 50% */
+  section[id] {
+    scroll-margin-top: 40px;
+  }
+
+  /* Specific scroll margin for mobile where header might be different height - reduced by 50% */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 45px;
+    }
+
+    section[id] {
+      scroll-margin-top: 45px;
+    }
   }
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+/* Additional utility to prevent horizontal scroll on any element */
+@layer utilities {
+  .prevent-horizontal-scroll {
+    overflow-x: hidden;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
 }
 
 .section-padding {
-  @apply py-16 md:py-24;
+  @apply py-12 md:py-16;
 }
 
 .container-padding {
@@ -107,16 +145,49 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Ensure timeline cards don't get cut off */
+@media (max-width: 768px) {
+  .timeline-card {
+    width: calc(100% - 1rem);
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+
+/* Fix for timeline cards on mobile */
+@media (max-width: 768px) {
+  #career .container-padding {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #career .card-content {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+}
+
+/* Reduce layout shifts */
+img,
+button,
+a {
+  @apply transition-opacity;
+}
+
 /* Hide scrollbar for carousel */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-/* Respect reduced motion preferences */
+/* Optimize animations */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
@@ -126,4 +197,130 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Animation preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-banner {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Smooth transitions for logo banners */
+.logo-banner-transition {
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Slot machine animation */
+@keyframes slotMachine {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  21% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slot-machine {
+  animation: slotMachine 0.5s ease-in-out;
+}
+
+/* Banner container and animation wrapper */
+.banner-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-animation-wrapper {
+  position: relative;
+  width: 100%;
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+/* Enhanced mobile padding */
+@media (max-width: 640px) {
+  .container-padding {
+    @apply px-6;
+  }
+
+  /* Extra padding for hero section on mobile */
+  #hero .container-padding {
+    @apply px-8;
+  }
+
+  /* Extra padding for about section on mobile */
+  #about .container-padding {
+    @apply px-8;
+  }
+}
+
+/* Very small screens need even more padding */
+@media (max-width: 375px) {
+  .container-padding {
+    @apply px-5;
+  }
+
+  #hero .container-padding,
+  #about .container-padding {
+    @apply px-6;
+  }
+}
+
+/* Position adjustments for navigation buttons near footer */
+.section-nav-button,
+.scroll-to-top-button {
+  transition: bottom 0.3s ease;
+}
+
+/* Default position when not near footer */
+.section-nav-button,
+.scroll-to-top-button {
+  bottom: 32px; /* Default position */
+}
+
+/* Position when near footer */
+html.near-footer .section-nav-button,
+html.near-footer .scroll-to-top-button {
+  bottom: 80px; /* Reduced from 120px to move down 40px */
+}
+
+@media (max-width: 768px) {
+  html.near-footer .section-nav-button,
+  html.near-footer .scroll-to-top-button {
+    bottom: 100px; /* Reduced from 140px to move down 40px on mobile */
+  }
+}
+
+/* Hardware acceleration for animations */
+.will-change-transform {
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }

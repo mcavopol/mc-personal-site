@@ -1,45 +1,81 @@
+import { Card, CardContent } from "@/components/ui/card"
 import { Linkedin, Mail, Github, Instagram, BookOpen, Twitter } from "lucide-react"
-
-const socialLinks = [
-  { href: "https://linkedin.com/in/michael-cavopol", label: "LinkedIn", icon: Linkedin },
-  { href: "https://x.com/cavopol", label: "Twitter (X)", icon: Twitter },
-  { href: "https://www.instagram.com/cavopol/", label: "Instagram", icon: Instagram },
-  { href: "https://cavopol.substack.com/", label: "Substack", icon: BookOpen },
-  { href: "mailto:mcavopol@gmail.com", label: "Email", icon: Mail, external: false },
-  { href: "https://github.com/mcavopol", label: "GitHub", icon: Github },
-]
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border py-12">
+    <footer className="bg-gray-100 dark:bg-gray-900 py-12">
       <div className="container-padding mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-bold tracking-tight">Michael Cavopol</h3>
-            <p className="text-sm text-muted-foreground mt-0.5">Product & Revenue Leader</p>
-          </div>
+        <Card className="bg-transparent border-none shadow-none">
+          <CardContent className="p-0">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="mb-6 md:mb-0">
+                <h3 className="text-xl font-bold">Michael Cavopol</h3>
+                <p className="text-gray-600 dark:text-gray-400 mt-1">Chief Revenue & Product Operator</p>
+              </div>
 
-          <div className="flex gap-5">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.external !== false ? "_blank" : undefined}
-                rel={link.external !== false ? "noopener noreferrer" : undefined}
-                aria-label={link.label}
-                className="text-muted-foreground hover:text-foreground transition-colors p-1"
-              >
-                <link.icon className="h-5 w-5" />
-              </a>
-            ))}
-          </div>
-        </div>
+              <div className="flex space-x-6 mb-6 md:mb-0">
+                <a
+                  href="https://linkedin.com/in/michael-cavopol"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://x.com/cavopol"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter (X)"
+                  className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+                >
+                  <Twitter className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/cavopol/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://cavopol.substack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Substack"
+                  className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+                >
+                  <BookOpen className="h-5 w-5" />
+                </a>
+                <a
+                  href="mailto:mcavopol@gmail.com"
+                  aria-label="Email"
+                  className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://github.com/mcavopol"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
 
-        <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          &copy; {currentYear} Michael Cavopol. All rights reserved.
-        </div>
+            <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+              © {currentYear} Michael Cavopol. All rights reserved.
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </footer>
   )
