@@ -1,0 +1,369 @@
+{
+  "roles": [
+    {
+      "company": "Arena Labs",
+      "title": "CPO & COO",
+      "dates": "2024-present",
+      "pillars": ["P1", "P2"],
+      "situation": "Pro services company that had failed multiple times to become a product company. Selling 8-week coaching programs to clinicians with discretionary budgets instead of C-suite P&L owners.",
+      "thesis": "Pivot GTM to hospital C-suite buyers. Rebuild product around JTBD: acute intervention and longitudinal habit formation. $25-45/mo subscription profitable without human coach.",
+      "outcomes": [
+        "85% engagement vs. 3-5% industry baseline",
+        "AI strategy: coaches generate training data, AI runs recommendations, pre-compiles conversation starters"
+      ]
+    },
+    {
+      "company": "Prado",
+      "title": "Interim COO & SVP Revenue/Product",
+      "dates": "2023-2024",
+      "pillars": ["P1", "P3"],
+      "situation": "High-burn startup serving two conflicting ICPs. Engineering spread thin. Embedded website builder blocking enterprise customers.",
+      "thesis": "20% of logos = 90% of revenue. Pivot to enterprise ICP. Build payments system (Rainforest Payments), remove Stripe/Square as middlemen.",
+      "outcomes": [
+        "Burn: 3x to 0x in 6 months",
+        "Median contract value: +427x",
+        "Dev cycle: 60 days to <7 days",
+        "OpEx reduction: 70%"
+      ]
+    },
+    {
+      "company": "Fresh Technology",
+      "title": "SVP Revenue & Product",
+      "dates": "2020-2024",
+      "pillars": ["P1", "P2"],
+      "situation": "Legacy IT services company. COVID hit during VC raise. Delivery marketplaces disintermediating restaurants.",
+      "thesis": "Channel distribution via POS partnerships is the unlock. Built strategic narrative for customers. KDS became critical for demand routing and delivery coordination.",
+      "outcomes": [
+        "Sales cycle: 8 months to 15 days",
+        "93% YoY growth",
+        "Support SLA: 23x faster",
+        "Signed Square, Clover, Lightspeed as channel partners"
+      ]
+    },
+    {
+      "company": "Ambition",
+      "title": "VP Post-Sales & Solutions",
+      "dates": "2017-2020",
+      "pillars": ["P1", "P2", "P3"],
+      "situation": "Employee ~10. Founders built for the buyer, not the user. Product should have been a Salesforce integration.",
+      "thesis": "Build post-sales machine to scale revenue while pushing for product-market fit.",
+      "outcomes": [
+        "ARR: $2M to $8M",
+        "NRR: +30 points",
+        "Expansion ARR: 12.7x",
+        "NPS: 55",
+        "Built CS, SE, PS, and support from zero"
+      ]
+    },
+    {
+      "company": "LeanKit",
+      "title": "Director, CS & Professional Services",
+      "dates": "2015-2017",
+      "pillars": ["P1", "P2", "P3"],
+      "situation": "Built reporting API for enterprise customers. Customers did nothing with it.",
+      "thesis": "Gap was insight delivery, not data access. Built PS team with BI analysts to bridge the gap.",
+      "outcomes": [
+        "Owned majority of company revenue at exit",
+        "CX NPS: 50+",
+        "Planview acquisition"
+      ]
+    },
+    {
+      "company": "LeanKit",
+      "title": "Product Manager, Construction",
+      "dates": "2013-2015",
+      "pillars": ["P1", "P2"],
+      "situation": "Joined as engineer (#~20). Construction was one of the last industries ripe for Agile adoption.",
+      "thesis": "Tiger team to open construction vertical from first principles.",
+      "outcomes": [
+        "New vertical opened",
+        "Customers: Walmart, BAE Systems, Rolls-Royce",
+        "Company ARR: $3M to $18M"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "ARR growth",
+      "value": "$3M to $18M",
+      "company": "LeanKit",
+      "period": "2013-2017",
+      "category": "revenue"
+    },
+    {
+      "metric": "ARR growth",
+      "value": "$2M to $8M",
+      "company": "Ambition",
+      "period": "2017-2020",
+      "category": "revenue"
+    },
+    {
+      "metric": "Expansion ARR",
+      "value": "12.7x",
+      "company": "Ambition",
+      "period": "2017-2020",
+      "category": "revenue"
+    },
+    {
+      "metric": "YoY revenue growth",
+      "value": "93%",
+      "company": "Fresh Technology",
+      "period": "2020-2024",
+      "category": "revenue"
+    },
+    {
+      "metric": "Median contract value increase",
+      "value": "+427x",
+      "company": "Prado",
+      "period": "2023-2024",
+      "category": "revenue"
+    },
+    {
+      "metric": "Burn reduction",
+      "value": "3x to 0x in 6 months",
+      "company": "Prado",
+      "period": "2023-2024",
+      "category": "efficiency"
+    },
+    {
+      "metric": "OpEx reduction",
+      "value": "70%",
+      "company": "Prado",
+      "period": "2023-2024",
+      "category": "efficiency"
+    },
+    {
+      "metric": "Sales cycle compression",
+      "value": "8 months to 15 days",
+      "company": "Fresh Technology",
+      "period": "2020-2024",
+      "category": "efficiency"
+    },
+    {
+      "metric": "Dev cycle compression",
+      "value": "60 days to <7 days",
+      "company": "Prado",
+      "period": "2023-2024",
+      "category": "efficiency"
+    },
+    {
+      "metric": "Support SLA improvement",
+      "value": "23x faster",
+      "company": "Fresh Technology",
+      "period": "2020-2024",
+      "category": "efficiency"
+    },
+    {
+      "metric": "User engagement",
+      "value": "85% vs. 3-5% baseline",
+      "company": "Arena Labs",
+      "period": "2024-present",
+      "category": "product"
+    },
+    {
+      "metric": "NRR improvement",
+      "value": "+30 points",
+      "company": "Ambition",
+      "period": "2017-2020",
+      "category": "product"
+    },
+    {
+      "metric": "NPS",
+      "value": "55",
+      "company": "Ambition",
+      "period": "2017-2020",
+      "category": "product"
+    },
+    {
+      "metric": "CX NPS",
+      "value": "50+",
+      "company": "LeanKit",
+      "period": "2015-2017",
+      "category": "product"
+    },
+    {
+      "metric": "LTV increase",
+      "value": "12.6x",
+      "company": "Composite",
+      "period": "Across roles",
+      "category": "product"
+    },
+    {
+      "metric": "Functions built from zero",
+      "value": "CS, SE, PS, Support",
+      "company": "Ambition",
+      "period": "2017-2020",
+      "category": "leadership"
+    }
+  ],
+  "quotes": [
+    {
+      "text": "Michael learned more about our business in two weeks than top-tier consultants did in a deep evaluation. He has an uncanny ability to make sense of chaos. In his first month, he literally talked to every customer and helped us uncover gaps in our product — but more importantly, in our company strategy — that had been staring us in the face for years.",
+      "attribution": {
+        "title": "CEO",
+        "company": "Prado"
+      },
+      "pillars": ["P1", "P3"],
+      "bestFor": "Product credibility, consulting/advisory positioning"
+    },
+    {
+      "text": "Michael fundamentally changed how we thought about revenue growth. He helped us see that we didn't quite have product-market fit yet, and quickly went to work building a professional services team that could scale revenue while we addressed the gaps in our product. He's the unicorn who can play across revenue, product, and strategy.",
+      "attribution": {
+        "title": "CEO",
+        "company": "Ambition"
+      },
+      "pillars": ["P1", "P3"],
+      "bestFor": "Cross-functional credibility, executive recruiter contexts"
+    },
+    {
+      "text": "Michael balances a well-tuned product sense with an incredible instinct for commercial strategy. He spotted a critical issue with our distribution model right away, and despite overwhelming opposition, kept advocating for a channel-driven approach for months. We finally listened — and since then, we've restructured the entire business around channel partners. Revenue has tripled since that decision.",
+      "attribution": {
+        "title": "CEO",
+        "company": "Fresh Technology"
+      },
+      "pillars": ["P1", "P2"],
+      "bestFor": "Strategic thinking, persistence, channel/GTM expertise"
+    },
+    {
+      "text": "Michael is a self-starter who's always laser-focused on the one or two things slowing the company down. He's relentless about challenging the status quo and relentless in his pursuit of excellence — but he balances that with genuine care for the people around him.",
+      "attribution": {
+        "title": "CEO",
+        "company": "LeanKit"
+      },
+      "pillars": ["P1", "P3"],
+      "bestFor": "Leadership credibility, culture fit"
+    },
+    {
+      "text": "Michael is a product person's product person. He loves building incredible digital experiences and he deeply cares about user context. He has this ability to put himself in the user's shoes at the exact moment in the customer journey — he can predict what a user is thinking and feeling with insane precision. I was constantly baffled during user interviews at his ability to guess what a user would say.",
+      "attribution": {
+        "title": "CPO",
+        "company": "Ambition"
+      },
+      "pillars": ["P1"],
+      "bestFor": "Product leadership roles, UX/product credibility"
+    },
+    {
+      "text": "Michael is an incredibly versatile cross-functional leader. Just when you think you've got him figured out, you'll catch him writing code on a flight, then presenting the company's growth strategy to investors an hour later. You can't pin him down. Just when you think nobody can be great at sales, product, and leadership all at once — he proves you wrong.",
+      "attribution": {
+        "title": "Board Member & Investor",
+        "company": null
+      },
+      "pillars": ["P2", "P3"],
+      "bestFor": "Board/investor contexts, executive range"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Arena Labs",
+      "relationship": "employee",
+      "category": "Healthcare / AI"
+    },
+    {
+      "name": "Prado",
+      "relationship": "employee",
+      "category": "E-commerce / OMS"
+    },
+    {
+      "name": "Fresh Technology",
+      "relationship": "employee",
+      "category": "Restaurant Tech"
+    },
+    {
+      "name": "Ambition",
+      "relationship": "employee",
+      "category": "Sales Performance"
+    },
+    {
+      "name": "LeanKit",
+      "relationship": "employee",
+      "category": "Agile / Project Management"
+    },
+    {
+      "name": "Hedgehog Growth Partners",
+      "relationship": "founder",
+      "category": "AI Strategy Advisory"
+    },
+    {
+      "name": "Walmart",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "Salesforce",
+      "relationship": "partner",
+      "category": "Enterprise"
+    },
+    {
+      "name": "Delta",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "Rolls-Royce",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "Johnson & Johnson",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "BAE Systems",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "Intel",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "FedEx",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "Caterpillar",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "Amazon",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "Square",
+      "relationship": "channel_partner",
+      "category": "POS / Payments"
+    },
+    {
+      "name": "Cisco",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "ServiceNow",
+      "relationship": "customer",
+      "category": "Enterprise"
+    },
+    {
+      "name": "Clover",
+      "relationship": "channel_partner",
+      "category": "POS / Payments"
+    },
+    {
+      "name": "Lightspeed",
+      "relationship": "channel_partner",
+      "category": "POS / Payments"
+    }
+  ],
+  "bios": {
+    "oneLiner": "Product and revenue leader. 20 years, 4 disruption cycles, $3M-to-$18M exits. Building AI-native products at Arena Labs.",
+    "threeLiner": "Michael Cavopol is a product and revenue leader with 20 years across B2B SaaS — from early-stage to nine-figure exit. He's shipped through four disruption cycles (Agile, Cloud, COVID-era ops, AI) and currently serves as COO & CPO at Arena Labs, where he's building AI-native healthcare products. Nashville-based.",
+    "shortParagraph": "I've spent 20 years building and scaling product companies — from LeanKit ($3M to $18M ARR, Planview acquisition) to Ambition ($2M to $8M ARR, NRR +30 pts) to Fresh Technology (93% YoY growth through channel partnerships). At each company, I walked into complexity, formed a thesis on what mattered, and built teams to execute against it.\n\nToday I'm COO & CPO at Arena Labs, designing AI-native healthcare products that pair human coaches with AI — not replacing people, using AI to scale quality. I also advise non-tech companies on practical AI strategy through Hedgehog Growth Partners. Based in Nashville.",
+    "fullBio": "I've spent 20 years at the intersection of product, revenue, and operations in B2B SaaS. Not as a specialist in any one function — as someone who moves quickly into complex environments, forms a sharp point of view on what matters, and builds the team and momentum to act on it.\n\nAt LeanKit, I joined as an engineer and rose to owning the majority of revenue — building professional services, customer success, and support from zero. We grew from $3M to $18M ARR before the Planview acquisition. At Ambition, I tripled ARR and built every post-sales function. At Fresh Technology, I identified channel partnerships as the growth unlock, signed Square, Clover, and Lightspeed, and we grew 93% year-over-year while compressing sales cycles from 8 months to 15 days.\n\nThe pattern across all of it: chaos to thesis to momentum. I've done it through four disruption cycles — Agile, Cloud/SaaS, COVID-era operations, and now AI. The tools change. The approach doesn't.\n\nToday I'm COO & CPO at Arena Labs, where we're building AI-native healthcare products. Our model pairs human coaches with AI — coaches generate training data, AI runs recommendations in the background, and we pre-compile conversation starters to reduce cognitive load. 85% engagement versus a 3-5% industry baseline.\n\nI also run Hedgehog Growth Partners, advising non-tech companies on practical AI strategy — helping business owners answer three questions: How does AI grow revenue? How does it improve margins? How does it transform what you actually offer customers?\n\nB.S. Computer Science, MTSU. Nashville-based. Married to Laura Lea, father to Luca.",
+    "narrativeBio": "I love the moment when a chaotic situation starts to make sense — when you can see through the noise to the few things that actually matter. That's been the thread through 20 years in B2B SaaS.\n\nI started as an engineer at LeanKit, one of the earliest Agile/Lean project management tools. I quickly realized my passion wasn't writing code — it was using technology to solve problems. I moved from engineering into product, then built professional services when I saw that customers had the data but not the insight. That PS team became customer success, which became the majority of company revenue. We grew from $3M to $18M ARR before Planview acquired us. Customers included Walmart, BAE Systems, and Rolls-Royce.\n\nAt Ambition, I learned the hardest lesson of my career. The founders had built for the buyer, not the user. The product should have been a Salesforce integration, not a standalone dashboard. You can paper over product gaps with great customer success — but only for so long. I tripled ARR from $2M to $6M, pushed NRR up 30 points, and drove expansion ARR 12.7x. But the experience hardened a conviction about JTBD and user-first product thinking that's driven every role since.\n\nFresh Technology was the proving ground. Restaurant tech through a pandemic. I walked in, saw that delivery marketplaces were doing to restaurants what Amazon did to booksellers, and built a strategic narrative around it. Then we built the products — first-party online ordering and a kitchen display system for demand routing. I identified that POS partnerships were the growth unlock and signed Square, Clover, and Lightspeed. Sales cycles dropped from 8 months to 15 days. Revenue grew 93% year-over-year.\n\nNow I'm COO & CPO at Arena Labs, where the work is AI-native from the ground up. We're building healthcare workforce wellness products that pair human coaches with AI. Think of it like Tesla's Autopilot model — coaches generate training data while coaching, AI runs recommendations in the background, and we pre-compile conversation starters to reduce cognitive load. The result: 85% engagement versus a 3-5% industry baseline. We're not replacing humans. We're using AI to scale quality.\n\nThrough all of it, one thing has stayed constant: I lead from the front. I get on calls. I pick up the phone. I get on the plane. I hire for human characteristics over credentials — a math teacher who became a support agent who became a product manager; an events coordinator who rose to lead the entire CS function. People I've hired consistently rise to leadership positions years later.\n\nOn the side, I run Hedgehog Growth Partners, advising non-tech \"Main Street\" companies on practical AI strategy. My thesis: AI is the biggest unlock for companies that aren't in tech. Every business owner needs to answer three questions fast — how does AI grow revenue, how does it improve margins, and how does it transform what you actually offer customers?\n\nB.S. Computer Science, MTSU. Nashville-based. Married to Laura Lea, father to Luca."
+  }
+}
